@@ -126,7 +126,7 @@ server <- function(input, output,session) {
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
     mytable <- matrix(row2,ncol = 3,byrow = TRUE)
-    if(choice == "Drug_name")
+    if(choice == "Drug_Name")
     {
       colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
     }
@@ -139,9 +139,17 @@ server <- function(input, output,session) {
   })
   
   check_me <- reactive({
-    test <- db[db$Drug %in% input$Drug_1 | db$CYP... %in% input$CYP_1 |
-                 db$Drug %in% input$Drug_2 | db$CYP... %in% input$CYP_2,]
     
+    choice = input$search
+    if(choice == "Drug_Name")
+    {
+      test <- db[db$Drug %in% input$Drug_1 | db$Drug... %in% input$Drug_2 ,]
+                 
+    }
+    else
+    {
+      test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
+    }
   })
   
   
