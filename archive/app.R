@@ -140,10 +140,10 @@ server <- function(input, output,session) {
   
   check_me <- reactive({
     
-    choice = input$search
+    choice <- input$search
     if(choice == "Drug_Name")
     {
-      test <- db[db$Drug %in% input$Drug_1 | db$Drug... %in% input$Drug_2 ,]
+      test <- db[db$Drug %in% input$Drug_1 | db$Drug %in% input$Drug_2 ,]
                  
     }
     else
