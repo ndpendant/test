@@ -57,7 +57,8 @@ server <- function(input, output,session) {
     {
       if(sum(str_detect(db$Drug, input$Drug_1)) > 0)
       {
-        tb1 <- db[db$Drug == input$Drug_1,]
+       # tb1 <- db[db$Drug == input$Drug_1,]
+        tb1 <- db[str_detect(db$Drug, input$Drug_1,]
       }
       
       if(sum(str_detect(db$Drug, input$Drug_2)) > 0)
