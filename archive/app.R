@@ -18,9 +18,13 @@ ui <- fluidPage(
       
       width = 3,
       imageOutput("image"),
-      selectInput("Drug_1b",label = "Drug 1b", choices = db$Drug),
-  
+      selectInput("search",label = "Search Type:", choices = c("Drug_Name","CYP")),
+      conditionalPanel("input$search == 'Drug_Name'",
+      selectInput("Drug_1b",label = "Drug 1b", choices = db$Drug)
+      ),
+      conditionalPanel("input$search == 'CYP'",
       selectInput("Drug_2b",label = "Drug 2b", choices = db$Drug)
+      )
     ),
     mainPanel(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
