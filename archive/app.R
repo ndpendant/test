@@ -27,7 +27,7 @@ ui <- fluidPage(
       selectInput("CYP_1",label = "CYP 1", choices = unique(db$CYP...)),
       selectInput("CYP_2",label = "CYP 2", choices = unique(db$CYP...))
       ),
-      actionButton("GO","Search",icon("refresh"))
+      actionButton("GO","Search",icon("refresh"),0)
           
     ),
     
