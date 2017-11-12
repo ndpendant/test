@@ -4,7 +4,7 @@
 library(shiny)
 library(DT)
 library(stringr)
-db <- read.csv("E:\\USF Database\\db11-9.csv",fill = TRUE)
+db <- read.csv("db11-9.csv",fill = TRUE)
 
 
 
