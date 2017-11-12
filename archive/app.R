@@ -20,8 +20,8 @@ ui <- fluidPage(
       imageOutput("image"),
       selectInput("search",label = "Search Type:", choices = c('Drug_Name','CYP')),
       conditionalPanel("input.search == 'Drug_Name' ",
-      selectInput("Drug_1",label = "Drug 1b", choices = db$Drug),
-      selectInput("Drug_2",label = "Drug 2b", choices = db$Drug)
+      selectInput("Drug_1",label = "Drug 1", choices = db$Drug),
+      selectInput("Drug_2",label = "Drug 2", choices = db$Drug)
       ),
       conditionalPanel("input.search == 'CYP' ",
       selectInput("CYP_1",label = "CYP 1", choices = db$CYP...),
@@ -51,27 +51,31 @@ ui <- fluidPage(
 server <- function(input, output,session) {
   
   found <- reactive({
-    
-    if(sum(str_detect(db$Drug, input$Drug_1b)) > 0)
+    choice <- input$search
+    if(choice == "Drug_Name")
     {
-      tb1 <- db[db$Drug == input$Drug_1b,]
-    }
-    
-    else if(sum(str_detect(db$CYP..., input$Drug_1b)) > 0)
+      if(sum(str_detect(db$Drug, input$Drug_1)) > 0)
+      {
+        tb1 <- db[db$Drug == input$Drug_1,]
+      }
+      
+      if(sum(str_detect(db$Drug, input$Drug_2)) > 0)
+      {
+        tb2 <- db[db$Drug %in% input$Drug_2,]
+      }
+      
+    else
     {
-      tb1 <- db[db$CYP... %in% input$Drug_1b,]
+      if(sum(str_detect(db$CYP..., input$CYP_1)) > 0)
+      {
+        tb1 <- db[db$CYP... %in% input$CYP_1,]
+      }
+   
+      if(sum(str_detect(db$CYP..., input$CYP_2)) > 0)
+      {
+        tb2 <- db[db$CYP... == input$CYP_2,]
+      }
     }
-    
-    if(sum(str_detect(db$Drug, input$Drug_2b)) > 0)
-    {
-      tb2 <- db[db$Drug %in% input$Drug_2b,]
-    }
-    
-    else if(sum(str_detect(db$CYP..., input$Drug_2b)) > 0)
-    {
-      tb2 <- db[db$CYP... == input$Drug_2b,]
-    }
-    
     
     inhibitor1 <- sum(str_detect(tb1$Action,"inhibitor"))
     substrate1 <- sum(str_detect(tb1$Action,"substrate"))
