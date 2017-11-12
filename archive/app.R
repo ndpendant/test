@@ -125,7 +125,15 @@ server <- function(input, output,session) {
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
     mytable <- matrix(row2,ncol = 3,byrow = TRUE)
-    colnames(mytable) <- c(input$Drug_1b,input$Drug_2b,"Drug Score")
+    if(choice == "Drug_name")
+    {
+      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
+    }
+    else
+    {
+      colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
+
+    }
     mytable <- data.frame(mytable)
   })
   
