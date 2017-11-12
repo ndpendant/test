@@ -34,7 +34,7 @@ ui <- fluidPage(
                  "."),
       tags$style(type="text/css"," .well {background-color: rgb(18, 87, 31) ;}"),
       tags$style(type="text/css"," .form-group {color: #FFF ;}"),
-      tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh}",
+      tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       
   h3(textOutput("header1")),
   dataTableOutput("table1"),
