@@ -26,7 +26,11 @@ ui <- fluidPage(
       conditionalPanel("input.search == 'CYP' ",
       selectInput("CYP_1",label = "CYP 1", choices = unique(db$CYP...)),
       selectInput("CYP_2",label = "CYP 2", choices = unique(db$CYP...))
-      )
+      ),
+      actionButton(,"GO","Search",icon("refresh"))
+        
+        )
+      
     ),
     mainPanel(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
@@ -36,7 +40,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .form-group {color: #FFF ;}"),
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       
-      tabsetPanel(
+      tabsetPanel(id = "tabs",
                   tabPanel("Home",value="home","tab 1 content"),
                   tabPanel("DDI",value="DDI",
                   
@@ -55,7 +59,12 @@ ui <- fluidPage(
 
 
 server <- function(input, output,session) {
-  
+   
+  observeEvent(input$GO, {
+    updateTabsetPanel(session, "tabs",
+      selected = "home"
+    )
+  })
   found <- reactive({
     choice <- input$search
     if(choice == "Drug_Name")
