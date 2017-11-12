@@ -63,24 +63,24 @@ server <- function(input, output,session) {
       #if(sum(str_detect(db$Drug, input$Drug_1)) > 0)
       #{
        # tb1 <- db[db$Drug == input$Drug_1,]
-        tb1 <- db[db$Drug %in% input$Drug_1,]
+        tb1 <- db[db$Drug %in% input$DDI$Drug_1,]
       #}
       
       #if(sum(str_detect(db$Drug, input$Drug_2)) > 0)
       #{
-        tb2 <- db[db$Drug %in% input$Drug_2,]
+        tb2 <- db[db$Drug %in% input$DDI$Drug_2,]
       #}
     }  
     else
     {
       #if(sum(str_detect(db$CYP..., input$CYP_1)) > 0)
       #{
-        tb1 <- db[db$CYP... %in% input$CYP_1,]
+        tb1 <- db[db$CYP... %in% input$DDI$CYP_1,]
       #}
    
       #if(sum(str_detect(db$CYP..., input$CYP_2)) > 0)
       #{
-        tb2 <- db[db$CYP... %in% input$CYP_2,]
+        tb2 <- db[db$CYP... %in% input$DDI$CYP_2,]
       #}
     }
     
@@ -134,7 +134,7 @@ server <- function(input, output,session) {
     mytable <- matrix(row2,ncol = 3,byrow = TRUE)
     if(choice == "Drug_Name")
     {
-      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
+      colnames(mytable) <- c(input$DDI$Drug_1,input$DDI$Drug_2,"Drug Score")
     }
     else
     {
@@ -149,12 +149,12 @@ server <- function(input, output,session) {
     choice <- input$search
     if(choice == "Drug_Name")
     {
-      test <- db[db$Drug %in% input$Drug_1 | db$Drug %in% input$Drug_2 ,]
+      test <- db[db$Drug %in% input$DDI$Drug_1 | db$Drug %in% input$DDI$Drug_2 ,]
                  
     }
     else
     {
-      test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
+      test <- db[db$CYP... %in% input$DDI$CYP_1 | db$CYP... %in% input$DDI$CYP_2,]
     }
   })
   
