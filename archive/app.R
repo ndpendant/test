@@ -12,20 +12,35 @@ ui <- fluidPage(
   #textInput("Drug_1", label = "Drug 1", value = "Enter text..."),
   
   #textInput("Drug_2",label =  "Drug 2", value = "Enter text..."),
+  sidebarLayout(
+    
+    sidebarPanel(
+      
+      width = 3,
+      imageOutput("image"),
+      selectInput("Drug_1b",label = "Drug 1b", choices = db$Drug),
   
-  selectInput("Drug_1b",label = "Drug 1b", choices = db$Drug),
-  
-  selectInput("Drug_2b",label = "Drug 2b", choices = db$Drug),
+      selectInput("Drug_2b",label = "Drug 2b", choices = db$Drug)
+    ),
+    mainPanel(
+      tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
+                 .dataTables_filter .dataTables_paginate table.dataTable {font-size: 10vh; padding-bottom: 60px; width: 50vw;}",
+                 "."),
+      
+  h3(textOutput("header1")),
   dataTableOutput("table1"),
+  h3(textOutput("header2")),
   dataTableOutput("table2")
-  
+      
+    )
+  )
   
   
 )
 
 
 
-server <- function(input, output) {
+server <- function(input, output,session) {
   
   found <- reactive({
     
@@ -36,12 +51,12 @@ server <- function(input, output) {
     
     else if(sum(str_detect(db$CYP..., input$Drug_1b)) > 0)
     {
-      tb1 <- db[db$CYP... == input$Drug_1b,]
+      tb1 <- db[db$CYP... %in% input$Drug_1b,]
     }
     
     if(sum(str_detect(db$Drug, input$Drug_2b)) > 0)
     {
-      tb2 <- db[db$Drug == input$Drug_2b,]
+      tb2 <- db[db$Drug %in% input$Drug_2b,]
     }
     
     else if(sum(str_detect(db$CYP..., input$Drug_2b)) > 0)
@@ -108,8 +123,15 @@ server <- function(input, output) {
     
   })
   
+  
+  output$image <- renderImage({
+  list(src = "www/USF_seal.png",contentType = "image/png",width= "100%" )  
+    
+  },deleteFile = FALSE)
+  
   output$table1 <-renderDataTable({
     found()
+   
     
     
   })
@@ -121,14 +143,21 @@ server <- function(input, output) {
     
   })
   
+  output$header1 <- renderText({
+    
+    "Results of search: "
+  })
   
-  
-  
+  output$header2 <- renderText({
+    
+    "Full list of results:"
+  })
   
   
   
   
   
 }
+
 
 shinyApp(ui,server)
