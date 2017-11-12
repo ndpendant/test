@@ -138,8 +138,8 @@ server <- function(input, output,session) {
   })
   
   check_me <- reactive({
-    test <- db[db$Drug %in% input$Drug_1b | db$CYP... %in% input$Drug_1b |
-                 db$Drug %in% input$Drug_2b | db$CYP... %in% input$Drug_2b,]
+    test <- db[db$Drug %in% input$Drug_1 | db$CYP... %in% input$CYP_1 |
+                 db$Drug %in% input$Drug_2 | db$CYP... %in% input$CYP_2,]
     
   })
   
