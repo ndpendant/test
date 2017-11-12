@@ -36,16 +36,21 @@ ui <- fluidPage(
       tags$style(type="text/css"," .form-group {color: #FFF ;}"),
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       
-  h3(textOutput("header1")),
-  dataTableOutput("table1"),
-  h3(textOutput("header2")),
-  dataTableOutput("table2")
-      
+      tabsetPanel(id = "Tab","Tabs",
+                  tabPanel("Home",value="home","tab 1 content")
+                  tabPanel("DDI",value="DDI",
+                  
+        
+                  h3(textOutput("header1")),
+                  dataTableOutput("table1"),
+                  h3(textOutput("header2")),
+                  dataTableOutput("table2")
+                          )
+                  )
+              )
     )
-  )
   
-  
-)
+ )
 
 
 
