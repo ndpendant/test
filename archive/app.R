@@ -26,6 +26,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
                  .dataTables_filter .dataTables_paginate table.dataTable {font-size: 10vh; padding-bottom: 60px; width: 50vw;}",
                  "."),
+      tags$style(type="text/css"," .well {background-color: rgb(18, 87, 31) ;}),
       
   h3(textOutput("header1")),
   dataTableOutput("table1"),
