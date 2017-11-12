@@ -37,7 +37,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       
       tabsetPanel(id = "Tab","Tabs",
-                  tabPanel("Home",value="home","tab 1 content")
+                  tabPanel("Home",value="home","tab 1 content"),
                   tabPanel("DDI",value="DDI",
                   
         
