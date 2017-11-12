@@ -20,10 +20,12 @@ ui <- fluidPage(
       imageOutput("image"),
       selectInput("search",label = "Search Type:", choices = c("Drug_Name","CYP")),
       conditionalPanel("input$search == 'Drug_Name'",
-      selectInput("Drug_1b",label = "Drug 1b", choices = db$Drug)
+      selectInput("Drug_1",label = "Drug 1b", choices = db$Drug),
+      selectInput("Drug_2",label = "Drug 2b", choices = db$Drug)
       ),
       conditionalPanel("input$search == 'CYP'",
-      selectInput("Drug_2b",label = "Drug 2b", choices = db$Drug)
+      selectInput("CYP_1",label = "Drug 1b", choices = db$CYP...),
+      selectInput("CYP_2",label = "Drug 2b", choices = db$CYP...)
       )
     ),
     mainPanel(
