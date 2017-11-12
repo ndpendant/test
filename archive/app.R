@@ -28,10 +28,9 @@ ui <- fluidPage(
       selectInput("CYP_2",label = "CYP 2", choices = unique(db$CYP...))
       ),
       actionButton("GO","Search",icon("refresh"))
-        
-        )
-      
+          
     ),
+    
     mainPanel(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
                  .dataTables_filter .dataTables_paginate  {font-size: 10vh; width: 50vw;}",
