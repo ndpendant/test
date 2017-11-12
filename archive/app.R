@@ -173,6 +173,7 @@ server <- function(input, output,session) {
   },deleteFile = FALSE)
   
   output$table1 <-renderDataTable({
+    input$GO
     found()
    
     
@@ -180,7 +181,7 @@ server <- function(input, output,session) {
   })
   
   output$table2 <-renderDataTable({ 
-    
+    input$GO
     check_me()
     
     
