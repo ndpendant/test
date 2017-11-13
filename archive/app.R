@@ -40,13 +40,15 @@ ui <- fluidPage(
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       
       tabsetPanel(id = "tabs",
-                  tabPanel("Home",value="home","tab 1 content"),
+                  tabPanel("Home",value="home",
+                           textOutput("home_header1")
+                            ),
                   tabPanel("DDI",value="DDI",
                   
         
-                  h3(textOutput("header1")),
+                  h3(textOutput("DDI_header1")),
                   dataTableOutput("table1"),
-                  h3(textOutput("header2")),
+                  h3(textOutput("DDI_header2")),
                   dataTableOutput("table2")
                           )
                   )
@@ -187,17 +189,21 @@ server <- function(input, output,session) {
     
   })
   
-  output$header1 <- renderText({
+  output$DDI_header1 <- renderText({
     
     "Results of search: "
   })
   
-  output$header2 <- renderText({
+  output$DDI_header2 <- renderText({
     
     "Full list of results:"
   })
   
-  
+  output$home_header1 <- renderText({
+    
+    "Welcome to the USF webserver! With the help of this tool it is possible to search for a drug-cocktail to check whether 
+the metabolisms of the drugs interact with each other. By typing in the first few letters of the drug or utilizing the drop down selection
+, you can choose 2 drugs from our database and determine a ddi_score. If you have chosen your drugs, click on the *Search* button."
   
   
   
