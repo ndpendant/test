@@ -35,9 +35,11 @@ ui <- fluidPage(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
                  .dataTables_filter .dataTables_paginate  {font-size: 10vh; width: 50vw;}",
                  "."),
-      tags$style(type="text/css"," .well {background-color: rgb(18, 87, 31) ;}"),
+      tags$style(type="text/css"," .well {background-color: rgb(18, 87, 31) ; max-width: 300px;} "),
       tags$style(type="text/css"," .form-group {color: #FFF ;}"),
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
+      tags$style(type="text/css"," .col-sm-3 {width: 0%;}"),
+      tags$style(type="text/css"," a {color: #FFF; background-color:rgb(18, 87, 31) ;}"),
       
       tabsetPanel(id = "tabs",
                   tabPanel("Home",value="home",
