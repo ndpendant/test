@@ -41,7 +41,8 @@ ui <- fluidPage(
       
       tabsetPanel(id = "tabs",
                   tabPanel("Home",value="home",
-                           textOutput("home_header1")
+                           h3(textOutput("home_header1")),
+                           h2(textOutput("home_body1")),
                             ),
                   tabPanel("DDI",value="DDI",
                   
@@ -201,13 +202,17 @@ server <- function(input, output,session) {
   
   output$home_header1 <- renderText({
     
-    "Welcome to the USF webserver! With the help of this tool it is possible to search for a drug-cocktail to check whether 
-the metabolisms of the drugs interact with each other. By typing in the first few letters of the drug or utilizing the drop down selection
-, you can choose 2 drugs from our database and determine a ddi_score. If you have chosen your drugs, click on the *Search* button."
-  
-  
+    "Welcome to the USF webserver! " 
   
 })
+  
+  output$home_body1 <- renderText({
+    
+    "With the help of this tool it is possible to search for a drug-cocktail to check whether 
+the metabolisms of the drugs interact with each other. By typing in the first few letters of the drug or utilizing the drop down selection
+, you can choose 2 drugs from our database and determine a ddi_score. If you have chosen your drugs, click on the *Search* button."
 
+  })  
+    
 }
 shinyApp(ui,server)
