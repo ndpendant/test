@@ -42,7 +42,7 @@ ui <- fluidPage(
       tabsetPanel(id = "tabs",
                   tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
-                           h3(textOutput("home_body1"))
+                           p(textOutput("home_body1"))
                             ),
                   tabPanel("DDI",value="DDI",
                   
