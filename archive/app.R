@@ -207,7 +207,7 @@ the metabolisms of the drugs interact with each other. By typing in the first fe
   
   
   
-}
+})
 
 
 shinyApp(ui,server)
