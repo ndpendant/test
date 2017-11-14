@@ -71,89 +71,90 @@ server <- function(input, output,session) {
   })
   found <- reactive({
     choice <- input$search
-    if(choice == "Drug_Name")
+    cyps <- db$Enzyme
+    hold <- NULL
+    for(i in cyps)
     {
-      #if(sum(str_detect(db$Drug, input$Drug_1)) > 0)
-      #{
-       # tb1 <- db[db$Drug == input$Drug_1,]
-        tb1 <- db[db$Drug %in% input$Drug_1,]
+        tb1 <- db[db$Drug %in% input$Drug_1 & db$Enzyme %in% i,]
       #}
       
       #if(sum(str_detect(db$Drug, input$Drug_2)) > 0)
       #{
-        tb2 <- db[db$Drug %in% input$Drug_2,]
+        tb2 <- db[db$Drug %in% input$Drug_2 & db$Enzyme %in% i,]
       #}
     }  
-    else
-    {
+    #else
+    #{
       #if(sum(str_detect(db$CYP..., input$CYP_1)) > 0)
       #{
-        tb1 <- db[db$CYP... %in% input$CYP_1,]
+     #   tb1 <- db[db$CYP... %in% input$CYP_1,]
       #}
    
       #if(sum(str_detect(db$CYP..., input$CYP_2)) > 0)
       #{
-        tb2 <- db[db$CYP... %in% input$CYP_2,]
+      #  tb2 <- db[db$CYP... %in% input$CYP_2,]
       #}
-    }
+    #}
     
-    inhibitor1 <- sum(str_detect(tb1$Action,"inhibitor"))
-    substrate1 <- sum(str_detect(tb1$Action,"substrate"))
-    inducer1 <-sum(str_detect(tb1$Action,"inducer"))
+      inhibitor1 <- sum(str_detect(tb1$Action,"inhibitor"))
+      substrate1 <- sum(str_detect(tb1$Action,"substrate"))
+      inducer1 <-sum(str_detect(tb1$Action,"inducer"))
     
-    inhibitor2 <- sum(str_detect(tb2$Action,"inhibitor"))
-    substrate2 <- sum(str_detect(tb2$Action,"substrate"))
-    inducer2 <-sum(str_detect(tb2$Action,"inducer"))
+      inhibitor2 <- sum(str_detect(tb2$Action,"inhibitor"))
+      substrate2 <- sum(str_detect(tb2$Action,"substrate"))
+      inducer2 <-sum(str_detect(tb2$Action,"inducer"))
     
-    if(inhibitor1 >= substrate1 && inhibitor1 >= inducer1)
-    {
-      action1 = "inhibitor"
-    }
+      if(inhibitor1 >= substrate1 && inhibitor1 >= inducer1)
+      {
+        action1 = "inhibitor"
+      }
     
-    else if(substrate1 >= inhibitor1 && substrate1 >= inducer1)
-    {
-      action1 = "substrate"
-    }
+      else if(substrate1 >= inhibitor1 && substrate1 >= inducer1)
+      {
+       action1 = "substrate"
+      }
     
-    else
-    {
-      action1 = "inducer"
-    }
+      else
+      {
+       action1 = "inducer"
+      }
     
-    if(inhibitor2 >= substrate2 && inhibitor2 >= inducer2)
-    {
-      action2 = "inhibitor"
-    }
+      if(inhibitor2 >= substrate2 && inhibitor2 >= inducer2)
+      {
+       action2 = "inhibitor"
+      }
     
-    else if(substrate2 >= inhibitor2 && substrate2 >= inducer2)
-    {
-      action2 = "substrate"
-    }
+      else if(substrate2 >= inhibitor2 && substrate2 >= inducer2)
+      {
+       action2 = "substrate"
+      }
     
-    else
-    {
-      action2 = "inducer"
-    }
+     else
+      {
+       action2 = "inducer"
+      }
     
-    pt1 <- max(inducer1,substrate1,inhibitor1)
-    pt2 <- max(inducer2,substrate2,inhibitor2)
-    score <- sqrt(pt1*pt2)
+      pt1 <- max(inducer1,substrate1,inhibitor1)
+      pt2 <- max(inducer2,substrate2,inhibitor2)
+      score <- sqrt(pt1*pt2)
     
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Drug Score")
-    row2 <- c(paste(action1,pt1),paste(action2,pt2), score)
-    
+      row2 <- c(paste(action1,pt1),paste(action2,pt2), score)
+      holding <- rbind(holding,row2)
+    }
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
-    mytable <- matrix(row2,ncol = 3,byrow = TRUE)
-    if(choice == "Drug_Name")
-    {
+     mytable <- matrix(holding,ncol = 3,byrow = TRUE)
+    #if(choice == "Drug_Name")
+    #{
       colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
-    }
-    else
-    {
-      colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
+      rownames(mytable) <- cyps
+    #}
+    #else
+    #{
+    # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
-    }
+   # }
     mytable <- data.frame(mytable)
   })
   
