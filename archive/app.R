@@ -82,7 +82,7 @@ server <- function(input, output,session) {
       #{
         tb2 <- db[db$Drug %in% input$Drug_2 & db$Enzyme %in% i,]
       #}
-    }  
+      
     #else
     #{
       #if(sum(str_detect(db$CYP..., input$CYP_1)) > 0)
