@@ -71,7 +71,13 @@ server <- function(input, output,session) {
   })
   found <- reactive({
     choice <- input$search
-    cyps <- db$Enzyme
+    
+    test <- db[db$Drug %in% input$Drug_1 | db$Enzyme %in% input$Drug_1 |
+           db$Drug %in% input$Drug_2 | db$Enzyme %in% input$Drug_2,]
+
+    cyps <- unique(test$Enzyme)
+
+    
     hold <- NULL
     for(i in cyps)
     {
