@@ -185,7 +185,7 @@ server <- function(input, output,session) {
       test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
     }
     
-    test$Database[test$Database == "Drugbank"] <- paste0("https://www.drugbank.ca/unearth/q?utf8=%E2%9C%93&query=",db$Drug,"&searcher=",db$Enzyme)
+    test$Database[test$Database == "Drugbank",] <- paste0("https://www.drugbank.ca/unearth/q?utf8=%E2%9C%93&query=",test$Drug,"&searcher=",test$Enzyme)
   })
   
   
