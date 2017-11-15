@@ -78,7 +78,7 @@ server <- function(input, output,session) {
     cyps <- unique(test$Enzyme)
 
     
-    hold <- NULL
+    holding <- NULL
     for(i in cyps)
     {
         tb1 <- db[db$Drug %in% input$Drug_1 & db$Enzyme %in% i,]
