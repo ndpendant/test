@@ -154,7 +154,7 @@ server <- function(input, output,session) {
     #if(choice == "Drug_Name")
     #{
       colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
-      #rownames(mytable) <- cyps
+      rownames(mytable) <- cyps
     #}
     #else
     #{
