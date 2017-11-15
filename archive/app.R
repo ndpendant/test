@@ -150,7 +150,7 @@ server <- function(input, output,session) {
     }
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
-     mytable <- matrix(holding,ncol = 3,byrow = TRUE)
+     mytable <- matrix(holding,ncol = 3)#,byrow = TRUE)
     #if(choice == "Drug_Name")
     #{
       colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
