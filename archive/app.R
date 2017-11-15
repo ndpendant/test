@@ -186,7 +186,7 @@ server <- function(input, output,session) {
     }
     
     test$Database[test$Database == "Drugbank"] <- paste0("https://www.drugbank.ca/unearth/q?utf8=%E2%9C%93&query=",test$Drug,"&searcher=",test$Enzyme)
-    
+    test<- data.frame(test)
   })
   
   
