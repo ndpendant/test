@@ -188,8 +188,8 @@ server <- function(input, output,session) {
     }
     stri_enc_tonative("\u2713")
     link <- paste("https://www.drugbank.ca/unearth/q?utf8=","\U2713","query=",test$Drug,"&searcher=",test$Enzyme)
-    test$Extra <- "=\U2713"
-    test$Extra[test$Database == "DrugBank"] <- link
+    test$Extra <- link
+   # test$Extra[test$Database == "DrugBank"] <- link
     test<- data.frame(test)
   })
   
