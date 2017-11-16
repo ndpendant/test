@@ -4,7 +4,7 @@
 library(shiny)
 library(DT)
 library(stringr)
-options(encoding = 'native.enc')
+
 db <- read.csv("db11-10.csv",fill = TRUE)
 
 
@@ -187,7 +187,7 @@ server <- function(input, output,session) {
     }
     
     test$Extra <- "\U2713"
-    test$Extra[test$Database == "DrugBank"] <- paste0("https://www.drugbank.ca/unearth/q?utf8=","\U2713","query=",test$Drug,"&searcher=",test$Enzyme)
+    test$Extra[test$Database == "DrugBank"] <- paste0("https://www.drugbank.ca/unearth/q?utf8=",enc2utf8("\U2713"),"query=",test$Drug,"&searcher=",test$Enzyme)
     test<- data.frame(test)
   })
   
