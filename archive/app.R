@@ -185,6 +185,7 @@ server <- function(input, output,session) {
     {
       test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
     }
+    Encoding("\U2713") <- "bytes"
     link <- paste0("https://www.drugbank.ca/unearth/q?utf8=\U2713query=",test$Drug,"&searcher=",test$Enzyme)
     test$Extra <- "=\U2713"
     test$Extra[test$Database == "DrugBank"] <- link
