@@ -4,7 +4,7 @@
 library(shiny)
 library(DT)
 library(stringr)
-
+options(encoding = 'native.enc')
 db <- read.csv("db11-10.csv",fill = TRUE)
 
 
