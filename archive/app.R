@@ -191,7 +191,7 @@ server <- function(input, output,session) {
     
     grep
     test$Extra <- link
-    test$Extra <-gsub("âœ“","\U2713",test$Extra)
+    test$Extra <-gsub("âœ“","NOOOOOOOO",test$Extra)
     test<- data.frame(test)
   })
   
