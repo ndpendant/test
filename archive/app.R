@@ -4,6 +4,7 @@
 library(shiny)
 library(DT)
 library(stringr)
+library(stringi)
 
 db <- read.csv("db11-10.csv",fill = TRUE)
 
@@ -185,7 +186,7 @@ server <- function(input, output,session) {
     {
       test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
     }
-    #Encoding("\U2713") <- "bytes"
+    stri_enc_toutf8("\u2713")
     link <- paste("https://www.drugbank.ca/unearth/q?utf8=","\U2713","query=",test$Drug,"&searcher=",test$Enzyme)
     test$Extra <- "=\U2713"
     test$Extra[test$Database == "DrugBank"] <- link
