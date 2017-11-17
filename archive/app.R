@@ -191,7 +191,7 @@ server <- function(input, output,session) {
     
    
     test$Extra <- " "
-    test$Extra[test$Database == "DrugBank",] <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
+    test$Extra[test$Database %in% "DrugBank"] <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     test<- data.frame(test)
   })
   
