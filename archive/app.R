@@ -181,7 +181,7 @@ server <- function(input, output,session) {
     {
       test1 <- db[db$Drug %in% input$Drug_1,]
       test2 <- db[db$Drug %in% input$Drug_2,]
-                 
+                
     }
    # else
    # {
@@ -189,11 +189,14 @@ server <- function(input, output,session) {
    # }
     #stri_enc_tonative("\u2713")
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    
+    db_t2 <- test2[test2$Database == "DrugBank",]
+    db_t2$Extra <- paste0("https://www.drugbank.ca/drugs/",db_t2$DrugID)
    
-    test2$Extra <- "hello"
-    test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    test2<- data.frame(test2)
+    #test2$Extra <- "hello"
+    #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
+    #test2<- data.frame(test2)
+    db_t2 <- data.frame(db_t2)
+    
   })
   
   
