@@ -179,8 +179,8 @@ server <- function(input, output,session) {
     choice <- input$search
     if(choice == "Drug_Name")
     {
-      test1 <- db[db$Drug %in% input$Drug_1,]
-      test2 <- db[db$Drug %in% input$Drug_2,]
+      test <- db[db$Drug %in% input$Drug_1 |db$Drug %in% input$Drug_2,]
+      #test2 <- db[db$Drug %in% input$Drug_2,]
                 
     }
    # else
@@ -189,17 +189,29 @@ server <- function(input, output,session) {
    # }
     #stri_enc_tonative("\u2713")
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    db_t2 <- test2[test2$Database == "DrugBank",]
-    db_t2$Extra <- paste0("https://www.drugbank.ca/drugs/",db_t2$DrugID)
-    sc_t2 <- test2[test2$Database == "SuperCYP",]
-    sc_t2$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
-    k_t2 <- test2[test2$Database == "KEGG",]
-    k_t2$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",db_t2$Drug,"&mode=1&viewImage=true")
+    db <- test[test$Database == "DrugBank",]
+    db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
+    sc <- test[test$Database == "SuperCYP",]
+    sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+    k <- test[test$Database == "KEGG",]
+    k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
     #test2$Extra <- "hello"
     #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #test2<- data.frame(test2)
-    fulldt <- rbind(db_t2,sc_t2)
-    fulldt <- rbind(fulldt,k_t2)
+    fulldt <- NULL
+    
+    if(nrow(db)>0)
+    {
+      fulldt <- rbind(fulldt,db)
+    }
+    if(nrow(k)>0)
+    {
+      fulldt <- rbind(fulldt,k)
+    }
+    if(nrow(sc)>0)
+    {
+      fulldt <- rbind(fulldt,sc)
+    }
     
     fulldt <- data.frame(fulldt)
     
