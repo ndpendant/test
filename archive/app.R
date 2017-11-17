@@ -179,20 +179,21 @@ server <- function(input, output,session) {
     choice <- input$search
     if(choice == "Drug_Name")
     {
-      test <- db[db$Drug %in% input$Drug_1 | db$Drug %in% input$Drug_2 ,]
+      test1 <- db[db$Drug %in% input$Drug_1,]
+      test2 <- db[db$Drug %in% input$Drug_2,]
                  
     }
-    else
-    {
-      test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
-    }
+   # else
+   # {
+   #   test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
+   # }
     #stri_enc_tonative("\u2713")
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     
    
-    test$Extra <- "hello"
-    test$Extra <-test[test$Database == "DrugBank"] <- test$DrugID#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    test<- data.frame(test)
+    test2$Extra <- "hello"
+    test2$Extra[test$Database == "DrugBank"] <- test$DrugID#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
+    test2<- data.frame(test)
   })
   
   
