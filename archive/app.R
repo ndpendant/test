@@ -190,7 +190,7 @@ server <- function(input, output,session) {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     
    
-    test$Extra <- " "
+    test$Extra <- "hello"
     test$Extra[test$Database %in% "DrugBank"] <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     test<- data.frame(test)
   })
