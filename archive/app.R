@@ -187,7 +187,7 @@ server <- function(input, output,session) {
       test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
     }
     #stri_enc_tonative("\u2713")
-    link-db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
+    link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     
    
     test$Extra <- " "
