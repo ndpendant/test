@@ -195,6 +195,10 @@ server <- function(input, output,session) {
     sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
     k <- test[test$Database == "KEGG",]
     k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+    iu <- test[test$Database == "Indiana University",]
+    iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
+    ild <- test[test$Database == "ildcare",]
+    ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
     #test2$Extra <- "hello"
     #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #test2<- data.frame(test2)
@@ -212,7 +216,15 @@ server <- function(input, output,session) {
     {
       fulldt <- rbind(fulldt,sc)
     }
-    
+    if(nrow(iu)>0)
+    {
+      fulldt <- rbind(fulldt,iu)
+    }  
+    if(nrow(ild)>0)
+    {
+      fulldt <- rbind(fulldt,ild)
+    }  
+      
     fulldt <- data.frame(fulldt)
     
   })
