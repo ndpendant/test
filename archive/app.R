@@ -191,11 +191,17 @@ server <- function(input, output,session) {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     db_t2 <- test2[test2$Database == "DrugBank",]
     db_t2$Extra <- paste0("https://www.drugbank.ca/drugs/",db_t2$DrugID)
-   
+    sc_t2 <- test2[test2$Database == "SuperCYP",]
+    sc_t2$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+    k_t2 <- test2[test2$Database == "KEGG",]
+    k_t2$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",db_t2$Drug,"&mode=1&viewImage=true")
     #test2$Extra <- "hello"
     #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #test2<- data.frame(test2)
-    db_t2 <- data.frame(db_t2)
+    fulldt <- rbind(db_t2,sc_t2)
+    fulldt <- rbind(fulldt,k_t2)
+    
+    fulldt <- data.frame(fulldt)
     
   })
   
