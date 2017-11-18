@@ -191,7 +191,7 @@ server <- function(input, output,session) {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #db <- test[test$Database == "DrugBank",]
     #db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
-    if(sum(str_detect(test$Database,"SuperCYP")>0)
+    if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
       sc <- test[test$Database == "SuperCYP",]
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
