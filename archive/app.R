@@ -42,6 +42,8 @@ ui <- fluidPage(
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       tags$style(type="text/css"," .col-sm-3 {max-width: 300px;}"),
       tags$style(type="text/css"," a {color:rgb(216, 31, 31) ;}"),
+      tags$style(type="text/css"," .nav-tabls>li.active>a {color:rgb(216, 31, 31) ;}"),
+      tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(216, 31, 31) ; color:#FFF ;}"),
       tags$style(type="text/css",".dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
       tabsetPanel(id = "tabs", 
                   tabPanel("Home",value="home",
