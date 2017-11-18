@@ -242,7 +242,7 @@ server <- function(input, output,session) {
   
   
   output$image <- renderImage({
-  list(src = "www/USF_seal.png",contentType = "image/png",width= "100%" )  
+  list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
     
   },deleteFile = FALSE)
   
