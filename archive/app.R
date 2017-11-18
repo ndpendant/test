@@ -225,8 +225,8 @@ server <- function(input, output,session) {
     #  fulldt <- rbind(fulldt,ild)
     #}  
       
-    fulldt <- data.frame(fulldt)
-    
+    #fulldt <- data.frame(fulldt)
+    data.frame(test)
   })
   
   
