@@ -191,8 +191,11 @@ server <- function(input, output,session) {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #db <- test[test$Database == "DrugBank",]
     #db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
-    sc <- test[test$Database == "SuperCYP",]
-    sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+    if(sum(str_detect(test$Database,"SuperCYP")>0)
+    {
+      sc <- test[test$Database == "SuperCYP",]
+      sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+    }
     #k <- test[test$Database == "KEGG",]
     #k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
     #iu <- test[test$Database == "Indiana University",]
@@ -225,8 +228,8 @@ server <- function(input, output,session) {
     #  fulldt <- rbind(fulldt,ild)
     #}  
       
-    #fulldt <- data.frame(fulldt)
-    data.frame(test)
+    fulldt <- data.frame(fulldt)
+    #data.frame(test)
   })
   
   
