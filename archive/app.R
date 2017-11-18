@@ -183,29 +183,55 @@ server <- function(input, output,session) {
       #test2 <- db[db$Drug %in% input$Drug_2,]
                 
     }
+    fulldt <- NULL
    # else
    # {
    #   test <- db[db$CYP... %in% input$CYP_1 | db$CYP... %in% input$CYP_2,]
    # }
     #stri_enc_tonative("\u2713")
+    
+    if(sum(str_detect(test$Database,"SuperCYP")>0))
+    {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    #db <- test[test$Database == "DrugBank",]
-    #db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
+    
+      db <- test[test$Database == "DrugBank",]
+      db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
+      fulldt <- rbind(fulldt,db)
+    }
+      
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
       sc <- test[test$Database == "SuperCYP",]
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+      fulldt <- rbind(fulldt,sc)
     }
-    #k <- test[test$Database == "KEGG",]
-    #k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
-    #iu <- test[test$Database == "Indiana University",]
-    #iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
-    #ild <- test[test$Database == "ildcare",]
-    #ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
-    #test2$Extra <- "hello"
+    
+    if(sum(str_detect(test$Database,"KEGG")>0))
+    {
+      k <- test[test$Database == "KEGG",]
+      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+      fulldt <- rbind(fulldt,k)
+    }
+    
+    if(sum(str_detect(test$Database,"Indiana University")>0))
+    {  
+      iu <- test[test$Database == "Indiana University",]
+      iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
+      fulldt <- rbind(fulldt,iu)
+    }  
+      
+    if(sum(str_detect(test$Database,"SuperCYP")>0))
+    {  
+      ild <- test[test$Database == "ildcare",]
+      ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
+      fulldt <- rbind(fulldt,ild)
+      
+    }  
+      
+      #test2$Extra <- "hello"
     #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #test2<- data.frame(test2)
-    fulldt <- NULL#c(" "," "," "," "," "," "," "," ") 
+    #c(" "," "," "," "," "," "," "," ") 
     
     #if(nrow(db)>1)
     #{
@@ -215,10 +241,10 @@ server <- function(input, output,session) {
     #{
     #  fulldt <- rbind(fulldt,k)
     #}
-    if(nrow(sc)>1)
-    {
-      fulldt <- rbind(fulldt,sc)
-    }
+    #if(nrow(sc)>1)
+    #{
+     # fulldt <- rbind(fulldt,sc)
+    #}
     #if(nrow(iu)>1)
     #{
     # fulldt <- rbind(fulldt,iu)
