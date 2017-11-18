@@ -190,7 +190,7 @@ server <- function(input, output,session) {
    # }
     #stri_enc_tonative("\u2713")
     
-    if(sum(str_detect(test$Database,"SuperCYP")>0))
+    if(sum(str_detect(test$Database,"DrugBank")>0))
     {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     
@@ -220,7 +220,7 @@ server <- function(input, output,session) {
       fulldt <- rbind(fulldt,iu)
     }  
       
-    if(sum(str_detect(test$Database,"SuperCYP")>0))
+    if(sum(str_detect(test$Database,"ildcare")>0))
     {  
       ild <- test[test$Database == "ildcare",]
       ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
