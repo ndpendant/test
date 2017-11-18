@@ -205,6 +205,7 @@ server <- function(input, output,session) {
     {
       sc <- test[test$Database == "SuperCYP",]
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+      sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       fulldt <- rbind(fulldt,sc)
     }
     
@@ -212,6 +213,7 @@ server <- function(input, output,session) {
     {
       k <- test[test$Database == "KEGG",]
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       fulldt <- rbind(fulldt,k)
     }
     
@@ -219,6 +221,7 @@ server <- function(input, output,session) {
     {  
       iu <- test[test$Database == "Indiana University",]
       iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
+      iu$Database <- paste0("<a href='",iu$Extra,"'>Indiana University</a>")
       fulldt <- rbind(fulldt,iu)
     }  
       
@@ -226,6 +229,7 @@ server <- function(input, output,session) {
     {  
       ild <- test[test$Database == "ildcare",]
       ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
+      ild$Database <- paste0("<a href='",ild$Extra,"'>ildcare</a>")
       fulldt <- rbind(fulldt,ild)
       
     }  
