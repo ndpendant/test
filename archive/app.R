@@ -179,7 +179,7 @@ server <- function(input, output,session) {
     choice <- input$search
     if(choice == "Drug_Name")
     {
-      test <- db[db$Drug %in% input$Drug_1 |db$Drug %in% input$Drug_2,]
+      test <- db[db$Drug %in% input$Drug_1 | db$Drug %in% input$Drug_2,]
       #test2 <- db[db$Drug %in% input$Drug_2,]
                 
     }
@@ -189,16 +189,16 @@ server <- function(input, output,session) {
    # }
     #stri_enc_tonative("\u2713")
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    db <- test[test$Database == "DrugBank",]
-    db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
-    sc <- test[test$Database == "SuperCYP",]
-    sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
-    k <- test[test$Database == "KEGG",]
-    k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
-    iu <- test[test$Database == "Indiana University",]
-    iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
-    ild <- test[test$Database == "ildcare",]
-    ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
+    #db <- test[test$Database == "DrugBank",]
+    #db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
+    #sc <- test[test$Database == "SuperCYP",]
+    #sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+    #k <- test[test$Database == "KEGG",]
+    #k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+    #iu <- test[test$Database == "Indiana University",]
+    #iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
+    #ild <- test[test$Database == "ildcare",]
+    #ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
     #test2$Extra <- "hello"
     #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #test2<- data.frame(test2)
@@ -212,7 +212,7 @@ server <- function(input, output,session) {
     #{
     #  fulldt <- rbind(fulldt,k)
     #}
-    #if(nrow(sc)>1)
+    if(nrow(sc)>1)
     {
       fulldt <- rbind(fulldt,sc)
     }
