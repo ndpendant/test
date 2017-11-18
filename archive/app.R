@@ -202,7 +202,7 @@ server <- function(input, output,session) {
     #test2$Extra <- "hello"
     #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     #test2<- data.frame(test2)
-    fulldt <- NULL
+    fulldt <- c(" "," "," "," "," "," "," "," ") 
     
     if(nrow(db)>0)
     {
