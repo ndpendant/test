@@ -204,23 +204,23 @@ server <- function(input, output,session) {
     #test2<- data.frame(test2)
     fulldt <- c(" "," "," "," "," "," "," "," ") 
     
-    if(nrow(db)>0)
+    if(nrow(db)>1)
     {
       fulldt <- rbind(fulldt,db)
     }
-    if(nrow(k)>0)
+    if(nrow(k)>1)
     {
       fulldt <- rbind(fulldt,k)
     }
-    if(nrow(sc)>0)
+    if(nrow(sc)>1)
     {
       fulldt <- rbind(fulldt,sc)
     }
-    if(nrow(iu)>0)
+    if(nrow(iu)>1)
     {
       fulldt <- rbind(fulldt,iu)
     }  
-    if(nrow(ild)>0)
+    if(nrow(ild)>1)
     {
       fulldt <- rbind(fulldt,ild)
     }  
