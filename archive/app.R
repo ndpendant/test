@@ -279,7 +279,7 @@ server <- function(input, output,session) {
     check_me()
     
     
-  })
+  },escape=FALSE)
   
   output$DDI_header1 <- renderText({
     
