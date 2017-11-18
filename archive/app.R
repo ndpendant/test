@@ -234,35 +234,10 @@ server <- function(input, output,session) {
       
     }  
       
-      #test2$Extra <- "hello"
-    #test2$Extra[test2$Database == "DrugBank"] <- test2[,c(4)]#paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    #test2<- data.frame(test2)
-    #c(" "," "," "," "," "," "," "," ") 
     
-    #if(nrow(db)>1)
-    #{
-    #  fulldt <- rbind(fulldt,db)
-    #}
-    #if(nrow(k)>1)
-    #{
-    #  fulldt <- rbind(fulldt,k)
-    #}
-    #if(nrow(sc)>1)
-    #{
-     # fulldt <- rbind(fulldt,sc)
-    #}
-    #if(nrow(iu)>1)
-    #{
-    # fulldt <- rbind(fulldt,iu)
-    #}  
-    #if(nrow(ild)>1)
-    #{
-    #  fulldt <- rbind(fulldt,ild)
-    #}  
      
-    fulldt <- data.frame(fulldt[1:5])
-    row.names(fulldt) <- NULL 
-    #data.frame(test)
+    fulldt <- data.frame(fulldt[1:5],row.names = FALSE)
+    
   })
   
   
