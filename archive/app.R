@@ -259,7 +259,7 @@ server <- function(input, output,session) {
     #{
     #  fulldt <- rbind(fulldt,ild)
     #}  
-      
+     row.names(fulldt) <- NULL 
     fulldt <- data.frame(fulldt[1:5])
     #data.frame(test)
   })
