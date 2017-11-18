@@ -196,7 +196,7 @@ server <- function(input, output,session) {
     
       db <- test[test$Database == "DrugBank",]
       db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
-      db$Database <- paste0("<a href='",mydata$Extra,"'>DrugBank</a>")
+      db$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
       fulldt <- rbind(fulldt,db)
       
     }
