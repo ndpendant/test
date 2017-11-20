@@ -155,6 +155,11 @@ server <- function(input, output,session) {
       {
          action2 = "No Matches"
       }
+      if((action1 == "substrate" && action2 == "substrate") | (action1 != "substrate" && action2 != "substrate"))
+      {
+         score = 0
+      }
+      
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
       row2 <- c(paste(action1,pt1),paste(action2,pt2), score)
