@@ -170,7 +170,7 @@ server <- function(input, output,session) {
      mytable <- matrix(holding,ncol = 3)#,byrow = TRUE)
     #if(choice == "Drug_Name")
     #{
-      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Drug Score")
+      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Reliability Score")
       rownames(mytable) <- cyps
     #}
     #else
