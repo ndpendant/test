@@ -179,6 +179,7 @@ server <- function(input, output,session) {
 
    # }
     mytable <- data.frame(mytable)
+    mytable <- mytable[mytable$Reliability.Score > 0,]
   })
   
   check_me <- reactive({
