@@ -170,7 +170,7 @@ server <- function(input, output,session) {
      mytable <- matrix(holding,ncol = 3)#,byrow = TRUE)
     #if(choice == "Drug_Name")
     #{
-      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"Reliability Score")
+      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
       rownames(mytable) <- cyps
     #}
     #else
@@ -179,7 +179,7 @@ server <- function(input, output,session) {
 
    # }
     mytable <- data.frame(mytable)
-    mytable <- mytable[mytable$Reliability.Score > 0,]
+    mytable <- mytable[mytable$R_Score > 0,]
   })
   
   check_me <- reactive({
