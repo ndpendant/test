@@ -7,7 +7,7 @@ library(stringr)
 library(stringi)
 
 db <- read.csv("db11-10.csv",fill = TRUE)
-
+#former color for .well background: rgb(216, 31, 31)
 
 
 ui <- fluidPage(
@@ -37,13 +37,13 @@ ui <- fluidPage(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_length .dataTables_info
                  .dataTables_filter .dataTables_paginate  {font-size: 10vh; width: 50vw;}",
                  "."),
-      tags$style(type="text/css"," .well {background-color: rgb(216, 31, 31) ; max-width: 300px; height: 100vh;} "),
+      tags$style(type="text/css"," .well {background-color: rgb(139, 8, 8) ; max-width: 300px; height: 100vh;} "),
       tags$style(type="text/css"," .form-group {color: #FFF ;}"),
       tags$style(type="text/css"," table.dataTable { padding-bottom: 60px; font-size:1.5vh ;}"),
       tags$style(type="text/css"," .col-sm-3 {max-width: 300px;}"),
       tags$style(type="text/css"," a {color:rgb(216, 31, 31) ;}"),
-      tags$style(type="text/css"," .nav-tabs>li.active>a {color:rgb(216, 31, 31) ;}"),
-      tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(216, 31, 31) ; color:#FFF ;}"),
+      tags$style(type="text/css"," .nav-tabs>li.active>a {color:rgb(139, 8, 8) ;}"),
+      tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(139, 8, 8) ; color:#FFF ;}"),
       tags$style(type="text/css",".dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
       tabsetPanel(id = "tabs", 
                   tabPanel("Home",value="home",
