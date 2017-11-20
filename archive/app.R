@@ -179,7 +179,7 @@ server <- function(input, output,session) {
 
    # }
     mytable <- data.frame(mytable)
-    mytable <- mytable[mytable$R_Score > 0,]
+    mytable <- mytable[mytable$R_Score > 0]
   })
   
   check_me <- reactive({
