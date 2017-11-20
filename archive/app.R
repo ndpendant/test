@@ -179,7 +179,7 @@ server <- function(input, output,session) {
 
    # }
     mytable <- data.frame(mytable)
-    truetable <- mytable[mytable$R_Score > 0,]
+    mytable <- mytable[which(MyData[,3]>0),]
     mytable <- NULL
   })
   
