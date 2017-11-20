@@ -156,7 +156,7 @@ server <- function(input, output,session) {
          action2 = "No Matches"
       }
       
-    #row1 <- c(input$Drug_1b,input$Drug_2b,"Drug Score")
+    #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
       row2 <- c(paste(action1,pt1),paste(action2,pt2), score)
       holding <- rbind(holding,row2)
     }
@@ -283,7 +283,7 @@ server <- function(input, output,session) {
     
     "With the help of this tool it is possible to search for a drug-cocktail to check whether 
 the metabolisms of the drugs interact with each other. By typing in the first few letters of the drug or utilizing the drop down selection
-, you can choose 2 drugs from our database and determine a ddi_score. If you have chosen your drugs, click on the *Search* button."
+, you can choose 2 drugs from our database and determine a Reliability score. If you have chosen your drugs, click on the *Search* button."
 
   })  
     
