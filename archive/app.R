@@ -179,7 +179,7 @@ server <- function(input, output,session) {
 
    # }
     mytable <- data.frame(mytable)
-    mytable <- mytable[which(MyData[,3]>0),]
+    mytable <- mytable[which(mytable[,3]>0),]
    
   })
   
