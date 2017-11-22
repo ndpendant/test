@@ -19,7 +19,7 @@ ui <- fluidPage(
     sidebarPanel(
       
       width = 3,
-      imageOutput("image",height = "40vh"),
+      imageOutput("image",height = "35vh"),
       selectInput("search",label = "Search Type:", choices = c('Drug_Name','CYP')),
       conditionalPanel("input.search == 'Drug_Name' ",
       selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
@@ -45,7 +45,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .nav-tabs>li.active>a {color:rgb(139, 8, 8) ;}"),
       tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(139, 8, 8) ; color:#FFF ;}"),
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
-      tags$style(type="text/css"," shiny-image-output shiny-bound-output {height: 40vh ;}"),
+     
       tabsetPanel(id = "tabs", 
                   tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
@@ -183,7 +183,7 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
-    #mytable <- mytable[mytable[,3] > 0,]
+    mytable <- mytable[mytable[,3] > 0,]
     mytable <- data.frame(mytable)
    
     #mytable <- mytable[which(mytable[,3]>0),]
