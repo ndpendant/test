@@ -136,7 +136,8 @@ server <- function(input, output,session) {
     
       else if(substrate2 >= inhibitor2 && substrate2 >= inducer2)
       {
-       action2 = "substrate"
+
+        action2 = "substrate"
       }
     
      else
@@ -178,6 +179,7 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
+    mytable <- mytable[mytable[,3] > 0,]
     mytable <- data.frame(mytable)
     #mytable <- mytable[which(mytable[,3]>0),]
    
