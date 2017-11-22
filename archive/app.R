@@ -179,8 +179,8 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
-    mytable <- mytable[mytable[,3] > 0,]
-    mytable <- data.frame(mytable)
+    #mytable <- mytable[mytable[,3] > 0,]
+    mytable <- data.frame(mytable[mytable[,3] > 0,])
     #mytable <- mytable[which(mytable[,3]>0),]
    
   })
