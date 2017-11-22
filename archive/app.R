@@ -166,7 +166,7 @@ server <- function(input, output,session) {
       row2 <- c(paste(action1,pt1),paste(action2,pt2), score)
       #if(score > 0)
       #{
-      #  holding <- rbind(holding,row2)
+      holding <- rbind(holding,row2)
       #}
     }
     #table <- rbind(row1,row2)
