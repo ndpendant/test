@@ -19,7 +19,7 @@ ui <- fluidPage(
     sidebarPanel(
       
       width = 3,
-      imageOutput("image"),
+      imageOutput("image",height = "40vh"),
       selectInput("search",label = "Search Type:", choices = c('Drug_Name','CYP')),
       conditionalPanel("input.search == 'Drug_Name' ",
       selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
@@ -260,7 +260,7 @@ server <- function(input, output,session) {
   output$image <- renderImage({
   list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
     
-  },height = "40vh",deleteFile = FALSE)
+  },deleteFile = FALSE)
   
   output$table1 <-renderDataTable({
     input$GO
