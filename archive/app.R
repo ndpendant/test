@@ -184,6 +184,8 @@ server <- function(input, output,session) {
 
    # }
     mytable <- matrix(mytable[mytable[,3] > 0,],ncol = 3)
+    colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
+    rownames(mytable) <- cyps
     mytable <- data.frame(mytable)
    
     #mytable <- mytable[which(mytable[,3]>0),]
