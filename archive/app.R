@@ -183,9 +183,10 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
+    cyp <- unique(mytable[mytable[,3] > 0,]$Enzyme)
     mytable <- matrix(mytable[mytable[,3] > 0,],ncol = 3,byrow = TRUE)
     colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
-    #rownames(mytable) <- cyps
+    rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
    
     #mytable <- mytable[which(mytable[,3]>0),]
