@@ -144,7 +144,7 @@ server <- function(input, output,session) {
       {
        action2 = "inducer"
       }
-#    
+    
       pt1 <- max(inducer1,substrate1,inhibitor1)
       pt2 <- max(inducer2,substrate2,inhibitor2)
       score <- sqrt(pt1*pt2)
@@ -182,8 +182,8 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
-    mytable <- mytable[mytable[,3] > 0,]
-    #mytable <- data.frame(mytable)
+    #mytable <- mytable[mytable[,3] > 0,]
+    mytable <- data.frame(mytable)
    
     #mytable <- mytable[which(mytable[,3]>0),]
    
