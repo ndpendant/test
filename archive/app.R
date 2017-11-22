@@ -183,7 +183,7 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
-    mytable <- mytable[mytable[,3] > 0,]
+    mytable <- matrix(mytable[mytable[,3] > 0,],ncol = 3)
     mytable <- data.frame(mytable)
    
     #mytable <- mytable[which(mytable[,3]>0),]
