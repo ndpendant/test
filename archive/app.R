@@ -177,6 +177,7 @@ server <- function(input, output,session) {
     #{
       colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
       rownames(mytable) <- cyps
+      cyp <- rownames(mytable[mytable[,3] > 0,])
     #}
     #else
     #{
@@ -184,7 +185,7 @@ server <- function(input, output,session) {
 
    # }
     mytable <- mytable[mytable[,3] > 0,]
-    cyp <- rownames(mytable)
+    #cyp <- rownames(mytable)
     mytable <- matrix(mytable,ncol = 3,byrow = TRUE)
     colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
     rownames(mytable) <- cyp
