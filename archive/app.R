@@ -260,7 +260,7 @@ server <- function(input, output,session) {
   output$image <- renderImage({
   list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
     
-  },deleteFile = FALSE)
+  }height = "40vh",deleteFile = FALSE)
   
   output$table1 <-renderDataTable({
     input$GO
