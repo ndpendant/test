@@ -190,7 +190,7 @@ server <- function(input, output,session) {
     mytable <- matrix(mytable,ncol = 4)
     colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
     #rownames(mytable) <- cyp
-    mytable <- data.frame(mytable)
+    mytable <- data.frame(mytable,row.names=FALSE)
    
     #mytable <- mytable[which(mytable[,3]>0),]
    
@@ -258,7 +258,7 @@ server <- function(input, output,session) {
       
     
      
-    fulldt <- data.frame(fulldt[1:5],row.names = NULL)
+    fulldt <- data.frame(fulldt[1:5],row.names = FALSE)
     
   })
   
