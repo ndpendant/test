@@ -162,10 +162,10 @@ server <- function(input, output,session) {
       {
          score = 0
       }
-      
+      enz <- test[test$Action %in% action1 | test$Action %in% action2 ,]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-      row2 <- c(paste(action1,pt1),paste(action2,pt2), score)
+      row2 <- c(enz,paste(action1,pt1),paste(action2,pt2), score)
       #if(score > 0)
       #{
       holding <- rbind(holding,row2)
@@ -173,12 +173,12 @@ server <- function(input, output,session) {
     }
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
-     mytable <- matrix(holding,ncol = 3)#,byrow = TRUE)
+     mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
     #if(choice == "Drug_Name")
     #{
-      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
+      colnames(mytable) <- c("Enzymes",input$Drug_1,input$Drug_2,"R_Score")
       rownames(mytable) <- cyps
-      cyp <- rownames(mytable[mytable[,3] > 0,])
+      cyp <- rownames(mytable[mytable[,4] > 0,])
     #}
     #else
     #{
