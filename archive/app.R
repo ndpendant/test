@@ -176,7 +176,7 @@ server <- function(input, output,session) {
      mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
     #if(choice == "Drug_Name")
     #{
-      colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
+      colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
       rownames(mytable) <- cyps
       cyp <- rownames(mytable[mytable[,4] > 0,])
     #}
