@@ -165,7 +165,7 @@ server <- function(input, output,session) {
       enz <- test[test$Action %in% action1 | test$Action %in% action2 ,]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-      row2 <- c(enz,paste(action1,pt1),paste(action2,pt2), score)
+      row2 <- c(enz$Enzyme,paste(action1,pt1),paste(action2,pt2), score)
       #if(score > 0)
       #{
       holding <- rbind(holding,row2)
