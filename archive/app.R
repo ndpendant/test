@@ -258,7 +258,7 @@ server <- function(input, output,session) {
       
     
      
-    fulldt <- data.frame(fulldt[1:5],row.names = FALSE)
+    fulldt <- data.frame(fulldt[1:5])
     
   })
   
