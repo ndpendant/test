@@ -8,6 +8,7 @@ library(stringi)
 
 db <- read.csv("db11-10.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
+db$Drug <- trimws(db$Drug,which = c("Right"))
 #former color for .well background: rgb(216, 31, 31)
 
 
