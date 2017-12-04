@@ -7,7 +7,7 @@ library(stringr)
 library(stringi)
 
 db <- read.csv("db11-10.csv",fill = TRUE)
-db$Drug <- toLower(db$Drug)
+db$Drug <- tolower(db$Drug)
 #former color for .well background: rgb(216, 31, 31)
 
 
