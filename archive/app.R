@@ -185,9 +185,9 @@ server <- function(input, output,session) {
     # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
 
    # }
-    mytable <- mytable[mytable[,3] > 0,]
+    mytable <- mytable[mytable[,4] > 0,]
     #cyp <- rownames(mytable)
-    mytable <- matrix(mytable,ncol = 3)
+    mytable <- matrix(mytable,ncol = 4)
     colnames(mytable) <- c(input$Drug_1,input$Drug_2,"R_Score")
     rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
