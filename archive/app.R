@@ -6,7 +6,7 @@ library(DT)
 library(stringr)
 library(stringi)
 
-db <- read.csv("db11-10.csv",fill = TRUE)
+db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
 db$Drug <- trimws(db$Drug )
 #former color for .well background: rgb(216, 31, 31)
