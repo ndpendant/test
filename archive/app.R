@@ -117,35 +117,90 @@ server <- function(input, output,session) {
       substrate2 <- sum(str_detect(tb2$Action,"substrate"))
       inducer2 <-sum(str_detect(tb2$Action,"inducer"))
     
-      if(inhibitor1 >= substrate1 && inhibitor1 >= inducer1)
+      #one outcome
+      if(inhibitor1 > substrate1 && inhibitor1 > inducer1)
       {
         action1 = "inhibitor"
       }
     
-      else if(substrate1 >= inhibitor1 && substrate1 >= inducer1)
+      else if(substrate1 > inhibitor1 && substrate1 > inducer1)
       {
-       action1 = "substrate"
+        action1 = "substrate"
       }
     
-      else
+      else if(inducer1 > substrate1 && inducer1 > inhibitor1)
       {
-       action1 = "inducer"
+        action1 = "inducer"
+      }
+        
+      #two outcomes  
+      else if(inhibitor1 == substrate1 && inhibitor1 > inducer1)
+      {
+        action1a = "inhibitor"
+        action1b = "substrate"
       }
     
-      if(inhibitor2 >= substrate2 && inhibitor2 >= inducer2)
+      else if(inhibitor1 == inducer1 && inhibitor1 > substrate1)
       {
-       action2 = "inhibitor"
+        action1a = "inhibitor"
+        action1b = "inducer"
       }
     
-      else if(substrate2 >= inhibitor2 && substrate2 >= inducer2)
+      else if(inducer1 == substrate1 && inducer1 > inhibitor1)
       {
-
-        action2 = "substrate"
+        action1a = "inducer"
+        action1b = "substrate"
+      }
+      
+      #three outcomes
+      else if(inducer1 == substrate1 && inducer1 == inhibitor1)
+      {
+        action1a = "inducer"
+        action1b = "substrate"
+        action1c = "inhibitor"
       }
     
-     else
+      #one outcome
+      if(inhibitor2 > substrate2 && inhibitor2 > inducer2)
       {
-       action2 = "inducer"
+        action2a = "inhibitor"
+      }
+    
+      else if(substrate2 > inhibitor2 && substrate2 > inducer2)
+      {
+        action2a = "substrate"
+      }
+    
+      else if(inducer2 > substrate2 && inducer2 > inhibitor2)
+      {
+        action2a = "inducer"
+      }
+        
+      #two outcomes  
+      else if(inhibitor2 == substrate2 && inhibitor2 > inducer2)
+      {
+        action2a = "inhibitor"
+        action2b = "substrate"
+      }
+    
+      else if(inhibitor2 == inducer2 && inhibitor2 > substrate2)
+      {
+        action2a = "inhibitor"
+        action2b = "inducer"
+      }
+    
+      else if(inducer2 == substrate2 && inducer2 > inhibitor2)
+      {
+        action2a = "inducer"
+        action2b = "substrate"
+      }
+      
+      #three outcomes
+      else if(inducer2 == substrate2 && inducer2 == inhibitor2)
+      {
+        action2a = "inducer"
+        action2b = "substrate"
+        action2c = "inhibitor"
       }
     
       pt1 <- max(inducer1,substrate1,inhibitor1)
