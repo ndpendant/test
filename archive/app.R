@@ -200,7 +200,7 @@ server <- function(input, output,session) {
       score <- sqrt(pt1*pt2)
       
       #appending rows to table
-      if(len(action1) < len(action2))
+      if(length(action1) < length(action2))
       {
         for(j in action1)
         {
