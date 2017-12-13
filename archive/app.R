@@ -120,112 +120,138 @@ server <- function(input, output,session) {
       #one outcome
       if(inhibitor1 > substrate1 && inhibitor1 > inducer1)
       {
-        action1 = "inhibitor"
+        action1 = c("inhibitor")
       }
     
       else if(substrate1 > inhibitor1 && substrate1 > inducer1)
       {
-        action1 = "substrate"
+        action1 = c("substrate")
       }
     
       else if(inducer1 > substrate1 && inducer1 > inhibitor1)
       {
-        action1 = "inducer"
+        action1 = c("inducer")
       }
         
       #two outcomes  
       else if(inhibitor1 == substrate1 && inhibitor1 > inducer1)
       {
-        action1a = "inhibitor"
-        action1b = "substrate"
+        action1 = c("inhibitor","substrate")
       }
     
       else if(inhibitor1 == inducer1 && inhibitor1 > substrate1)
       {
-        action1a = "inhibitor"
-        action1b = "inducer"
+        action1 = c("inhibitor","inducer")
       }
     
       else if(inducer1 == substrate1 && inducer1 > inhibitor1)
       {
-        action1a = "inducer"
-        action1b = "substrate"
+        action1 = c("inducer","substrate")
       }
       
       #three outcomes
       else if(inducer1 == substrate1 && inducer1 == inhibitor1)
       {
-        action1a = "inducer"
-        action1b = "substrate"
-        action1c = "inhibitor"
+        action1a = c("inducer","substrate","inhibitor")
       }
     
       #one outcome
       if(inhibitor2 > substrate2 && inhibitor2 > inducer2)
       {
-        action2a = "inhibitor"
+        action2 = c("inhibitor")
       }
     
       else if(substrate2 > inhibitor2 && substrate2 > inducer2)
       {
-        action2a = "substrate"
+        action2 = c("substrate")
       }
     
       else if(inducer2 > substrate2 && inducer2 > inhibitor2)
       {
-        action2a = "inducer"
+        action2 = c("inducer")
       }
         
       #two outcomes  
       else if(inhibitor2 == substrate2 && inhibitor2 > inducer2)
       {
-        action2a = "inhibitor"
-        action2b = "substrate"
+        action2 = c("inhibitor","substrate")
       }
     
       else if(inhibitor2 == inducer2 && inhibitor2 > substrate2)
       {
-        action2a = "inhibitor"
-        action2b = "inducer"
+        action2 = c("inhibitor","inducer")
       }
     
       else if(inducer2 == substrate2 && inducer2 > inhibitor2)
       {
-        action2a = "inducer"
-        action2b = "substrate"
+        action2 = c("inducer","substrate")
       }
       
       #three outcomes
       else if(inducer2 == substrate2 && inducer2 == inhibitor2)
       {
-        action2a = "inducer"
-        action2b = "substrate"
-        action2c = "inhibitor"
+        action2 = c("inducer","substrate","inhibitor")
       }
-    
+      
+        
+        
       pt1 <- max(inducer1,substrate1,inhibitor1)
       pt2 <- max(inducer2,substrate2,inhibitor2)
       score <- sqrt(pt1*pt2)
-      if(pt1 == 0)
+      
+      #appending rows to table
+      if(len(action1) < len(action2))
       {
-         action1 = "No Matches"
-      }
-      if(pt2 == 0)
-      {
-         action2 = "No Matches"
-      }
-      if((action1 == "substrate" && action2 == "substrate") | (action1 != "substrate" && action2 != "substrate"))
-      {
-         score = 0
-      }
+        for(j in action1)
+        {
+          for(k in action2)
+          {
+            if(pt1 == 0)
+            {
+              action1[k] = "No Matches"
+            }
+            if(pt2 == 0)
+            {
+              action2[k] = "No Matches"
+            }
+            if((action1[j] == "substrate" && action2[k] == "substrate") | (action1[j] != "substrate" && action2[k] != "substrate"))
+            {
+              score = 0
+            }
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-      row2 <- c(i,paste(action1,pt1),paste(action2,pt2), score)
-      #if(score > 0)
-      #{
-      holding <- rbind(holding,row2)
-      #}
+            row2 <- c(i,paste(action1[j],pt1),paste(action2[k],pt2), score)
+            holding <- rbind(holding,row2)
+          }
+        }
+      }
+      else
+      {
+        for(j in action2)
+        {
+          for(k in action1)
+          {
+            if(pt1 == 0)
+            {
+              action1[j] = "No Matches"
+            }
+            if(pt2 == 0)
+            {
+              action2[j] = "No Matches"
+            }
+            if((action1[k] == "substrate" && action2[j] == "substrate") | (action1[k] != "substrate" && action2[j] != "substrate"))
+            {
+              score = 0
+            }
+     # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
+      
+    #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
+            row2 <- c(i,paste(action1[j],pt1),paste(action2[k],pt2), score)
+            holding <- rbind(holding,row2)
+          }
+        }   
+      }  
     }
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
