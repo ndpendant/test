@@ -58,6 +58,7 @@ ui <- fluidPage(
         
                   h3(textOutput("DDI_header1")),
                   dataTableOutput("table1"),
+                  textOutput("verbose"),
                   h3(textOutput("DDI_header2")),
                   dataTableOutput("table2")
                           )
@@ -152,7 +153,7 @@ server <- function(input, output,session) {
       #three outcomes
       else if(inducer1 == substrate1 && inducer1 == inhibitor1)
       {
-        action1a = c("inducer","substrate","inhibitor")
+        action1 = c("inducer","substrate","inhibitor")
       }
     
       #one outcome
@@ -198,7 +199,7 @@ server <- function(input, output,session) {
       pt1 <- max(inducer1,substrate1,inhibitor1)
       pt2 <- max(inducer2,substrate2,inhibitor2)
       score <- sqrt(pt1*pt2)
-      
+      print(paste(i,action1, pt1, action2, pt2))
       #appending rows to table
       if(length(action1) < length(action2))
       {
@@ -278,7 +279,7 @@ server <- function(input, output,session) {
     colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
     #rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
-   
+    
     #mytable <- mytable[which(mytable[,3]>0),]
    
   })
@@ -386,6 +387,11 @@ server <- function(input, output,session) {
   
 })
   
+  output$verbose <- renderText({
+    found()
+    
+    
+    })
   output$home_body1 <- renderText({
     
     "With the help of this tool it is possible to search for a drug-cocktail to check whether 
