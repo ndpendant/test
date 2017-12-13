@@ -254,7 +254,7 @@ server <- function(input, output,session) {
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-            row2 <- c(i,paste(j,pt1),paste(tk,pt2), s)
+            row2 <- c(i,paste(k,pt1),paste(j,pt2), s)
             print(row2)
             holding <- rbind(holding,row2)
           }
