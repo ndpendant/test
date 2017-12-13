@@ -199,7 +199,7 @@ server <- function(input, output,session) {
       pt1 <- max(inducer1,substrate1,inhibitor1)
       pt2 <- max(inducer2,substrate2,inhibitor2)
       score <- sqrt(pt1*pt2)
-      out <- paste(i, pt1, pt2,score)
+      out <- paste(i,action1, pt1,action2, pt2,score)
       print(out)
       #appending rows to table
       if(length(action1) < length(action2))
