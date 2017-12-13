@@ -206,13 +206,14 @@ server <- function(input, output,session) {
         {
           for(k in action2)
           {
+            tk = k
             if(pt1 == 0)
             {
-              k = "No Matches"
+              tk = "No Matches"
             }
             if(pt2 == 0)
             {
-              k = "No Matches"
+              tk = "No Matches"
             }
             if((j == "substrate" && k == "substrate") | (j != "substrate" && k != "substrate"))
             {
@@ -221,7 +222,7 @@ server <- function(input, output,session) {
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-            row2 <- c(i,paste(j,pt1),paste(k,pt2), score)
+            row2 <- c(i,paste(j,pt1),paste(tk,pt2), score)
             holding <- rbind(holding,row2)
           }
         }
@@ -232,13 +233,14 @@ server <- function(input, output,session) {
         {
           for(k in action1)
           {
+            tk = k
             if(pt1 == 0)
             {
-              j = "No Matches"
+              tk = "No Matches"
             }
             if(pt2 == 0)
             {
-              j = "No Matches"
+              tk = "No Matches"
             }
             if((k == "substrate" && j == "substrate") | (k != "substrate" && j != "substrate"))
             {
@@ -247,7 +249,7 @@ server <- function(input, output,session) {
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-            row2 <- c(i,paste(j,pt1),paste(k,pt2), score)
+            row2 <- c(i,paste(j,pt1),paste(tk,pt2), score)
             holding <- rbind(holding,row2)
           }
         }   
