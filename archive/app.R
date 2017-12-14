@@ -289,7 +289,7 @@ server <- function(input, output,session) {
               pt2 <- inhibitor2
             }
             
-            
+            score <- sqrt(pt1*pt2)
             tk = k
             s = score
             if(pt1 == 0)
