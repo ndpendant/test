@@ -334,7 +334,7 @@ server <- function(input, output,session) {
     colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
     #rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
-    
+    mytable <- mytable[order(-R_Score),]
     #mytable <- mytable[which(mytable[,3]>0),]
    
   })
