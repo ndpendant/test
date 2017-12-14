@@ -196,9 +196,9 @@ server <- function(input, output,session) {
       
         
         
-      pt1 <- max(inducer1,substrate1,inhibitor1)
-      pt2 <- max(inducer2,substrate2,inhibitor2)
-      score <- sqrt(pt1*pt2)
+      #pt1 <- max(inducer1,substrate1,inhibitor1)
+      # pt2 <- max(inducer2,substrate2,inhibitor2)
+      # score <- sqrt(pt1*pt2)
       
       #appending rows to table
       if(length(action1) < length(action2))
@@ -208,6 +208,33 @@ server <- function(input, output,session) {
         {
           for(k in action2)
           {
+            if(j == "inducer")
+            {
+              pt1 <- inducer1
+            }
+            else if(j == "substrate")
+            {
+              pt1 <- substrate1 
+            }
+            else
+            {
+              pt1 <- inhibitor1
+            }
+            if(k == "inducer")
+            {
+              pt2 <- inducer2
+            }
+            else if(k == "substrate")
+            {
+              pt2 <- substrate2 
+            }
+            else
+            {
+              pt2 <- inhibitor2
+            }
+            
+            
+            score <- sqrt(pt1*pt2)
             tk = k
             s = score
             if(pt1 == 0)
@@ -223,7 +250,7 @@ server <- function(input, output,session) {
               s = 0
             }
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
-      
+            
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
             row2 <- c(i,paste(j,pt1),paste(tk,pt2), s)
             print(row2)
@@ -237,6 +264,32 @@ server <- function(input, output,session) {
         {
           for(k in action1)
           {
+            if(k == "inducer")
+            {
+              pt1 <- inducer1
+            }
+            else if(k == "substrate")
+            {
+              pt1 <- substrate1 
+            }
+            else
+            {
+              pt1 <- inhibitor1
+            }
+            if(j == "inducer")
+            {
+              pt2 <- inducer2
+            }
+            else if(j == "substrate")
+            {
+              pt2 <- substrate2 
+            }
+            else
+            {
+              pt2 <- inhibitor2
+            }
+            
+            
             tk = k
             s = score
             if(pt1 == 0)
