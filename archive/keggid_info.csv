@@ -1,0 +1,2238 @@
+DrugID,DrugName
+D00222, Acyclovir 
+D02764, Acyclovir sodium 
+D00224, Allopurinol 
+D07564, Allopurinol sodium
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D00960, Anastrozole 
+D00528, Caffeine 
+D01453, Caffeine hydrate 
+D07603, Caffeine citrate 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D02539, Clinafloxacin hydrochloride 
+C10208, Daidzein
+D03669, Deferasirox 
+D00131, Disulfiram 
+E00764, Echinacea
+D00310, Enoxacin 
+D05461, Enoxacin hydrate 
+D04098, Etintidine hydrochloride 
+D00318, Famotidine 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+C11368, Grepafloxacin
+D02178, Grepafloxacin hydrochloride 
+D08063, Idrocilamide 
+D00139, Methoxsalen 
+D08215, Mexiletine 
+D00639, Mexiletine hydrochloride 
+D08217, Mibefradil 
+D05024, Mibefradil dihydrochloride 
+D00210, Norfloxacin 
+D08287, Norfloxacin nicotinate
+D02306, Pefloxacin 
+D02307, Pefloxacin mesylate 
+D02747, Peginterferon alfa-2a 
+D08368, Phenylpropanolamine 
+D01224, Phenylpropanolamine hydrochloride 
+D05466, Phenylpropanolamine polistirex 
+D08379, Pipemidic acid 
+D01531, Pipemidic acid hydrate 
+C03882, Piperine
+D08435, Propafenone 
+D00640, Propafenone hydrochloride 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D00568, Rofecoxib 
+D05928, Stiripentol 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D00372, Thiabendazole 
+D08594, Ticlopidine 
+D01028, Ticlopidine hydrochloride 
+D09996, Vemurafenib 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D08673, Viloxazine 
+D02572, Viloxazine hydrochloride 
+D00411, Zafirlukast 
+D00414, Zileuton 
+D00964, Letrozole 
+D00139, Methoxsalen 
+D07729, Clopidogrel 
+D00769, Clopidogrel bisulfate 
+D05597, Prasugrel hydrochloride 
+D06074, Tenofovir 
+D01982, Tenofovir disoproxil fumarate 
+D10428, Tenofovir alafenamide 
+D10605, Tenofovir alafenamide fumarate 
+D00583, Thiotepa 
+D08594, Ticlopidine 
+D01028, Ticlopidine hydrochloride 
+D00578, Voriconazole 
+D00184, Cyclosporine 
+D00276, Clarithromycin 
+D07710, Clarithromycin lactobionate
+D10104, Dabrafenib mesylate 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D00334, Gemfibrozil 
+D00351, Ketoconazole 
+D00350, Itraconazole 
+D00145, Trimethoprim 
+D06236, Trimethoprim sulfate 
+D08644, Trimethoprim lactate
+D08229, Montelukast 
+D00529, Montelukast sodium 
+D03669, Deferasirox 
+D10172, Teriflunomide 
+D01078, Telithromycin 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D01056, Benzbromarone 
+D01661, Bucolome 
+D01223, Capecitabine 
+D01784, Carmofur 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D08890, Choline fenofibrate 
+D00285, Co-Trimoxazole 
+D07752, Croconazole 
+D02169, Croconazole hydrochloride 
+D00184, Cyclosporine 
+D07782, Delavirdine 
+D00895, Delavirdine mesylate 
+D07858, Diosmin 
+D00131, Disulfiram 
+D01309, Doxifluridine 
+D00359, Lovastatin 
+D00565, Fenofibrate 
+D04112, Etravirine 
+D00322, Fluconazole 
+D00584, Fluorouracil 
+D07974, Fluorouracil sodium salt
+D07983, Fluvastatin 
+D00892, Fluvastatin sodium 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D04624, Isoconazole 
+D01480, Isoconazole nitrate 
+D00346, Isoniazid 
+D01501, Isoniazid calcium pyruvinate 
+D02002, Isoniazid sodium methanesulfonate hydrate 
+D09773, Isoniazid glucuronate sodium 
+D01092, Lanoconazole 
+D00749, Leflunomide 
+D00416, Miconazole 
+D00882, Miconazole nitrate 
+D00409, Metronidazole 
+D05016, Metronidazole hydrochloride 
+D05017, Metronidazole phosphate 
+D08214, Metronidazole benzoate 
+D01620, Neticonazole hydrochloride 
+D00462, Oxandrolone 
+D08313, Oxiconazole 
+D00885, Oxiconazole nitrate 
+D00510, Phenylbutazone 
+D08363, Phenylbutazone calcium
+D08364, Phenylbutazone sodium
+D00475, Probenecid 
+D02360, Sertraline 
+D00825, Sertraline hydrochloride 
+D08535, Sulconazole 
+D00886, Sulconazole nitrate 
+D00449, Sulfinpyrazone 
+D05928, Stiripentol 
+D00447, Sulfamethoxazole 
+D01954, Sulfaphenazole 
+D02698, Teniposide 
+D01244, Tegafur 
+D01079, Tigecycline 
+D02386, Ticrynafen 
+D00578, Voriconazole 
+D00411, Zafirlukast 
+C07600, Allicin
+D03215, Armodafinil 
+D00252, Carbamazepine 
+D00104, Chloramphenicol 
+D01072, Chloramphenicol palmitate 
+D02185, Chloramphenicol sodium succinate 
+D07674, Chloramphenicol stearate
+D07675, Chloramphenicol succinate
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00276, Clarithromycin 
+D07710, Clarithromycin lactobionate
+D07729, Clopidogrel 
+D00769, Clopidogrel bisulfate 
+D07782, Delavirdine 
+D00895, Delavirdine mesylate 
+D07793, Desvenlafaxine 
+D02570, Desvenlafaxine succinate 
+D08903, Dexlansoprazole 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D01361, Erythromycin ethylsuccinate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D07917, Esomeprazole 
+D01984, Esomeprazole magnesium 
+D04056, Esomeprazole sodium 
+D09339, Esomeprazole potassium 
+D10120, Esomeprazole strontium 
+D04112, Etravirine 
+D00536, Felbamate 
+D00322, Fluconazole 
+D01429, Fosfluconazole 
+D00326, Fluoxetine 
+D00823, Fluoxetine hydrochloride 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+E00839, Grapefruit juice
+D02691, Somatropin 
+D00141, Indomethacin 
+D01565, Indometacin farnesil 
+D02110, Indomethacin sodium 
+D00351, Ketoconazole 
+D00355, Lansoprazole 
+D02561, Moclobemide 
+D01832, Modafinil 
+D00455, Omeprazole 
+D01207, Omeprazole sodium 
+D05259, Omeprazole magnesium 
+D05261, Omeprazole sodium injection 
+D00533, Oxcarbazepine 
+D05353, Pantoprazole 
+D02593, Pantoprazole sodium 
+D08463, Rabeprazole 
+D00724, Rabeprazole sodium 
+D00427, Ritonavir 
+D01710, Roxithromycin 
+D05928, Stiripentol 
+D08594, Ticlopidine 
+D01028, Ticlopidine hydrochloride 
+D01322, Troleandomycin 
+D00537, Topiramate 
+D00578, Voriconazole 
+D09701, Abiraterone acetate 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D07520, Bepridil 
+D00631, Bepridil hydrochloride 
+D07591, Bupropion 
+D00817, Bupropion hydrochloride 
+D07938, Bupropion hydrobromide 
+D00567, Celecoxib 
+D07398, Chlorphenamine 
+D00665, Chlorpheniramine maleate 
+D03475, Chlorpheniramine polistirex 
+D00270, Chlorpromazine 
+D00789, Chlorpromazine hydrochloride 
+D03274, Chlorpromazine hibenzate 
+D04034, Chlorpromazine phenolphthalinate 
+D09819, Chlorpromazine tannate 
+D03491, Cidoxepin hydrochloride 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D03504, Cinacalcet 
+D03505, Cinacalcet hydrochloride 
+D03535, Clemastine 
+D00666, Clemastine fumarate 
+D01253, Clobazam 
+D07727, Clomipramine 
+D00811, Clomipramine hydrochloride 
+D09881, Cobicistat 
+D00110, Cocaine 
+D02182, Cocaine hydrochloride 
+D09883, Dacomitinib 
+D10514, Dacomitinib hydrate 
+D07793, Desvenlafaxine 
+D02570, Desvenlafaxine succinate 
+D07803, Dexchlorpheniramine 
+D00668, Dexchlorpheniramine maleate 
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D00300, Diphenhydramine  Weak in vivo
+D00669, Diphenhydramine hydrochloride  Weak in vivo
+D02419, Diphenhydramine salicylate  Weak in vivo
+D03285, Diphenhydramine tannate  Weak in vivo
+D03360, Diphenhydramine laurylsulfate  Weak in vivo
+D03854, Diphenhydramine citrate  Weak in vivo
+D07875, Doxepin 
+D00814, Doxepin hydrochloride 
+D03899, Doxorubicin 
+D01275, Doxorubicin hydrochloride 
+D07880, Duloxetine 
+D01179, Duloxetine hydrochloride 
+E00764, Echinacea
+D07913, Escitalopram 
+D02567, Escitalopram oxalate 
+D00326, Fluoxetine 
+D00823, Fluoxetine hydrochloride 
+D01206, Febuxostat 
+D01977, Gefitinib 
+D08033, Halofantrine 
+D02485, Halofantrine hydrochloride 
+D08044, Hydralazine 
+D01302, Hydralazine hydrochloride 
+D04458, Hydralazine polistirex 
+D08050, Hydroxychloroquine 
+D02114, Hydroxychloroquine sulfate 
+D08054, Hydroxyzine 
+D00672, Hydroxyzine hydrochloride 
+D01096, Hydroxyzine pamoate 
+D08066, Imatinib 
+D01441, Imatinib mesylate 
+D08106, Labetalol 
+D00600, Labetalol hydrochloride 
+D00403, Methotrimeprazine 
+D01520, Levomepromazine hydrochloride 
+D02248, Levomepromazine maleate 
+D08121, Levomethadone 
+D08122, Levomethadone hydrochloride
+D01425, Lopinavir 
+D06613, Lorcaserin hydrochloride 
+D08195, Methadone 
+D02102, Methadone hydrochloride 
+D00726, Metoclopramide 
+D02213, Metoclopramide hydrochloride 
+D05008, Metoclopramide hydrochloride 
+D08217, Mibefradil 
+D05024, Mibefradil dihydrochloride 
+D08220, Midodrine 
+D01307, Midodrine hydrochloride 
+D09535, Mirabegron 
+D02561, Moclobemide 
+D02362, Paroxetine 
+D02260, Paroxetine hydrochloride hydrate 
+D05374, Paroxetine hydrochloride 
+D05375, Paroxetine mesylate 
+D05380, Pazopanib hydrochloride 
+D00503, Perphenazine 
+D02037, Perphenazine maleate 
+D04038, Perphenazine fendizoate 
+D04965, Perphenazine hydrochloride
+D08341, Perphenazine decanoate
+D08342, Perphenazine enantate
+D08435, Propafenone 
+D00640, Propafenone hydrochloride 
+D08458, Quinidine 
+D00642, Quinidine gluconate 
+D00643, Quinidine polygalacturonate
+D02272, Quinidine sulfate 
+D08459, Quinidine phenylethylbarbiturate
+D00422, Ranitidine 
+D00673, Ranitidine hydrochloride 
+D05699, Ranitidine bismuth citrate 
+D00427, Ritonavir 
+D02360, Sertraline 
+D00825, Sertraline hydrochloride 
+D05928, Stiripentol 
+D01078, Telithromycin 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D00373, Thioridazine 
+D00798, Thioridazine hydrochloride 
+D08645, Tripelennamine 
+D02091, Tripelennamine hydrochloride 
+D06246, Tripelennamine citrate
+D09996, Vemurafenib 
+D08670, Venlafaxine 
+D00821, Venlafaxine hydrochloride 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D00960, Anastrozole 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D00104, Chloramphenicol 
+D01072, Chloramphenicol palmitate 
+D02185, Chloramphenicol sodium succinate 
+D07674, Chloramphenicol stearate
+D07675, Chloramphenicol succinate
+D00184, Cyclosporine 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D10104, Dabrafenib mesylate 
+D03656, Darunavir 
+D06478, Darunavir ethanolate 
+D03669, Deferasirox 
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D04316, Gestodene 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D01361, Erythromycin ethylsuccinate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D00554, Ethinyl estradiol 
+D00350, Itraconazole 
+D01235, Josamycin 
+D05351, Josamycin propionate 
+D00416, Miconazole 
+D00882, Miconazole nitrate 
+D00585, Mifepristone 
+D01339, Midecamycin 
+D01636, Midecamycin acetate 
+D00210, Norfloxacin 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D05928, Stiripentol 
+D01322, Troleandomycin 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D00104, Chloramphenicol 
+D01072, Chloramphenicol palmitate 
+D02185, Chloramphenicol sodium succinate 
+D07674, Chloramphenicol stearate
+D07675, Chloramphenicol succinate
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D00350, Itraconazole 
+D00585, Mifepristone 
+D00210, Norfloxacin 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D00104, Chloramphenicol 
+D01072, Chloramphenicol palmitate 
+D02185, Chloramphenicol sodium succinate 
+D07674, Chloramphenicol stearate
+D07675, Chloramphenicol succinate
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D01361, Erythromycin ethylsuccinate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D00350, Itraconazole 
+D00585, Mifepristone 
+D00210, Norfloxacin 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D09964, Almorexant 
+D00225, Alprazolam 
+D07450, Amlodipine 
+D00615, Amlodipine besylate 
+D02914, Amlodipine maleate 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D00894, Amprenavir 
+D02968, Aprepitant 
+D07471, Atazanavir 
+D01276, Atazanavir sulfate 
+D07474, Atorvastatin 
+D00887, Atorvastatin calcium anhydorous
+D02258, Atorvastatin calcium 
+D07486, Azithromycin 
+D02134, Azithromycin hydrate 
+D06390, Azithromycin 
+C00757, Berberine
+D01250, Berberine chloride hydrate 
+D03258, Berberine tannate 
+D03293, Berberine sulfate hydrate 
+D00961, Bicalutamide 
+D08876, Boceprevir 
+D06574, Casopitant mesylate 
+D00184, Cyclosporine 
+D01896, Cilostazol 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D00276, Clarithromycin 
+D07710, Clarithromycin lactobionate
+D00282, Clotrimazole 
+D09731, Crizotinib 
+D07748, Conivaptan 
+D01236, Conivaptan hydrochloride 
+D09881, Cobicistat 
+D00771, Chlorzoxazone 
+D07837, Dihydroergotamine 
+D02211, Dihydroergotamine mesylate 
+D07838, Dihydroergotamine tartrate
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D02537, Dronedarone 
+D03914, Dronedarone hydrochloride 
+D07906, Ergotamine 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D01361, Erythromycin ethylsuccinate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D02714, Everolimus 
+D00322, Fluconazole 
+D01429, Fosfluconazole 
+D00326, Fluoxetine 
+D00823, Fluoxetine hydrochloride 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D02497, Fosamprenavir 
+D02867, Fosamprenavir calcium hydrate 
+D03835, Fosamprenavir calcium 
+D03837, Fosamprenavir sodium 
+D06597, Fosaprepitant dimeglumine 
+D00334, Gemfibrozil 
+E00777, Goldenseal
+E00839, Grapefruit juice
+D08066, Imatinib 
+D01441, Imatinib mesylate 
+D03833, Indinavir 
+D00897, Indinavir sulfate 
+D02861, Indinavir sulfate ethanolate 
+D00346, Isoniazid 
+D01501, Isoniazid calcium pyruvinate 
+D02002, Isoniazid sodium methanesulfonate hydrate 
+D09773, Isoniazid glucuronate sodium 
+D04641, Istradefylline 
+D00350, Itraconazole 
+D09916, Ivacaftor 
+D00351, Ketoconazole 
+D04657, Lacidipine 
+D08108, Lapatinib 
+D04024, Lapatinib ditosylate 
+D09566, Linagliptin 
+D02498, Lopinavir mixture with ritonavir
+D04820, Lurasidone hydrochloride 
+D06670, Maraviroc 
+D08217, Mibefradil 
+D05024, Mibefradil dihydrochloride 
+D00416, Miconazole 
+D00882, Miconazole nitrate 
+D00819, Nefazodone hydrochloride 
+D08259, Nelfinavir 
+D00899, Nelfinavir mesylate 
+D08953, Nilotinib 
+D06413, Nilotinib hydrochloride hydrate 
+D05380, Pazopanib hydrochloride 
+D02555, Posaconazole 
+D08441, Propiverine 
+D01007, Propiverine hydrochloride 
+D00422, Ranitidine 
+D00673, Ranitidine hydrochloride 
+D05700, Ranolazine 
+D05701, Ranolazine hydrochloride 
+D00427, Ritonavir 
+D01710, Roxithromycin 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D08556, Tacrolimus 
+D00107, Tacrolimus 
+D08257, Nefazodone 
+D09012, Telaprevir 
+D01078, Telithromycin 
+D09017, Ticagrelor 
+D01322, Troleandomycin 
+D01254, Tofisopam 
+D01213, Tolvaptan 
+D00400, Valsartan 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D00578, Voriconazole 
+D00414, Zileuton 
+D03781, Liarozole fumarate 
+D03784, Liarozole hydrochloride 
+D03215, Armodafinil 
+D08903, Dexlansoprazole 
+D07917, Esomeprazole 
+D01984, Esomeprazole magnesium 
+D04056, Esomeprazole sodium 
+D09339, Esomeprazole potassium 
+D10120, Esomeprazole strontium 
+D00085, Insulin 
+D04541, Insulin human isophane 
+D04542, Insulin human zinc 
+D04543, Insulin human zinc extended 
+D04547, Insulin isophane 
+D04549, Insulin zinc extended 
+D04550, Insulin zinc prompt 
+D04551, Insulin zinc 
+D05622, Proinsulin human 
+D08080, Insulin injection biphasic isophane 
+D03230, Insulin human 
+D04548, Insulin neutral 
+D04477, Insulin lispro 
+D04475, Insulin aspart 
+D04540, Insulin glulisine 
+D03250, Insulin glargine 
+D04539, Insulin detemir 
+D00355, Lansoprazole 
+D01832, Modafinil 
+D08229, Montelukast 
+D00529, Montelukast sodium 
+D05077, Moricizine 
+D02087, Moricizine hydrochloride 
+D08242, Nafcillin 
+D00928, Nafcillin sodium 
+D00455, Omeprazole 
+D01207, Omeprazole sodium 
+D05259, Omeprazole magnesium 
+D05261, Omeprazole sodium injection 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00512, Phenytoin 
+D02103, Phenytoin sodium 
+D00414, Zileuton 
+D00896, Efavirenz 
+D07993, Fosphenytoin 
+D02096, Fosphenytoin sodium 
+D07595, Fosphenytoin sodium hydrate 
+D00435, Nevirapine 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D10104, Dabrafenib mesylate 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D02968, Aprepitant 
+D07538, Bosentan 
+D01227, Bosentan 
+D00252, Carbamazepine 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00430, Secobarbital 
+D01310, Secobarbital sodium 
+E00784, St. Johns wort
+D02481, Artemisinin 
+D00252, Carbamazepine 
+D00182, Norethindrone 
+D00953, Norethindrone acetate 
+D00473, Prednisone 
+D08416, Prednisone acetate
+D00424, Rifabutin 
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00427, Ritonavir 
+D00292, Dexamethasone 
+D00975, Dexamethasone sodium phosphate 
+D01510, Dexamethasone metasulfobenzoate sodium 
+D01615, Dexamethasone palmitate 
+D01632, Dexamethasone dipropionate 
+D01948, Dexamethasone valerate 
+D02174, Dexamethasone acetate 
+D02591, Dexamethasone acefurate 
+D02592, Dexamethasone beloxil 
+D07073, Dexamethasone cipecilate 
+D07796, Dexamethasone 21-acetate
+D07797, Dexamethasone isonicotinate
+D07798, Dexamethasone sodium hemisulfate
+D07799, Dexamethasone 21-tebutate
+D07800, Dexamethasone 21-valerate
+D07801, Dexamethasone phenylpropionate
+D07802, Dexamethasone phosphate
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00346, Isoniazid 
+D01501, Isoniazid calcium pyruvinate 
+D02002, Isoniazid sodium methanesulfonate hydrate 
+D09773, Isoniazid glucuronate sodium 
+D07538, Bosentan 
+D01227, Bosentan 
+D00252, Carbamazepine 
+D10104, Dabrafenib mesylate 
+D01615, Dexamethasone palmitate 
+D07993, Fosphenytoin 
+D02096, Fosphenytoin sodium 
+D07595, Fosphenytoin sodium hydrate 
+D00435, Nevirapine 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00424, Rifabutin 
+D00252, Carbamazepine 
+D00435, Nevirapine 
+D00533, Oxcarbazepine 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00424, Rifabutin 
+D00395, Troglitazone 
+D00252, Carbamazepine 
+D00435, Nevirapine 
+D00533, Oxcarbazepine 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00424, Rifabutin 
+D00395, Troglitazone 
+D00894, Amprenavir 
+D02968, Aprepitant 
+D03215, Armodafinil 
+D03012, Avasimibe 
+D07538, Bosentan 
+D01227, Bosentan 
+D00252, Carbamazepine 
+D01253, Clobazam 
+E00764, Echinacea
+D00896, Efavirenz 
+D04112, Etravirine 
+D01832, Modafinil 
+D08242, Nafcillin 
+D00928, Nafcillin sodium 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00512, Phenytoin 
+D02103, Phenytoin sodium 
+D08378, Pioglitazone 
+D00945, Pioglitazone hydrochloride 
+D00473, Prednisone 
+D08416, Prednisone acetate
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00424, Rifabutin 
+D05775, Rufinamide 
+E00784, St. Johns wort
+D09996, Vemurafenib 
+D00139, Methoxsalen 
+D08466, Ramosetron 
+D02016, Ramosetron hydrochloride 
+D04641, Istradefylline 
+D08838, Acotiamide hydrochloride 
+D09572, Riociguat 
+D09785, Delamanid 
+D07455, Anagrelide 
+D02933, Anagrelide hydrochloride 
+D10255, Anagrelide hydrochloride hydrate 
+D04052, Adrenaline - lidocaine hydrochloride mixt
+D07129, Alosetron 
+D02829, Alosetron hydrochloride 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D05429, Aminophylline hydrate 
+D07448, Amitriptyline 
+D00809, Amitriptyline hydrochloride 
+D00228, Amoxapine 
+D03215, Armodafinil 
+D01776, Antipyrine 
+D03150, Bortezomib 
+D00528, Caffeine 
+D01453, Caffeine hydrate 
+D07603, Caffeine citrate 
+D00255, Carvedilol 
+D03415, Carvedilol phosphate 
+D00771, Chlorzoxazone 
+D02017, Oxtriphylline 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D07727, Clomipramine 
+D00811, Clomipramine hydrochloride 
+D07729, Clopidogrel 
+D00769, Clopidogrel bisulfate 
+D00283, Clozapine 
+D07758, Cyclobenzaprine 
+D00772, Cyclobenzaprine hydrochloride 
+D02347, Dantrolene 
+D02274, Dantrolene sodium 
+D03729, Dexpropranolol hydrochloride 
+D07880, Duloxetine 
+D01179, Duloxetine hydrochloride 
+D03978, Eltrombopag olamine 
+D00310, Enoxacin 
+D05461, Enoxacin hydrate 
+D04023, Erlotinib hydrochloride 
+D07907, Erlotinib 
+D00105, Estradiol 
+D01413, Estradiol valerate 
+D01617, Estradiol dipropionate 
+D01953, Estradiol benzoate 
+D04061, Estradiol acetate 
+D04063, Estradiol cypionate 
+D04064, Estradiol enanthate 
+D04065, Estradiol undecylate 
+D07918, Estradiol hemihydrate
+D07919, Estradiol 17 beta-hemisuccinate
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D02497, Fosamprenavir 
+D02867, Fosamprenavir calcium hydrate 
+D03835, Fosamprenavir calcium 
+D03837, Fosamprenavir sodium 
+D00136, Haloperidol 
+D01898, Haloperidol decanoate 
+D08035, Haloperidol lactate
+D00815, Imipramine hydrochloride 
+D01287, Levobupivacaine hydrochloride 
+D00358, Lidocaine 
+D02086, Lidocaine hydrochloride 
+D08127, Lidocaine hydrochloride monohydrate
+D08170, Melatonin
+D00139, Methoxsalen 
+D08215, Mexiletine 
+D00639, Mexiletine hydrochloride 
+D08216, Mianserin 
+D01358, Mianserin hydrochloride 
+D00563, Mirtazapine 
+D01832, Modafinil 
+D00118, Naproxen 
+D00970, Naproxen sodium 
+D10017, Naproxen etemesil 
+D08255, Naratriptan 
+D00674, Naratriptan hydrochloride 
+D03365, Nicotine 
+D00210, Norfloxacin 
+D08287, Norfloxacin nicotinate
+D00454, Olanzapine 
+D06623, Olanzapine pamoate 
+D00456, Ondansetron 
+D00678, Ondansetron hydrochloride hydrate 
+D07175, Palonosetron 
+D05343, Palonosetron hydrochloride 
+D00217, Acetaminophen 
+D00569, Phenacetin 
+D00560, Pimozide 
+D01583, Pirfenidone 
+D08435, Propafenone 
+D00640, Propafenone hydrochloride 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D02689, Ramelteon 
+D08466, Ramosetron 
+D02016, Ramosetron hydrochloride 
+D00775, Riluzole 
+D08489, Ropinirole 
+D00784, Ropinirole hydrochloride 
+D08490, Ropivacaine 
+D04048, Ropivacaine hydrochloride 
+D08555, Tacrine 
+D02068, Tacrine hydrochloride 
+D08559, Tamoxifen 
+D00966, Tamoxifen citrate 
+D00371, Theophylline 
+D01712, Theophylline sodium acetate 
+D06103, Theophylline 
+D06104, Theophylline sodium glycinate 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D08611, Tizanidine 
+D00776, Tizanidine hydrochloride 
+D08508, Sarpogrelate 
+D01624, Sarpogrelate hydrochloride 
+D05928, Stiripentol 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D08682, Warfarin 
+D00564, Warfarin sodium 
+D01280, Warfarin potassium 
+D00414, Zileuton 
+D00415, Zolmitriptan 
+D08690, Zolpidem 
+D00706, Zolpidem tartrate 
+D00105, Estradiol 
+D00964, Letrozole 
+D00139, Methoxsalen 
+D00425, Nabumetone 
+D03365, Nicotine 
+D00525, Pilocarpine 
+D02200, Pilocarpine hydrochloride 
+D05478, Pilocarpine nitrate 
+D08376, Pilocarpine borate
+D07086, Rivaroxaban 
+D03215, Armodafinil 
+D07591, Bupropion 
+D00817, Bupropion hydrochloride 
+D07938, Bupropion hydrobromide 
+D00252, Carbamazepine 
+D07729, Clopidogrel 
+D00769, Clopidogrel bisulfate 
+D07760, Cyclophosphamide 
+D00287, Cyclophosphamide 
+D10104, Dabrafenib mesylate 
+D00896, Efavirenz 
+D00343, Ifosfamide 
+D08121, Levomethadone 
+D08122, Levomethadone hydrochloride
+D08195, Methadone 
+D02102, Methadone hydrochloride 
+D01832, Modafinil 
+D00512, Phenytoin 
+D02103, Phenytoin sodium 
+D03844, Phenytoin - phenobarbital - caffeine and sodium benzoate
+D07583, Phenytoin - phenobarbital mixt
+D02360, Sertraline 
+D00825, Sertraline hydrochloride 
+D08524, Sorafenib 
+D06272, Sorafenib tosylate 
+D02922, Amodiaquine 
+D02466, Amodiaquine hydrochloride 
+D00252, Carbamazepine 
+D07661, Cerivastatin 
+D00889, Cerivastatin sodium 
+D07760, Cyclophosphamide 
+D00287, Cyclophosphamide 
+D10104, Dabrafenib mesylate 
+D03978, Eltrombopag olamine 
+D09848, Pioglitazone hydrochloride and glimepiride tablets 
+D08108, Lapatinib 
+D04024, Lapatinib ditosylate 
+D08229, Montelukast 
+D00529, Montelukast sodium 
+D01855, Mozavaptane hydrochloride 
+D08953, Nilotinib 
+D06413, Nilotinib hydrochloride hydrate 
+D00491, Paclitaxel 
+D08378, Pioglitazone 
+D00945, Pioglitazone hydrochloride 
+D00594, Repaglinide 
+D06543, Vitamin A 
+D00164, Retinol palmitate 
+D01621, Retinol acetate 
+D08477, Retinol propionate
+D08491, Rosiglitazone 
+D00596, Rosiglitazone maleate 
+D08524, Sorafenib 
+D06272, Sorafenib tosylate 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D00380, Tolbutamide 
+D06177, Tolbutamide sodium sterile
+D00382, Torsemide 
+D08619, Torasemide sodium
+D08668, Vardenafil 
+D02731, Vardenafil dihydrochoride 
+D03260, Vardenafil hydrochloride hydrate 
+D09989, Vardenafil hydrochloride 
+D00069, Vitamin A oil 
+D01372, Zopiclone 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D01397, Ampiroxicam 
+D03215, Armodafinil 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D01056, Benzbromarone 
+D07520, Bepridil 
+D00631, Bepridil hydrochloride 
+D07538, Bosentan 
+D01227, Bosentan 
+D00522, Candesartan 
+D00626, Candesartan cilexetil 
+D01223, Capecitabine 
+D00255, Carvedilol 
+D03415, Carvedilol phosphate 
+D00567, Celecoxib 
+D07760, Cyclophosphamide 
+D00287, Cyclophosphamide 
+D10104, Dabrafenib mesylate 
+D07782, Delavirdine 
+D00895, Delavirdine mesylate 
+D07816, Diclofenac 
+D00903, Diclofenac potassium 
+D00904, Diclofenac sodium 
+D07817, Diclofenac diethylamine
+D07818, Diclofenac hydroxyethylpyrrolidine
+D07819, Diclofenac calcium
+D00306, Dronabinol 
+D00781, Entacapone 
+D01514, Etizolam 
+D04112, Etravirine 
+D00322, Fluconazole 
+D01429, Fosfluconazole 
+D00326, Fluoxetine 
+D00823, Fluoxetine hydrochloride 
+D00330, Flurbiprofen 
+D02290, Flurbiprofen sodium 
+D01475, Flurbiprofen axetil 
+D10254, Esflurbiprofen 
+D07983, Fluvastatin 
+D00892, Fluvastatin sodium 
+D02497, Fosamprenavir 
+D02867, Fosamprenavir calcium hydrate 
+D03835, Fosamprenavir calcium 
+D03837, Fosamprenavir sodium 
+D07993, Fosphenytoin 
+D02096, Fosphenytoin sodium 
+D07595, Fosphenytoin sodium hydrate 
+D00336, Glyburide 
+D00593, Glimepiride 
+D00335, Glipizide 
+D01071, Hexobarbital 
+D00126, Ibuprofen 
+D01122, Ibuprofen piconol 
+D04490, Ibuprofen aluminum 
+D06606, Ibuprofen lysine 
+D08058, Ibuprofen arginine salt
+D08059, Ibuprofen sodium
+D09760, Ibuprofen sodium 
+D08066, Imatinib 
+D01441, Imatinib mesylate 
+D00523, Irbesartan 
+D00749, Leflunomide 
+D01866, Lornoxicam 
+D08146, Losartan 
+D00357, Losartan potassium 
+D07895, Losartan potassium and hydrochlorothiazide tablets 
+D09848, Pioglitazone hydrochloride and glimepiride tablets 
+D00151, Mefenamic acid 
+D00969, Meloxicam 
+D00416, Miconazole 
+D00882, Miconazole nitrate 
+D01832, Modafinil 
+D01718, Mofezolac 
+D08229, Montelukast 
+D00529, Montelukast sodium 
+D00118, Naproxen 
+D00970, Naproxen sodium 
+D10017, Naproxen etemesil 
+D08255, Naratriptan 
+D00674, Naratriptan hydrochloride 
+D01111, Nateglinide 
+D08259, Nelfinavir 
+D00899, Nelfinavir mesylate 
+D00512, Phenytoin 
+D02103, Phenytoin sodium 
+D03844, Phenytoin - phenobarbital - caffeine and sodium benzoate
+D07583, Phenytoin - phenobarbital mixt
+D00127, Piroxicam 
+D05511, Piroxicam betadex 
+D05512, Piroxicam cinnamate 
+D05513, Piroxicam olamine 
+D01862, Pitavastatin calcium 
+D10568, Pitavastatin calcium hydrate 
+D00457, Quazepam 
+D08491, Rosiglitazone 
+D00596, Rosiglitazone maleate 
+D08508, Sarpogrelate 
+D01624, Sarpogrelate hydrochloride 
+D02360, Sertraline 
+D00825, Sertraline hydrochloride 
+D08514, Sildenafil 
+D02229, Sildenafil citrate 
+D00434, Simvastatin 
+D08524, Sorafenib 
+D06272, Sorafenib tosylate 
+D00452, Suprofen 
+D08559, Tamoxifen 
+D00966, Tamoxifen citrate 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D01767, Tenoxicam 
+D00380, Tolbutamide 
+D06177, Tolbutamide sodium sterile
+D00382, Torsemide 
+D08619, Torasemide sodium
+D02027, Tranilast 
+D00392, Trimethadione 
+D00399, Valproic acid 
+D00304, Divalproex sodium 
+D00710, Valproate sodium 
+D08667, Calcium valproate
+D00400, Valsartan 
+D08668, Vardenafil 
+D02731, Vardenafil dihydrochoride 
+D03260, Vardenafil hydrochloride hydrate 
+D09989, Vardenafil hydrochloride 
+D00578, Voriconazole 
+D08682, Warfarin 
+D00564, Warfarin sodium 
+D01280, Warfarin potassium 
+D08690, Zolpidem 
+D00706, Zolpidem tartrate 
+D00293, Diazepam 
+D07448, Amitriptyline 
+D00809, Amitriptyline hydrochloride 
+D00228, Amoxapine 
+D03215, Armodafinil 
+D03150, Bortezomib 
+D07538, Bosentan 
+D01227, Bosentan 
+D00768, Carisoprodol 
+D00104, Chloramphenicol 
+D01072, Chloramphenicol palmitate 
+D02185, Chloramphenicol sodium succinate 
+D07674, Chloramphenicol stearate
+D07675, Chloramphenicol succinate
+D01173, Cilnidipine 
+D01896, Cilostazol 
+D07729, Clopidogrel 
+D00769, Clopidogrel bisulfate 
+D01253, Clobazam 
+D07727, Clomipramine 
+D00811, Clomipramine hydrochloride 
+D10104, Dabrafenib mesylate 
+D07782, Delavirdine 
+D00895, Delavirdine mesylate 
+D08903, Dexlansoprazole 
+D03729, Dexpropranolol hydrochloride 
+D00293, Diazepam 
+D07913, Escitalopram 
+D02567, Escitalopram oxalate 
+D07917, Esomeprazole 
+D01984, Esomeprazole magnesium 
+D04056, Esomeprazole sodium 
+D09339, Esomeprazole potassium 
+D10120, Esomeprazole strontium 
+D01514, Etizolam 
+D04112, Etravirine 
+D00322, Fluconazole 
+D01429, Fosfluconazole 
+D00329, Flurazepam 
+D00695, Flurazepam hydrochloride 
+D01408, Flurazepam hydrochloride 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D07993, Fosphenytoin 
+D02096, Fosphenytoin sodium 
+D07595, Fosphenytoin sodium hydrate 
+D01071, Hexobarbital 
+D08070, Imipramine 
+D00815, Imipramine hydrochloride 
+D08071, Imipramine pamoate 
+D00141, Indomethacin 
+D01565, Indometacin farnesil 
+D02110, Indomethacin sodium 
+D00355, Lansoprazole 
+D08774, Amoxicillin hydrate - clarithromycin - lansoprazole mixt
+D00749, Leflunomide 
+D00375, Mephenytoin 
+C20130, S-Mephenytoin
+D00700, Mephobarbital 
+D02561, Moclobemide 
+D01832, Modafinil 
+D08259, Nelfinavir 
+D00899, Nelfinavir mesylate 
+D00965, Nilutamide 
+D08283, Nordazepam 
+D00455, Omeprazole 
+D01207, Omeprazole sodium 
+D05261, Omeprazole sodium injection 
+D05259, Omeprazole magnesium 
+D05353, Pantoprazole 
+D02593, Pantoprazole sodium 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00512, Phenytoin 
+D02103, Phenytoin sodium 
+D03844, Phenytoin - phenobarbital - caffeine and sodium benzoate
+D07583, Phenytoin - phenobarbital mixt
+D00474, Primidone 
+D00066, Progesterone 
+D08428, Proguanil 
+D02487, Proguanil hydrochloride 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D08463, Rabeprazole 
+D00724, Rabeprazole sodium 
+D08508, Sarpogrelate 
+D01624, Sarpogrelate hydrochloride 
+D02360, Sertraline 
+D00825, Sertraline hydrochloride 
+D05928, Stiripentol 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D02698, Teniposide 
+D08668, Vardenafil 
+D02731, Vardenafil dihydrochoride 
+D03260, Vardenafil hydrochloride hydrate 
+D09989, Vardenafil hydrochloride 
+D00578, Voriconazole 
+D00199, Ajmaline 
+D07156, Alprenolol 
+D01182, Alprenolol hydrochloride 
+D07445, Amfetamine 
+D02074, Amphetamine sulfate 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D07448, Amitriptyline 
+D00809, Amitriptyline hydrochloride 
+D00228, Amoxapine 
+D02969, Aprindine 
+D01164, Aripiprazole 
+D00235, Atenolol 
+D07473, Atomoxetine 
+D02574, Atomoxetine hydrochloride 
+D07520, Bepridil 
+D00631, Bepridil hydrochloride 
+D07537, Bopindolol 
+D01794, Bopindolol malonate 
+D01444, Bunitrolol hydrochloride 
+D07624, Carteolol 
+D00599, Carteolol hydrochloride 
+D00255, Carvedilol 
+D03415, Carvedilol phosphate 
+D00567, Celecoxib 
+D07667, Cevimeline 
+D00661, Cevimeline hydrochloride 
+D07398, Chlorphenamine 
+D00665, Chlorpheniramine maleate 
+D03475, Chlorpheniramine polistirex 
+D00270, Chlorpromazine 
+D00789, Chlorpromazine hydrochloride 
+D03274, Chlorpromazine hibenzate 
+D04034, Chlorpromazine phenolphthalinate 
+D09819, Chlorpromazine tannate 
+D03492, Cifenline 
+D01455, Cifenline succinate 
+D01173, Cilnidipine 
+D01896, Cilostazol 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D01295, Cinnarizine 
+D07734, Cinnarizine dihydrochloride
+D07704, Citalopram 
+D00822, Citalopram hydrobromide 
+D07705, Citalopram hydrochloride
+D07727, Clomipramine 
+D00811, Clomipramine hydrochloride 
+D00195, Codeine 
+D02101, Codeine phosphate 
+D03580, Codeine sulfate 
+D07740, Codeine hydrochloride
+D03664, Debrisoquin sulfate 
+D07782, Delavirdine 
+D00895, Delavirdine mesylate 
+D07791, Desipramine 
+D00812, Desipramine hydrochloride 
+D03740, Dextroamphetamine 
+D02078, Dextroamphetamine sulfate 
+D07803, Dexchlorpheniramine 
+D00668, Dexchlorpheniramine maleate 
+D07805, Dexfenfluramine 
+D03713, Dexfenfluramine hydrochloride 
+D03729, Dexpropranolol hydrochloride 
+D00848, Dextromethorphan hydrobromide 
+D03742, Dextromethorphan 
+D03744, Dextromethorphan polistirex 
+D04340, Dextromethorphan hydrobromide - potassium cresolsulfonate mixt
+D07831, Dihydrocodeine 
+D01481, Dihydrocodeine phosphate 
+D00300, Diphenhydramine 
+D00669, Diphenhydramine hydrochloride 
+D02419, Diphenhydramine salicylate 
+D03285, Diphenhydramine tannate 
+D03360, Diphenhydramine laurylsulfate 
+D03854, Diphenhydramine citrate 
+D07869, Donepezil 
+D00670, Donepezil hydrochloride 
+D01546, Dothiepin hydrochloride 
+D07875, Doxepin 
+D00814, Doxepin hydrochloride 
+D07880, Duloxetine 
+D01179, Duloxetine hydrochloride 
+D07894, Encainide 
+D03991, Encainide hydrochloride 
+D07913, Escitalopram 
+D02567, Escitalopram oxalate 
+D00068, Alcohol 
+D06542, Ethanol 
+D00326, Fluoxetine 
+D00823, Fluoxetine hydrochloride 
+D07962, Flecainide 
+D00638, Flecainide acetate 
+D07971, Flunarizine 
+D01303, Flunarizine hydrochloride 
+D07977, Fluphenazine 
+D00791, Fluphenazine hydrochloride 
+D00793, Fluphenazine decanoate 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D02497, Fosamprenavir 
+D02867, Fosamprenavir calcium hydrate 
+D03835, Fosamprenavir calcium 
+D03837, Fosamprenavir sodium 
+D00136, Haloperidol 
+D01898, Haloperidol decanoate 
+D08035, Haloperidol lactate
+D08066, Imatinib 
+D01441, Imatinib mesylate 
+D08070, Imipramine 
+D00815, Imipramine hydrochloride 
+D08071, Imipramine pamoate 
+D00749, Leflunomide 
+D00403, Methotrimeprazine 
+D01520, Levomepromazine hydrochloride 
+D02248, Levomepromazine maleate 
+D00358, Lidocaine 
+D02086, Lidocaine hydrochloride 
+D08127, Lidocaine hydrochloride monohydrate
+D00364, Loratadine 
+D02566, Maprotiline 
+D00818, Maprotiline hydrochloride 
+D01324, Mequitazine 
+D00726, Metoclopramide 
+D02213, Metoclopramide hydrochloride 
+D05008, Metoclopramide hydrochloride 
+D02358, Metoprolol 
+D00601, Metoprolol tartrate 
+D00635, Metoprolol succinate 
+D05011, Metoprolol fumarate 
+D08215, Mexiletine 
+D00639, Mexiletine hydrochloride 
+D08216, Mianserin 
+D01358, Mianserin hydrochloride 
+D05039, Minaprine 
+D05040, Minaprine hydrochloride 
+D00563, Mirtazapine 
+D08255, Naratriptan 
+D00674, Naratriptan hydrochloride 
+D01111, Nateglinide 
+D05127, Nebivolol 
+D06622, Nebivolol hydrochloride 
+D08259, Nelfinavir 
+D00899, Nelfinavir mesylate 
+D08288, Nortriptyline 
+D00816, Nortriptyline hydrochloride 
+D00454, Olanzapine 
+D06623, Olanzapine pamoate 
+D00456, Ondansetron 
+D00678, Ondansetron hydrochloride hydrate 
+D05312, Oxycodone 
+D00847, Oxycodone hydrochloride 
+D03783, Oxycodone terephthalate 
+D05462, Oxycodone hydrochloride hydrate 
+D07175, Palonosetron 
+D05343, Palonosetron hydrochloride 
+D02362, Paroxetine 
+D02260, Paroxetine hydrochloride hydrate 
+D05374, Paroxetine hydrochloride 
+D05375, Paroxetine mesylate 
+D08339, Pergolide 
+D00502, Pergolide mesylate 
+D08340, Perhexiline 
+D05442, Perhexiline maleate 
+D00503, Perphenazine 
+D02037, Perphenazine maleate 
+D04038, Perphenazine fendizoate 
+D04965, Perphenazine hydrochloride
+D08341, Perphenazine decanoate
+D08342, Perphenazine enantate
+D00569, Phenacetin 
+D08351, Phenformin 
+D08352, Phenformin hydrochloride
+D00560, Pimozide 
+D00513, Pindolol 
+D08435, Propafenone 
+D00640, Propafenone hydrochloride 
+D00494, Promethazine 
+D00480, Promethazine hydrochloride 
+D01242, Promethazine teoclate 
+D03290, Promethazine methylenedisalicylate 
+D08432, Promethazine maleate
+D08768, Promethazine hibenzate
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D08466, Ramosetron 
+D02016, Ramosetron hydrochloride 
+D00426, Risperidone 
+D08508, Sarpogrelate 
+D01624, Sarpogrelate hydrochloride 
+D03731, Selegiline 
+D00785, Selegiline hydrochloride 
+D01041, Sparteine 
+D02239, Sparteine sulfate 
+D08559, Tamoxifen 
+D00966, Tamoxifen citrate 
+D08561, Tandospirone 
+D01078, Telithromycin 
+D00373, Thioridazine 
+D00798, Thioridazine hydrochloride 
+D08600, Timolol 
+D00378, Timolol 
+D00603, Timolol maleate 
+D00646, Tolterodine 
+D01148, Tolterodine tartrate 
+D08623, Tramadol 
+D01355, Tramadol hydrochloride 
+D08626, Trazodone 
+D00820, Trazodone hydrochloride 
+D00394, Trimipramine 
+D02408, Trimipramine maleate 
+D02130, Tropisetron 
+D02041, Tropisetron hydrochloride 
+D08670, Venlafaxine 
+D00821, Venlafaxine hydrochloride 
+D03556, Zuclopenthixol 
+D08691, Zuclopenthixol acetate
+D08692, Zuclopenthixol decanoate
+D08693, Zuclopenthixol dihydrochloride
+D07086, Rivaroxaban 
+D00425, Nabumetone 
+D04052, Adrenaline - lidocaine hydrochloride mixt
+D00225, Alprazolam 
+D07448, Amitriptyline 
+D00809, Amitriptyline hydrochloride 
+D02910, Amiodarone 
+D00636, Amiodarone hydrochloride 
+D07450, Amlodipine 
+D00615, Amlodipine besylate 
+D02914, Amlodipine maleate 
+D00228, Amoxapine 
+D01397, Ampiroxicam 
+D00894, Amprenavir 
+D00960, Anastrozole 
+D03213, Apixaban 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D01326, Aprindine hydrochloride 
+D01562, Aranidipine 
+D01164, Aripiprazole 
+D03215, Armodafinil 
+D00234, Astemizole 
+D07474, Atorvastatin 
+D00887, Atorvastatin calcium anhydorous
+D02258, Atorvastatin calcium 
+D08488, Amlodipine besilate - atorvastatin calcium mixt
+D03218, Axitinib 
+D07471, Atazanavir 
+D01276, Atazanavir sulfate 
+D01145, Azelnidipine 
+D07494, Barnidipine 
+D01104, Barnidipine hydrochloride 
+D07509, Benidipine 
+D02045, Benidipine hydrochloride 
+D07520, Bepridil 
+D00631, Bepridil hydrochloride 
+D00961, Bicalutamide 
+D01176, Blonanserin 
+D07538, Bosentan 
+D01227, Bosentan 
+D03150, Bortezomib 
+D01245, Bromazepam 
+D03165, Bromocriptine 
+D00780, Bromocriptine mesylate 
+D01101, Bromperidol 
+D02626, Bromperidol decanoate 
+D00246, Budesonide 
+D09595, Budesonide - formoterol fumarate dihydrate mixt
+D01450, Bupivacaine hydrochloride 
+D00987, Cabergoline 
+D00528, Caffeine 
+D01453, Caffeine hydrate 
+D07569, Candesartan cilexetil and anmlodipine besylate tablets 
+D00252, Carbamazepine 
+D00255, Carvedilol 
+D03415, Carvedilol phosphate 
+D07661, Cerivastatin 
+D00889, Cerivastatin sodium 
+D07667, Cevimeline 
+D00661, Cevimeline hydrochloride 
+D00104, Chloramphenicol 
+D07398, Chlorphenamine 
+D00665, Chlorpheniramine maleate 
+D03475, Chlorpheniramine polistirex 
+D03492, Cifenline 
+D01455, Cifenline succinate 
+D01703, Ciclesonide 
+D00184, Cyclosporine 
+D01173, Cilnidipine 
+D01896, Cilostazol 
+D00295, Cimetidine 
+D03503, Cimetidine hydrochloride 
+D03505, Cinacalcet hydrochloride 
+D00186, Ciprofloxacin 
+D02216, Ciprofloxacin hydrochloride 
+D07702, Ciprofloxacin lactate
+D00274, Cisapride 
+D02092, Cisapride 
+D07704, Citalopram 
+D00822, Citalopram hydrobromide 
+D07705, Citalopram hydrochloride
+D00276, Clarithromycin 
+D07710, Clarithromycin lactobionate
+D01253, Clobazam 
+D07727, Clomipramine 
+D00811, Clomipramine hydrochloride 
+D07729, Clopidogrel 
+D00769, Clopidogrel bisulfate 
+D00283, Clozapine 
+D00195, Codeine 
+D02101, Codeine phosphate 
+D03580, Codeine sulfate 
+D07740, Codeine hydrochloride
+D00570, Colchicine 
+D01697, Colforsin daropate hydrochloride 
+D04070, Estrogens conjugated 
+D05987, Synthetic conjugated estrogens B 
+D07749, Cortisone 
+D07760, Cyclophosphamide 
+D00287, Cyclophosphamide 
+D10104, Dabrafenib mesylate 
+D03656, Darunavir 
+D06478, Darunavir ethanolate 
+D07782, Delavirdine 
+D00895, Delavirdine mesylate 
+D00292, Dexamethasone 
+D00975, Dexamethasone sodium phosphate 
+D01510, Dexamethasone metasulfobenzoate sodium 
+D01615, Dexamethasone palmitate 
+D01632, Dexamethasone dipropionate 
+D01948, Dexamethasone valerate 
+D02174, Dexamethasone acetate 
+D02591, Dexamethasone acefurate 
+D02592, Dexamethasone beloxil 
+D07073, Dexamethasone cipecilate 
+D07796, Dexamethasone 21-acetate
+D07797, Dexamethasone isonicotinate
+D07798, Dexamethasone sodium hemisulfate
+D07799, Dexamethasone 21-tebutate
+D07800, Dexamethasone 21-valerate
+D07801, Dexamethasone phenylpropionate
+D07802, Dexamethasone phosphate
+D07803, Dexchlorpheniramine 
+D00668, Dexchlorpheniramine maleate 
+D08903, Dexlansoprazole 
+D03729, Dexpropranolol hydrochloride 
+D03742, Dextromethorphan 
+D00848, Dextromethorphan hydrobromide 
+D03744, Dextromethorphan polistirex 
+D00592, Dapsone 
+D00293, Diazepam 
+D03799, Dienogest 
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D00303, Disopyramide 
+D00637, Disopyramide phosphate 
+D07866, Docetaxel 
+D02165, Docetaxel 
+D01745, Domperidone 
+D07868, Domperidone maleate
+D07869, Donepezil 
+D00670, Donepezil hydrochloride 
+D00306, Dronabinol 
+D03820, Dutasteride 
+D00896, Efavirenz 
+D00310, Enoxacin 
+D05461, Enoxacin hydrate 
+D01115, Eplerenone 
+D07905, Ergometrine 
+D01163, Ergonovine maleate 
+D07906, Ergotamine 
+D00679, Ergotamine tartrate 
+D07907, Erlotinib 
+D04023, Erlotinib hydrochloride 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D01361, Erythromycin ethylsuccinate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D02205, Ethylmorphine hydrochloride hydrate 
+D07913, Escitalopram 
+D02567, Escitalopram oxalate 
+D07917, Esomeprazole 
+D01984, Esomeprazole magnesium 
+D04056, Esomeprazole sodium 
+D09339, Esomeprazole potassium 
+D00311, Estazolam 
+D00554, Ethinyl estradiol 
+D00125, Etoposide 
+D04112, Etravirine 
+D00963, Exemestane 
+D00105, Estradiol 
+D01413, Estradiol valerate 
+D01617, Estradiol dipropionate 
+D01953, Estradiol benzoate 
+D04061, Estradiol acetate 
+D04063, Estradiol cypionate 
+D04064, Estradiol enanthate 
+D04065, Estradiol undecylate 
+D07918, Estradiol hemihydrate
+D07919, Estradiol 17 beta-hemisuccinate
+D04071, Estrogens esterified 
+D00539, Ethosuximide 
+D01514, Etizolam 
+D01293, Ethyl loflazepate 
+D00319, Felodipine 
+D00320, Fentanyl 
+D01399, Fentanyl citrate 
+D03852, Droperidol - fentanyl citrate mixt
+D07962, Flecainide 
+D00638, Flecainide acetate 
+D07983, Fluvastatin 
+D00892, Fluvastatin sodium 
+D00322, Fluconazole 
+D01429, Fosfluconazole 
+D00321, Finasteride 
+D00321, Finasteride 
+D07984, Fluvoxamine 
+D00824, Fluvoxamine maleate 
+D02497, Fosamprenavir 
+D02867, Fosamprenavir calcium hydrate 
+D03835, Fosamprenavir calcium 
+D03837, Fosamprenavir sodium 
+D01977, Gefitinib 
+D03259, Gemtuzumab ozogamicin 
+D04316, Gestodene 
+D00136, Haloperidol 
+D01898, Haloperidol decanoate 
+D08035, Haloperidol lactate
+D00542, Halothane 
+D00088, Hydrocortisone 
+D00165, Hydrocortisone acetate 
+D00976, Hydrocortisone cypionate
+D00977, Hydrocortisone sodium phosphate 
+D00978, Hydrocortisone sodium succinate 
+D01442, Hydrocortisone succinate 
+D01619, Hydrocortisone butyrate 
+D01886, Hydrocortisone probutate 
+D02288, Hydrocortisone valerate 
+D04467, Hydrocortisone hemisuccinate 
+D06876, Hydrocortisone aceponate 
+D09796, Hydrocortisone caproate 
+D08265, Hydroquinine hydrobromide
+D08054, Hydroxyzine 
+D00672, Hydroxyzine hydrochloride 
+D01096, Hydroxyzine pamoate 
+D00343, Ifosfamide 
+D06273, Imidafenacin 
+D08070, Imipramine 
+D00815, Imipramine hydrochloride 
+D08071, Imipramine pamoate 
+D03833, Indinavir 
+D00897, Indinavir sulfate 
+D02861, Indinavir sulfate ethanolate 
+D10243, Irbesartan - amlodipine besilate mixt
+D07585, Isopropylantipyrine - ergotamine tartrate - anhydrous caffeine mixt
+D08066, Imatinib 
+D01441, Imatinib mesylate 
+D08086, Irinotecan 
+D01061, Irinotecan hydrochloride 
+D00350, Itraconazole 
+D01235, Josamycin 
+D05351, Josamycin propionate 
+D00351, Ketoconazole 
+D00355, Lansoprazole 
+D08774, Amoxicillin hydrate - clarithromycin - lansoprazole mixt
+D08108, Lapatinib 
+D04024, Lapatinib ditosylate 
+D00749, Leflunomide 
+D08111, Lercanidipine 
+D01849, Lercanidipine hydrochloride 
+D00964, Letrozole 
+D04716, Levomethadyl acetate 
+D00840, Levomethadyl acetate hydrochloride 
+D01287, Levobupivacaine hydrochloride 
+D08121, Levomethadone 
+D08122, Levomethadone hydrochloride
+D09187, Estradiol - levonorgestrel mixt
+D00358, Lidocaine 
+D02086, Lidocaine hydrochloride 
+D08127, Lidocaine hydrochloride monohydrate
+D04813, Lidocaine hydrochloride - epinephrine bitartrate mixt
+D00364, Loratadine 
+D08146, Losartan 
+D00357, Losartan potassium 
+D00359, Lovastatin 
+D01553, Manidipine hydrochloride 
+D00969, Meloxicam 
+D00680, Methylergonovine maleate 
+D00407, Methylprednisolone 
+D00751, Methylprednisolone sodium succinate 
+D00979, Methylprednisolone acetate 
+D08215, Mexiletine 
+D00639, Mexiletine hydrochloride 
+D00416, Miconazole 
+D00882, Miconazole nitrate 
+D08227, Mometasone 
+D00690, Mometasone furoate 
+D01111, Nateglinide 
+D08195, Methadone 
+D02102, Methadone hydrochloride 
+D00544, Methoxyflurane 
+D01316, Mexazolam 
+D08216, Mianserin 
+D01358, Mianserin hydrochloride 
+D00550, Midazolam 
+D00696, Midazolam hydrochloride 
+D05028, Midazolam maleate 
+D00563, Mirtazapine 
+D01832, Modafinil 
+D08229, Montelukast 
+D00529, Montelukast sodium 
+D08236, Mosapride 
+D01994, Mosapride citrate hydrate 
+D01855, Mozavaptane hydrochloride 
+D06405, Nalfurafine hydrochloride 
+D08259, Nelfinavir 
+D00899, Nelfinavir mesylate 
+D08255, Naratriptan 
+D00674, Naratriptan hydrochloride 
+D08953, Nilotinib 
+D06413, Nilotinib hydrochloride hydrate 
+D08283, Nordazepam 
+D00210, Norfloxacin 
+D08270, Nicardipine 
+D00617, Nicardipine hydrochloride 
+D00437, Nifedipine 
+D01908, Nilvadipine 
+D00438, Nimodipine 
+D00618, Nisoldipine 
+D00629, Nitrendipine 
+D00453, Ofloxacin 
+D08291, Ofloxacin hydrochloride
+D09594, Olmesartan medoxomil - azelnidipine mixt
+D00455, Omeprazole 
+D01207, Omeprazole sodium 
+D05259, Omeprazole magnesium 
+D05261, Omeprazole sodium injection 
+D00456, Ondansetron 
+D00678, Ondansetron hydrochloride hydrate 
+D05312, Oxycodone 
+D00847, Oxycodone hydrochloride 
+D03783, Oxycodone terephthalate 
+D05462, Oxycodone hydrochloride hydrate 
+D00491, Paclitaxel 
+D07175, Palonosetron 
+D05343, Palonosetron hydrochloride 
+D00217, Acetaminophen 
+D02372, Perospirone hydrochloride hydrate 
+D00560, Pimozide 
+D00127, Piroxicam 
+D08408, Pranlukast 
+D02732, Pranlukast hydrate 
+D08410, Pravastatin 
+D00893, Pravastatin sodium 
+D00471, Praziquantel 
+D00066, Progesterone 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D08435, Propafenone 
+D00640, Propafenone hydrochloride 
+D08441, Propiverine 
+D01007, Propiverine hydrochloride 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D08458, Quinidine 
+D00642, Quinidine gluconate 
+D00643, Quinidine polygalacturonate
+D02272, Quinidine sulfate 
+D08459, Quinidine phenylethylbarbiturate
+D08460, Quinine 
+D02261, Quinine hydrochloride hydrate 
+D02262, Quinine sulfate 
+D05681, Quinine ascorbate 
+D08461, Quinine dihydrochloride
+D00854, Quinupristin - dalfopristin mixt
+D00457, Quazepam 
+D08456, Quetiapine 
+D00458, Quetiapine fumarate 
+D00724, Rabeprazole sodium 
+D08463, Rabeprazole 
+D02689, Ramelteon 
+D00424, Rifabutin 
+D00211, Rifampin 
+D08479, Rifampicin sodium
+D00426, Risperidone 
+D00427, Ritonavir 
+D07086, Rivaroxaban 
+D01710, Roxithromycin 
+D05792, Salmeterol 
+D00687, Salmeterol xinafoate 
+D08699, Salmeterol xinafoate - fluticasone propionate mixt
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D08508, Sarpogrelate 
+D01624, Sarpogrelate hydrochloride 
+D03731, Selegiline 
+D00785, Selegiline hydrochloride 
+D00547, Sevoflurane 
+D02360, Sertraline 
+D00825, Sertraline hydrochloride 
+D08514, Sildenafil 
+D02229, Sildenafil citrate 
+D00434, Simvastatin 
+D01269, Solifenacin succinate 
+D06272, Sorafenib tosylate 
+D05928, Stiripentol 
+D06402, Sunitinib malate 
+D08556, Tacrolimus 
+D00107, Tacrolimus 
+D02008, Tadalafil 
+D01418, Tamibarotene 
+D08559, Tamoxifen 
+D00966, Tamoxifen citrate 
+D08561, Tandospirone 
+D01992, Tandospirone citrate 
+D00370, Temazepam 
+D01078, Telithromycin 
+D09743, Telmisartan - amlodipine besilate mixt
+D06068, Temsirolimus 
+D02698, Teniposide 
+D02375, Terbinafine 
+D02219, Terbinafine hydrochloride 
+D00521, Terfenadine 
+D00075, Testosterone 
+D00957, Testosterone cypionate 
+D00958, Testosterone enanthate 
+D00959, Testosterone propionate 
+D06085, Testosterone ketolaurate 
+D06086, Testosterone phenylacetate 
+D06087, Testosterone undecanoate 
+D08573, Testosterone decanoate
+D08574, Testosterone phenylpropionate
+D01254, Tofisopam 
+D00646, Tolterodine 
+D01148, Tolterodine tartrate 
+D00537, Topiramate 
+D08620, Toremifene 
+D00967, Toremifene citrate 
+D01355, Tramadol hydrochloride 
+D08626, Trazodone 
+D00820, Trazodone hydrochloride 
+D00387, Triazolam 
+D00392, Trimethadione 
+D01322, Troleandomycin 
+D00399, Valproic acid 
+D00710, Valproate sodium 
+D08667, Calcium valproate
+D09745, Valsartan - amlodipine besilate mixt
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D08675, Vinblastine 
+D01068, Vinblastine sulfate 
+D08679, Vincristine 
+D02197, Vincristine sulfate 
+D06304, Vindesine 
+D01769, Vindesine sulfate 
+D08680, Vinorelbine 
+D01935, Vinorelbine tartrate 
+D00578, Voriconazole 
+D00538, Zonisamide 
+D00530, Zaleplon 
+D08687, Ziprasidone 
+D01939, Ziprasidone hydrochloride 
+D02100, Ziprasidone mesylate 
+D08690, Zolpidem 
+D00706, Zolpidem tartrate 
+D01372, Zopiclone 
+D01321, Zotepine 
+D07450, Amlodipine 
+D00615, Amlodipine besylate 
+D02914, Amlodipine maleate 
+D03213, Apixaban 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D00234, Astemizole 
+D03218, Axitinib 
+D00528, Caffeine 
+D01453, Caffeine hydrate 
+D07398, Chlorphenamine 
+D00665, Chlorpheniramine maleate 
+D03475, Chlorpheniramine polistirex 
+D00184, Cyclosporine 
+D07749, Cortisone 
+D00274, Cisapride 
+D02092, Cisapride 
+D00292, Dexamethasone 
+D00975, Dexamethasone sodium phosphate 
+D01510, Dexamethasone metasulfobenzoate sodium 
+D01615, Dexamethasone palmitate 
+D01632, Dexamethasone dipropionate 
+D01948, Dexamethasone valerate 
+D02174, Dexamethasone acetate 
+D02591, Dexamethasone acefurate 
+D02592, Dexamethasone beloxil 
+D07073, Dexamethasone cipecilate 
+D07796, Dexamethasone 21-acetate
+D07797, Dexamethasone isonicotinate
+D07798, Dexamethasone sodium hemisulfate
+D07799, Dexamethasone 21-tebutate
+D07800, Dexamethasone 21-valerate
+D07801, Dexamethasone phenylpropionate
+D07802, Dexamethasone phosphate
+D07803, Dexchlorpheniramine 
+D00668, Dexchlorpheniramine maleate 
+D03729, Dexpropranolol hydrochloride 
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D01745, Domperidone 
+D07868, Domperidone maleate
+D03820, Dutasteride 
+D01115, Eplerenone 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D00319, Felodipine 
+D00320, Fentanyl 
+D01399, Fentanyl citrate 
+D00088, Hydrocortisone 
+D00165, Hydrocortisone acetate 
+D00976, Hydrocortisone cypionate
+D00977, Hydrocortisone sodium phosphate 
+D00978, Hydrocortisone sodium succinate 
+D01442, Hydrocortisone succinate 
+D01619, Hydrocortisone butyrate 
+D01886, Hydrocortisone probutate 
+D02288, Hydrocortisone valerate 
+D04467, Hydrocortisone hemisuccinate 
+D06876, Hydrocortisone aceponate 
+D09796, Hydrocortisone caproate 
+D08265, Hydroquinine hydrobromide
+D00136, Haloperidol 
+D01898, Haloperidol decanoate 
+D08035, Haloperidol lactate
+D08054, Hydroxyzine 
+D00672, Hydroxyzine hydrochloride 
+D01096, Hydroxyzine pamoate 
+D08066, Imatinib 
+D01441, Imatinib mesylate 
+D03833, Indinavir 
+D00897, Indinavir sulfate 
+D02861, Indinavir sulfate ethanolate 
+D08086, Irinotecan 
+D01061, Irinotecan hydrochloride 
+D08108, Lapatinib 
+D04024, Lapatinib ditosylate 
+D08111, Lercanidipine 
+D01849, Lercanidipine hydrochloride 
+D00359, Lovastatin 
+D00550, Midazolam 
+D00696, Midazolam hydrochloride 
+D05028, Midazolam maleate 
+D08255, Naratriptan 
+D00674, Naratriptan hydrochloride 
+D01111, Nateglinide 
+D00437, Nifedipine 
+D00629, Nitrendipine 
+D00560, Pimozide 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D08456, Quetiapine 
+D00458, Quetiapine fumarate 
+D08460, Quinine 
+D02261, Quinine hydrochloride hydrate 
+D02262, Quinine sulfate 
+D05681, Quinine ascorbate 
+D08461, Quinine dihydrochloride
+D07086, Rivaroxaban 
+D05792, Salmeterol 
+D00687, Salmeterol xinafoate 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D08514, Sildenafil 
+D02229, Sildenafil citrate 
+D08556, Tacrolimus 
+D00107, Tacrolimus 
+D01078, Telithromycin 
+D00521, Terfenadine 
+D00075, Testosterone 
+D00957, Testosterone cypionate 
+D00958, Testosterone enanthate 
+D00959, Testosterone propionate 
+D06085, Testosterone ketolaurate 
+D06086, Testosterone phenylacetate 
+D06087, Testosterone undecanoate 
+D08573, Testosterone decanoate
+D08574, Testosterone phenylpropionate
+D08626, Trazodone 
+D00820, Trazodone hydrochloride 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D00530, Zaleplon 
+D08687, Ziprasidone 
+D01939, Ziprasidone hydrochloride 
+D02100, Ziprasidone mesylate 
+D08690, Zolpidem 
+D00706, Zolpidem tartrate 
+D07450, Amlodipine 
+D00615, Amlodipine besylate 
+D02914, Amlodipine maleate 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D00234, Astemizole 
+D00528, Caffeine 
+D01453, Caffeine hydrate 
+D07398, Chlorphenamine 
+D00665, Chlorpheniramine maleate 
+D03475, Chlorpheniramine polistirex 
+D00184, Cyclosporine 
+D00274, Cisapride 
+D02092, Cisapride 
+D00292, Dexamethasone 
+D00975, Dexamethasone sodium phosphate 
+D01510, Dexamethasone metasulfobenzoate sodium 
+D01615, Dexamethasone palmitate 
+D01632, Dexamethasone dipropionate 
+D01948, Dexamethasone valerate 
+D02174, Dexamethasone acetate 
+D02591, Dexamethasone acefurate 
+D02592, Dexamethasone beloxil 
+D07073, Dexamethasone cipecilate 
+D07796, Dexamethasone 21-acetate
+D07797, Dexamethasone isonicotinate
+D07798, Dexamethasone sodium hemisulfate
+D07799, Dexamethasone 21-tebutate
+D07800, Dexamethasone 21-valerate
+D07801, Dexamethasone phenylpropionate
+D07802, Dexamethasone phosphate
+D07803, Dexchlorpheniramine 
+D00668, Dexchlorpheniramine maleate 
+D03729, Dexpropranolol hydrochloride 
+D01745, Domperidone 
+D07868, Domperidone maleate
+D07845, Diltiazem 
+D00616, Diltiazem hydrochloride 
+D03830, Diltiazem malate 
+D01115, Eplerenone 
+D00140, Erythromycin 
+D00851, Erythromycin estolate 
+D01361, Erythromycin ethylsuccinate 
+D02009, Erythromycin lactobionate 
+D02184, Erythromycin stearate 
+D02523, Erythromycin acistrate 
+D02524, Erythromycin gluceptate 
+D02525, Erythromycin propionate 
+D04054, Erythromycin salnacedin 
+D07909, Erythromycin thiocyanate
+D07910, Erythromycin stinoprate 
+D00319, Felodipine 
+D00320, Fentanyl 
+D01399, Fentanyl citrate 
+D00136, Haloperidol 
+D01898, Haloperidol decanoate 
+D08035, Haloperidol lactate
+D00088, Hydrocortisone 
+D00165, Hydrocortisone acetate 
+D00976, Hydrocortisone cypionate
+D00977, Hydrocortisone sodium phosphate 
+D00978, Hydrocortisone sodium succinate 
+D01442, Hydrocortisone succinate 
+D01619, Hydrocortisone butyrate 
+D01886, Hydrocortisone probutate 
+D02288, Hydrocortisone valerate 
+D04467, Hydrocortisone hemisuccinate 
+D06876, Hydrocortisone aceponate 
+D09796, Hydrocortisone caproate 
+D08265, Hydroquinine hydrobromide
+D03833, Indinavir 
+D00897, Indinavir sulfate 
+D02861, Indinavir sulfate ethanolate 
+D08086, Irinotecan 
+D01061, Irinotecan hydrochloride 
+D08111, Lercanidipine 
+D01849, Lercanidipine hydrochloride 
+D00359, Lovastatin 
+D00550, Midazolam 
+D00696, Midazolam hydrochloride 
+D05028, Midazolam maleate 
+D01111, Nateglinide 
+D00629, Nitrendipine 
+D00560, Pimozide 
+D08443, Propranolol 
+D00483, Propranolol hydrochloride 
+D08456, Quetiapine 
+D00458, Quetiapine fumarate 
+D08460, Quinine 
+D02261, Quinine hydrochloride hydrate 
+D02262, Quinine sulfate 
+D05681, Quinine ascorbate 
+D08461, Quinine dihydrochloride
+D05792, Salmeterol 
+D00687, Salmeterol xinafoate 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D08514, Sildenafil 
+D02229, Sildenafil citrate 
+D08556, Tacrolimus 
+D00107, Tacrolimus 
+D01078, Telithromycin 
+D00521, Terfenadine 
+D00075, Testosterone 
+D00957, Testosterone cypionate 
+D00958, Testosterone enanthate 
+D00959, Testosterone propionate 
+D06085, Testosterone ketolaurate 
+D06086, Testosterone phenylacetate 
+D06087, Testosterone undecanoate 
+D08573, Testosterone decanoate
+D08574, Testosterone phenylpropionate
+D08626, Trazodone 
+D00820, Trazodone hydrochloride 
+D02356, Verapamil 
+D00619, Verapamil hydrochloride 
+D08687, Ziprasidone 
+D01939, Ziprasidone hydrochloride 
+D02100, Ziprasidone mesylate 
+D08690, Zolpidem 
+D00706, Zolpidem tartrate 
+D00530, Zaleplon 
+D07122, Alfentanil 
+D00835, Alfentanil hydrochloride 
+D00225, Alprazolam 
+D02968, Aprepitant 
+D06597, Fosaprepitant dimeglumine 
+D00234, Astemizole 
+D00555, Amobarbital 
+D02252, Amobarbital sodium 
+D07474, Atorvastatin 
+D00887, Atorvastatin calcium anhydorous
+D02258, Atorvastatin calcium 
+D01145, Azelnidipine 
+D02615, Chlorpromazine hydrochloride - promethazine hydrochloride - phenobarbital mixt
+D01176, Blonanserin 
+D00246, Budesonide 
+D07593, Buspirone 
+D00702, Buspirone hydrochloride 
+D00274, Cisapride 
+D02092, Cisapride 
+D00570, Colchicine 
+D07748, Conivaptan 
+D01236, Conivaptan hydrochloride 
+D00184, Cyclosporine 
+D07837, Dihydroergotamine 
+D02211, Dihydroergotamine mesylate 
+D07838, Dihydroergotamine tartrate
+D00297, Digitoxin 
+D03654, Darifenacin 
+D01699, Darifenacin hydrobromide 
+D03656, Darunavir 
+D06478, Darunavir ethanolate 
+D03658, Dasatinib 
+D06414, Dasatinib 
+D02537, Dronedarone 
+D03914, Dronedarone hydrochloride 
+D07887, Eletriptan 
+D01973, Eletriptan hydrobromide 
+D01115, Eplerenone 
+D07906, Ergotamine 
+D00679, Ergotamine tartrate 
+D02714, Everolimus 
+D00319, Felodipine 
+D00320, Fentanyl 
+D01399, Fentanyl citrate 
+D07981, Fluticasone 
+D01708, Fluticasone propionate 
+D06315, Fluticasone furoate 
+C07051, Indinavir
+D03833, Indinavir 
+D00897, Indinavir sulfate 
+D02861, Indinavir sulfate ethanolate 
+D01425, Lopinavir 
+D00359, Lovastatin 
+D04820, Lurasidone hydrochloride 
+D06670, Maraviroc 
+D00550, Midazolam 
+D00696, Midazolam hydrochloride 
+D05028, Midazolam maleate 
+D00831, Mefloquine hydrochloride 
+D00618, Nisoldipine 
+D00472, Prednisolone 
+D00506, Phenobarbital 
+D00701, Phenobarbital sodium 
+D08356, Phenobarbital diethylamine
+D00512, Phenytoin 
+D02103, Phenytoin sodium 
+D07583, Phenytoin - phenobarbital mixt
+D03844, Phenytoin - phenobarbital - caffeine and sodium benzoate
+D00560, Pimozide 
+D04307, Proxyphylline - ephedrine hydrochloride - phenobarbital mixt
+D08456, Quetiapine 
+D00458, Quetiapine fumarate 
+D08458, Quinidine 
+D00642, Quinidine gluconate 
+D00643, Quinidine polygalacturonate
+D02272, Quinidine sulfate 
+D08459, Quinidine phenylethylbarbiturate
+D09720, Rilpivirine 
+D09958, Rilpivirine hydrochloride 
+D07086, Rivaroxaban 
+D08492, Rosuvastatin 
+D01915, Rosuvastatin calcium 
+D00429, Saquinavir 
+D01160, Saquinavir mesylate 
+D08514, Sildenafil 
+D02229, Sildenafil citrate 
+D00434, Simvastatin 
+D00753, Sirolimus 
+D08556, Tacrolimus 
+D00107, Tacrolimus 
+D02008, Tadalafil 
+D00521, Terfenadine 
+D09017, Ticagrelor 
+D08605, Tipranavir 
+D03843, Tipranavir disodium 
+D01213, Tolvaptan 
+D00387, Triazolam 
+D08668, Vardenafil 
+D02731, Vardenafil dihydrochoride 
+D03260, Vardenafil hydrochloride hydrate 
+D09989, Vardenafil hydrochloride 
+D00550, Midazolam 
+D00696, Midazolam hydrochloride 
+D05028, Midazolam maleate 
