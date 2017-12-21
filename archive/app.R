@@ -388,42 +388,42 @@ server <- function(input, output,session) {
       
     }
       
-    if(sum(str_detect(test$Database,"SuperCYP")>0))
-    {
-      sc <- test[test$Database == "SuperCYP",]
-      sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
-      sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
-      sc$Structure <- "Not Available"
-      fulldt <- rbind(fulldt,sc)
-    }
+#    if(sum(str_detect(test$Database,"SuperCYP")>0))
+#    {
+#      sc <- test[test$Database == "SuperCYP",]
+#      sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+#      sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
+#      sc$Structure <- "Not Available"
+#      fulldt <- rbind(fulldt,sc)
+#    }
     
-    if(sum(str_detect(test$Database,"KEGG")>0))
-    {
-      k <- test[test$Database == "KEGG",]
-      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
-      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
-      k$Structure <- "Not Available"
-      fulldt <- rbind(fulldt,k)
-    }
+#    if(sum(str_detect(test$Database,"KEGG")>0))
+#    {
+#      k <- test[test$Database == "KEGG",]
+#      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+#      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
+#      k$Structure <- "Not Available"
+#      fulldt <- rbind(fulldt,k)
+#    }
     
-    if(sum(str_detect(test$Database,"Indiana University")>0))
-    {  
-      iu <- test[test$Database == "Indiana University",]
-      iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
-      iu$Database <- paste0("<a href='",iu$Extra,"'>Indiana University</a>")
-      iu$Structure <- "Not Available"
-      fulldt <- rbind(fulldt,iu)
-    }  
+ #   if(sum(str_detect(test$Database,"Indiana University")>0))
+ #   {  
+ #     iu <- test[test$Database == "Indiana University",]
+ #     iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
+ #     iu$Database <- paste0("<a href='",iu$Extra,"'>Indiana University</a>")
+ #     iu$Structure <- "Not Available"
+ #     fulldt <- rbind(fulldt,iu)
+ #   }  
       
-    if(sum(str_detect(test$Database,"ildcare")>0))
-    {  
-      ild <- test[test$Database == "ildcare",]
-      ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
-      ild$Database <- paste0("<a href='",ild$Extra,"'>ildcare</a>")
-      ild$Structure <- "Not Available"
-      fulldt <- rbind(fulldt,ild)
+  #  if(sum(str_detect(test$Database,"ildcare")>0))
+  #  {  
+  ##    ild <- test[test$Database == "ildcare",]
+   #   ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
+   #   ild$Database <- paste0("<a href='",ild$Extra,"'>ildcare</a>")
+   #   ild$Structure <- "Not Available"
+   #   fulldt <- rbind(fulldt,ild)
       
-    }  
+    #}  
       
     
      
