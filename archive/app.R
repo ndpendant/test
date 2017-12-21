@@ -84,6 +84,14 @@ ui <- fluidPage(
 
 server <- function(input, output,session) {
    
+  shinyInput <- function(FUN, len, id, ...) {
+      inputs <- character(len)
+      for (i in seq_len(len)) {
+        inputs[i] <- as.character(FUN(paste0(id, i), ...))
+      }
+      inputs
+    }
+  
   observeEvent(input$GO, {
     updateTabsetPanel(session, "tabs",
       selected = "DDI"
