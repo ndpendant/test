@@ -384,7 +384,7 @@ server <- function(input, output,session) {
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
       dbank$Structure <- shinyInput(actionLink,nrow(dbank),"db_struct",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
        
-      fulldt <- rbind(fulldt,db)
+      fulldt <- rbind(fulldt,dbank)
       
     }
       
