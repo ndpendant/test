@@ -71,7 +71,8 @@ ui <- fluidPage(
                   dataTableOutput("table1"),
                   textOutput("verbose"),
                   h3(textOutput("DDI_header2")),
-                  dataTableOutput("table2")
+                  dataTableOutput("table2"),
+                  bsModal("modalExample", "Your plot", "struct", size = "medium",htmlOutput("pic"))
                           )
                   )
               )
@@ -373,7 +374,7 @@ server <- function(input, output,session) {
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
-      dbank$Structure <- HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      dbank$Structure <- shinyInput(actionLink,"db_struct",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
        
       fulldt <- rbind(fulldt,db)
       
