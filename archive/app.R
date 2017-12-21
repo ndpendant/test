@@ -9,6 +9,17 @@ library(stringi)
 db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
 db$Drug <- trimws(db$Drug )
+
+drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
+drug_info$Name <- tolower(drug_info$Name)
+drug_info$Name <- trimws(drug_info$Name)
+
+
+
+kegg_info <- read.csv("keggid_info.csv",fill = TRUE)
+kegg_info$DrugName <- tolower(kegg_info$DrugName)
+kegg_info$DrugName <- trimws(kegg_info$DrugName)
+
 #former color for .well background: rgb(216, 31, 31)
 
 
@@ -359,9 +370,11 @@ server <- function(input, output,session) {
     {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
     
-      db <- test[test$Database == "DrugBank",]
-      db$Extra <- paste0("https://www.drugbank.ca/drugs/",db$DrugID)
-      db$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
+      dbank <- test[test$Database == "DrugBank",]
+      dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
+      dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
+      dbank$Structure <- HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"))
+       
       fulldt <- rbind(fulldt,db)
       
     }
@@ -371,6 +384,7 @@ server <- function(input, output,session) {
       sc <- test[test$Database == "SuperCYP",]
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
+      sc$Structure <- "Not Available"
       fulldt <- rbind(fulldt,sc)
     }
     
@@ -379,6 +393,7 @@ server <- function(input, output,session) {
       k <- test[test$Database == "KEGG",]
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
+      k$Structure <- "Not Available"
       fulldt <- rbind(fulldt,k)
     }
     
@@ -387,6 +402,7 @@ server <- function(input, output,session) {
       iu <- test[test$Database == "Indiana University",]
       iu$Extra <- "http://medicine.iupui.edu/clinpharm/ddis/main-table/"
       iu$Database <- paste0("<a href='",iu$Extra,"'>Indiana University</a>")
+      iu$Structure <- "Not Available"
       fulldt <- rbind(fulldt,iu)
     }  
       
@@ -395,13 +411,15 @@ server <- function(input, output,session) {
       ild <- test[test$Database == "ildcare",]
       ild$Extra <- "http://www.ildcare.eu/Downloads/artseninfo/CYP450_drug_interactions.pdf"
       ild$Database <- paste0("<a href='",ild$Extra,"'>ildcare</a>")
+      ild$Structure <- "Not Available"
       fulldt <- rbind(fulldt,ild)
       
     }  
       
     
      
-    fulldt <- data.frame(fulldt[1:5])
+    #fulldt <- data.frame(fulldt[1:5])
+    fulldt <- data.frame(fulldt)                          
     fulldt <- fulldt[(order(fulldt$Enzyme)),]
     
   })
