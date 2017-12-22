@@ -452,7 +452,9 @@ server <- function(input, output,session) {
    print("dbank info")
    print("length of dbank")
    print(length(check_me()$drugs))
-   print("Full dank")
+   print("Type for dbank")
+   print(typeof(check_me()$drugs))
+   print("Full dbank")
    print(check_me()$drugs)
   
    for(i in range(1,length(check_me()$drugs))) 
