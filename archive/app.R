@@ -450,7 +450,7 @@ server <- function(input, output,session) {
    #b = input$
    dbmod = NULL
   
-   for(i in range(1,length(dbank)))
+   for(i in range(1,length(dbank))) 
    {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
