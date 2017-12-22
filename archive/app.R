@@ -459,6 +459,10 @@ server <- function(input, output,session) {
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)) 
                   )
     dbmod = c(dbmod,dbm) 
+    print("dbmod info")
+    print("length of dbmod")
+    print(length(dbmod))
+    print("Full dbmod")
     print(dbmod)
    }
   })
@@ -467,7 +471,12 @@ server <- function(input, output,session) {
     input$GO
     #check_me()
     check_me()$fulldt
+    print("Got from check_me()")
+    print("This is dt type")
     print(typeof(check_me()$dt))
+    print("This is dt")
+    print(check_me()$dt)
+    print("This is dbank type") 
     print(typeof(check_me()$dbank))
     
     
