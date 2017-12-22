@@ -457,7 +457,7 @@ server <- function(input, output,session) {
    print("Full dbank")
    print(check_me()$drugs)
   
-   for(i in range(1,length(check_me()$drugs))) 
+   for(i in range(1,nrow(check_me()$drugs))) 
    {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
