@@ -478,7 +478,7 @@ server <- function(input, output,session) {
     input$GO
     #check_me()
     
-    a <- data.frame(check_me()$dt)
+    a <- data.frame(unlist(check_me()$dt))
     print("converted dt to a")
     print("type of a")
     print(typeof(a))
