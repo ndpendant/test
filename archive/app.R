@@ -431,7 +431,7 @@ server <- function(input, output,session) {
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
     fulldt <- fulldt[(order(fulldt$Enzyme)),]
-    
+    list(dbank)
   })
   
   
@@ -450,7 +450,7 @@ server <- function(input, output,session) {
    #b = input$
    dbmod = NULL
   
-   for(i in range(1,length(check_me$dbank))) 
+   for(i in range(1,length(check_me()$dbank))) 
    {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
