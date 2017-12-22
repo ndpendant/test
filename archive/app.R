@@ -447,12 +447,19 @@ server <- function(input, output,session) {
       
  output$view_struct <- renderUI({
    check_me()
-   b = input$
-   if()
-   tagList(
-     bsModal("modalExample", "Your plot", "struct", size = "medium",htmlOutput("pic"))
+   #b = input$
+   dbmod = NULL
+  
+   for(i in range(1,length(dbank))
+   {
+    dbname = paste0("dbstruct_",i)
+    mname = paste0("modal_",i)
+    htmlname = paste0("pic_",i)
+    dbm <- tagList(
+     bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
+    dbmod = c(dbmod,dbm)  
    )
-    
+    print(dbmod)
   })
   
   output$table2 <-renderDataTable({ 
