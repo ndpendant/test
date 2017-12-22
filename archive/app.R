@@ -478,7 +478,7 @@ server <- function(input, output,session) {
     input$GO
     #check_me()
     
-    a <- data.frame(matrix(unlist(check_me()$dt), ncol = 11)stringsAsFactors=FALSE)
+    a <- data.frame(matrix(unlist(check_me()$dt), ncol = 11,stringsAsFactors=FALSE))
     #a <- ldply (check_me()$dt, data.frame)
     print("converted dt to a")
     print("type of a")
