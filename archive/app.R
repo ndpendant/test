@@ -431,7 +431,7 @@ server <- function(input, output,session) {
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
     fulldt <- fulldt[(order(fulldt$Enzyme)),]
-    list(dbank)
+    list(dbank,fulldt)
   })
   
   
@@ -465,7 +465,7 @@ server <- function(input, output,session) {
   
   output$table2 <-renderDataTable({ 
     input$GO
-    check_me()
+    check_me()$fulldt
     
     
   },escape=FALSE)
