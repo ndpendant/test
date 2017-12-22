@@ -465,7 +465,8 @@ server <- function(input, output,session) {
   
   output$table2 <-renderDataTable({ 
     input$GO
-    check_me()$fulldt
+    check_me()
+    #check_me()$fulldt
     
     
   },escape=FALSE)
