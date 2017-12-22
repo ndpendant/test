@@ -477,7 +477,13 @@ server <- function(input, output,session) {
   output$table2 <-renderDataTable({ 
     input$GO
     #check_me()
+    
     a <- data.frame(check_me()$dt)
+    print("converted dt to a")
+    print("type of a")
+    print(typeof(a))
+    print("content of a")
+    print(a)
     print("Got from check_me()")
     print("This is dt type")
     print(typeof(check_me()$dt))
