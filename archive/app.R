@@ -480,9 +480,11 @@ server <- function(input, output,session) {
     
     a <- data.frame(matrix(unlist(check_me()$dt), ncol = 11),stringsAsFactors=FALSE)
     #a <- ldply (check_me()$dt, data.frame)
+    b <- data.frame(a[1:11])
     print("converted dt to a")
     print("type of a")
     print(typeof(a))
+    print(typeof(b))
     print("content of a")
     print(a[1])
     print("Got from check_me()")
