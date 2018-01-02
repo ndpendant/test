@@ -431,7 +431,7 @@ server <- function(input, output,session) {
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
     fulldt <- fulldt[(order(fulldt$Enzyme)),]
-    #list(drugs = dbank,dt = fulldt)
+    list(drugs = dbank,dt = fulldt)
     
   })
   
@@ -477,7 +477,7 @@ server <- function(input, output,session) {
   
   output$table2 <-renderDataTable({ 
     input$GO
-    check_me()
+    check_me()$dt
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
     
