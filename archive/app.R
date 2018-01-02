@@ -452,13 +452,13 @@ server <- function(input, output,session) {
    dbmod = NULL
    print("dbank info")
    print("length of dbank")
-   print(length(check_me()$drugs))
+   print(length(check_me()))
    print("Type for dbank")
-   print(typeof(check_me()$drugs))
+   print(typeof(check_me()))
    print("Full dbank")
-   print(check_me()$drugs)
+   print(check_me())
   
-   for(i in range(1,nrow(check_me()$drugs))) 
+   for(i in range(1,nrow(check_me()))) 
    {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
