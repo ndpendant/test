@@ -432,7 +432,7 @@ server <- function(input, output,session) {
     fulldt <- data.frame(fulldt)                          
     fulldt <- fulldt[(order(fulldt$Enzyme)),]
     #list(drugs = dbank,dt = fulldt)
-    return(fulldt)
+    
   })
   
   
