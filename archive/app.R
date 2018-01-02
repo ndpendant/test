@@ -479,7 +479,7 @@ server <- function(input, output,session) {
     input$GO
     check_me()
     print("Type received from check_me()")
-    print(typeof(check_me()))
+ #   print(typeof(check_me()))
     
  #   a <- data.frame(matrix(unlist(check_me()$dt), ncol = 11),stringsAsFactors=FALSE)
     #a <- ldply (check_me()$dt, data.frame)
