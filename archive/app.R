@@ -454,7 +454,7 @@ server <- function(input, output,session) {
    print("length of dbank")
    print(length(check_me()))
    print("Type for dbank")
-   print(typeof(check_me()dbank))
+   print(typeof(check_me()$dbank))
    print("Full dbank")
    print(check_me())
   
