@@ -394,6 +394,10 @@ server <- function(input, output,session) {
         dbs <- shinyInput(actionLink,nrow(dbank),dbct,label = "structure")
         holddb <- c(holddb,dbs)
       }
+      print("length of holddb")
+      print(length(holddb))
+      print("what is holddb")
+      print(holddb)
       dbank$Structure <- holddb
       fulldt <- rbind(fulldt,dbank)
       
