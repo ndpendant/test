@@ -501,8 +501,8 @@ server <- function(input, output,session) {
   #  print("Full dbmod")
    # print(dbmod)
 #    modal_made <<- nrow(check_me()$drugs) 
-    #outname <- paste0("output$",htmlname)
-    collectme <- assign(paste0("output$",htmlname), renderUI({
+    outname <- paste0("output$",htmlname)
+    collectme <- assign(outname, renderUI({
   
     
       
