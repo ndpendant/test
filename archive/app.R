@@ -405,6 +405,8 @@ server <- function(input, output,session) {
         #dbs <- shinyInput(actionLink,1,paste0("dbstruct_",i),label = "structure")
       #  holddb <- c(holddb,dbs)
         holddb <- c(holddb,ala)
+        print("ala is")
+        print(ala)
       }
      # print(nrow(dbank))
       print("length of holddb")
