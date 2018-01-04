@@ -475,7 +475,7 @@ server <- function(input, output,session) {
    # print(dbmod)
     modal_made <<- nrow(check_me()$drugs) 
     #outname <- paste0("output$",htmlname)
-    assign(paste0("output$",htmlname), renderUI({
+    b <-assign(paste0("output$",htmlname), renderUI({
   
     
       
@@ -486,8 +486,8 @@ server <- function(input, output,session) {
       
     }))
     print("new outname")
-    print(outname)
-    print(typeof(outname))
+    print(paste0("output$",htmlname))
+    print(b)
   }
     print("New modals made!!!")
     print(modal_made)       
