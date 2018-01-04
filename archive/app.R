@@ -475,6 +475,7 @@ server <- function(input, output,session) {
  #  check_me()
    #b = input$
    dbmod = NULL
+   newpics = NULL
  #  print("dbank info")
  #  print("length of dbank")
  #  print(length(check_me()))
@@ -511,13 +512,15 @@ server <- function(input, output,session) {
     
       
     }))
+     newpics <- c(newpics,collectme)
 #    print("new outname")
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
-   print("what happened when assigning??")
-   print(collectme)
-    dbmod    
+   print("what happened when assigning (length)??")
+   print(length(newpics))
+   dbmod
+   newpics
 #    print("New modals made!!!")
 #    print(modal_made)       
   })
