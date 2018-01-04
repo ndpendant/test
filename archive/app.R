@@ -385,7 +385,7 @@ server <- function(input, output,session) {
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
-      dbank$Structure <- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
+      dbank$Structure <- dbank$DrugID#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
       #dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       #holddb <- NULL
       #for(i in range(1,nrow(dbank)))
