@@ -381,7 +381,7 @@ server <- function(input, output,session) {
     if(sum(str_detect(test$Database,"DrugBank")>0))
     {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-    
+      aaaaa <- NULL
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
