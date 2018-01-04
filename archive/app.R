@@ -1,6 +1,7 @@
 #install.packages("shiny")
 #install.packages("DT")
 #install.packages("stringr")
+library(shinyBS)
 library(shiny)
 library(DT)
 library(stringr)
