@@ -480,7 +480,7 @@ server <- function(input, output,session) {
   print("This is the number of modals made!!!")
   print(modal_made)
       
-  for(i in range(1,modal_made+1)
+  for(i in range(1,modal_made+1))
   {
     outname <- paste0("pic_",i)
     output$outname <- renderUI({
