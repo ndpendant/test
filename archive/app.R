@@ -488,10 +488,10 @@ server <- function(input, output,session) {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
-    dbm <- tagList(
+    tagList(
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
               
-                  )
+           )
      
     dbmod = c(dbmod,dbm) 
  #   print("dbmod info")
