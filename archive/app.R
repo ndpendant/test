@@ -385,8 +385,16 @@ server <- function(input, output,session) {
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
-      dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-       
+      #dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      holddb <- NULL
+      for(i in range(1,nrow(dbank)+1))
+      {
+        print(i)
+        dbct <- paste0("dbstruct_",i)
+        dbs <- shinyInput(actionLink,nrow(dbank),dbct,label = "structure")
+        holddb <- (holddb,dbs)
+      }
+      dbank$Structure <- holddb
       fulldt <- rbind(fulldt,dbank)
       
     }
