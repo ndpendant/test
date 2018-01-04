@@ -523,7 +523,7 @@ server <- function(input, output,session) {
    print("what happened when assigning (length)??")
    print(length(newpics))
    dbmod
-   newpics
+#   newpics
 #    print("New modals made!!!")
 #    print(modal_made)       
   })
