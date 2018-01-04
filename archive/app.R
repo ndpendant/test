@@ -471,7 +471,7 @@ server <- function(input, output,session) {
     found()
  })
       
- #output$view_struct_pt1 <- renderUI({
+ output$view_struct_pt1 <- renderUI({
  #  check_me()
    #b = input$
 #   dbmod = NULL
@@ -483,15 +483,15 @@ server <- function(input, output,session) {
  #  print("Full dbank")
   # print(check_me())
   
- #  for(i in range(1,nrow(check_me()$drugs))) 
-#   {
-#    dbname = paste0("dbstruct_",i)
-##    mname = paste0("modal_",i)
-#    htmlname = paste0("pic_",i)
-#    dbm <- tagList(
-#              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)) 
-#                  )
-#    dbmod = c(dbmod,dbm) 
+   for(i in 1:nrow(check_me()$drugs)) 
+   {
+    dbname = paste0("dbstruct_",i)
+    mname = paste0("modal_",i)
+    htmlname = paste0("pic_",i)
+    dbm <- tagList(
+              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)) 
+                  )
+    dbmod = c(dbmod,dbm) 
  #   print("dbmod info")
  #   print("length of dbmod")
   #  print(length(dbmod))
@@ -499,16 +499,16 @@ server <- function(input, output,session) {
    # print(dbmod)
 #    modal_made <<- nrow(check_me()$drugs) 
     #outname <- paste0("output$",htmlname)
- #   b <-assign(paste0("output$",htmlname), renderUI({
+ assign(paste0("output$",htmlname), renderUI({
   
     
       
- #     HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
  
       
     
       
-#    }))
+    }))
 #    print("new outname")
 #    print(paste0("output$",htmlname))
 #    print(b)
