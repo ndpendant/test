@@ -387,7 +387,7 @@ server <- function(input, output,session) {
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
       #dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       holddb <- NULL
-      for(i in range(1,nrow(dbank)+1))
+      for(i in range(1,nrow(dbank)))
       {
         print(i)
         dbct <- paste0("dbstruct_",i)
