@@ -474,7 +474,7 @@ server <- function(input, output,session) {
  output$view_struct_pt1 <- renderUI({
  #  check_me()
    #b = input$
-   dbmod = NULL
+   #dbmod = NULL
  #  print("dbank info")
  #  print("length of dbank")
  #  print(length(check_me()))
@@ -493,10 +493,10 @@ server <- function(input, output,session) {
               
            )
      
-    dbmod = c(dbmod,dbm) 
+    #dbmod = c(dbmod,dbm) 
  #   print("dbmod info")
-    print("length of dbmod")
-    print(length(dbmod))
+    #print("length of dbmod")
+    #print(length(dbmod))
   #  print("Full dbmod")
    # print(dbmod)
 #    modal_made <<- nrow(check_me()$drugs) 
@@ -515,7 +515,7 @@ server <- function(input, output,session) {
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
-   dbm     
+        
 #    print("New modals made!!!")
 #    print(modal_made)       
   })
