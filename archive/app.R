@@ -479,6 +479,8 @@ server <- function(input, output,session) {
   
   print("This is the number of modals made!!!")
   print(modal_made)
+  print("This is the type for output$")
+  print(typeof(output$DDI_header2))
       
   for(i in range(1,modal_made+1))
   {
