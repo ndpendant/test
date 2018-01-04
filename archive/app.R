@@ -87,13 +87,13 @@ ui <- fluidPage(
 
 server <- function(input, output,session) {
    
-  shinyInput <- function(FUN, len, id, ...) {
-      inputs <- character(len)
-      for (i in seq_len(len)) {
-        inputs[i] <- as.character(FUN(paste0(id, i), ...))
-      }
-      inputs
-    }
+#  shinyInput <- function(FUN, len, id, ...) {
+#      inputs <- character(len)
+ #     for (i in seq_len(len)) {
+##        inputs[i] <- as.character(FUN(paste0(id, i), ...))
+#      }
+ #     inputs
+  #  }
   
   observeEvent(input$GO, {
     updateTabsetPanel(session, "tabs",
@@ -381,17 +381,17 @@ server <- function(input, output,session) {
     if(sum(str_detect(test$Database,"DrugBank")>0))
     {
     #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-      aaaaa <- NULL
+      #aaaaa <- NULL
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
-      dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
+      dbank$Database <- paste0("<a href='",dbank$Extra,"'>DrugBank</a>")
       #aaaaa<- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
      # aaaaa[1:8] <- actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")
-      print("this is the aaaas")
-      print(length(aaaaa))
-      print(aaaaa)
+      #print("this is the aaaas")
+      #print(length(aaaaa))
+      #print(aaaaa)
       dbank$Extra2 <- paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")
-      dbank$Structure <- paste0("<a href='",db$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
+      dbank$Structure <- paste0("<a href='",dbank$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
       #dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       #holddb <- NULL
       #for(i in range(1,nrow(dbank)))
