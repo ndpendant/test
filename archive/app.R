@@ -483,11 +483,14 @@ server <- function(input, output,session) {
  
       
     
-      print("New modals made!!!")
-      print(modal_made)
+      
     }))
+    print("new outname")
+    print(outname)
+    print(typeof(outname))
   }
-          
+    print("New modals made!!!")
+    print(modal_made)       
   })
   
   print("This is the number of modals made!!!")
