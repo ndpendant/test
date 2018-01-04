@@ -385,11 +385,12 @@ server <- function(input, output,session) {
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
       dbank$Database <- paste0("<a href='",db$Extra,"'>DrugBank</a>")
-      aaaaa<- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
+      #aaaaa<- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
+      aaaaa[1:8] <- actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")
       print("this is the aaaas")
       print(length(aaaaa))
       print(aaaaa)
-      dbank$Structure <- actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
+      dbank$Structure <- aaaaa #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
       #dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure")#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       #holddb <- NULL
       #for(i in range(1,nrow(dbank)))
