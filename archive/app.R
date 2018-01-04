@@ -73,8 +73,8 @@ ui <- fluidPage(
                   textOutput("verbose"),
                   h3(textOutput("DDI_header2")),
                   dataTableOutput("table2"),
-                  uiOutput("view_struct_pt1"),
-                  uiOutput("view_struct_pt2")
+                  uiOutput("view_struct_pt1")
+                  #uiOutput("view_struct_pt2")
                   #bsModal("modalExample", "Your plot", "struct", size = "medium",htmlOutput("pic"))
                           )
                   )
@@ -501,7 +501,7 @@ server <- function(input, output,session) {
    # print(dbmod)
 #    modal_made <<- nrow(check_me()$drugs) 
     #outname <- paste0("output$",htmlname)
-    assign(paste0("output$",htmlname), renderUI({
+    collectme <- assign(paste0("output$",htmlname), renderUI({
   
     
       
@@ -515,6 +515,8 @@ server <- function(input, output,session) {
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
+   print("what happened when assigning??")
+   print(collectme)
     dbmod    
 #    print("New modals made!!!")
 #    print(modal_made)       
