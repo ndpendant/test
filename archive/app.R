@@ -512,10 +512,10 @@ server <- function(input, output,session) {
 #    print("new outname")
 #    print(paste0("output$",htmlname))
 #    print(b)
- # }
+  }
 #    print("New modals made!!!")
 #    print(modal_made)       
-#  })
+  })
   
   print("This is the number of modals made!!!")
   print(modal_made)
