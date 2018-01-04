@@ -473,7 +473,7 @@ server <- function(input, output,session) {
     print(length(dbmod))
     print("Full dbmod")
     print(dbmod)
-    modal_made = nrow(check_me()$drugs) 
+    modal_made <<- nrow(check_me()$drugs) 
    }
   })
   
