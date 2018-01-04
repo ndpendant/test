@@ -72,7 +72,8 @@ ui <- fluidPage(
                   textOutput("verbose"),
                   h3(textOutput("DDI_header2")),
                   dataTableOutput("table2"),
-                  uiOutput("view_struct")
+                  uiOutput("view_struct_pt1"),
+                  uiOutput("view_struct_pt2")
                   #bsModal("modalExample", "Your plot", "struct", size = "medium",htmlOutput("pic"))
                           )
                   )
