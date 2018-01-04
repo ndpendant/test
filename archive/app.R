@@ -392,7 +392,7 @@ server <- function(input, output,session) {
         print(i)
         dbct <- paste0("dbstruct_",i)
         dbs <- shinyInput(actionLink,nrow(dbank),dbct,label = "structure")
-        holddb <- (holddb,dbs)
+        holddb <- c(holddb,dbs)
       }
       dbank$Structure <- holddb
       fulldt <- rbind(fulldt,dbank)
