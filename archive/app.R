@@ -475,19 +475,8 @@ server <- function(input, output,session) {
    # print(dbmod)
     modal_made <<- nrow(check_me()$drugs) 
    }
-  })
-  
-  print("This is the number of modals made!!!")
-  print(modal_made)
-  print("This is the type for output$")
-  
-      
-  for(i in range(1,modal_made+1))
-  {
-    outname <- paste0("output$pic_",i)
-    print(outname)
-    
-    assign(outname, renderUI({
+   outname <- paste0("output$",htmlname)
+   assign(outname, renderUI({
   
     
       
@@ -497,8 +486,17 @@ server <- function(input, output,session) {
     
     print("New modals made!!!")
     print(modal_made)
-  }))  
-  }
+  })
+          
+  })
+  
+  print("This is the number of modals made!!!")
+  print(modal_made)
+  print("This is the type for output$")
+  
+      
+    
+  
       
   output$table2 <-renderDataTable({ 
     input$GO
