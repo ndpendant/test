@@ -399,11 +399,12 @@ server <- function(input, output,session) {
       {
         print(i)
         dbadd <- actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")
+        ala <- input$dbadd$attribs$id
       #  aaaaa<- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
        # holddb <- c(holddb,aaaaa)
         #dbs <- shinyInput(actionLink,1,paste0("dbstruct_",i),label = "structure")
       #  holddb <- c(holddb,dbs)
-        holddb <- c(holddb,dbadd)
+        holddb <- c(holddb,ala)
       }
      # print(nrow(dbank))
       print("length of holddb")
