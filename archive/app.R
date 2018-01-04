@@ -488,7 +488,8 @@ server <- function(input, output,session) {
  
       
     }
-    
+    print("New modals made!!!")
+    print(modal_made)
   })  
       
   output$table2 <-renderDataTable({ 
