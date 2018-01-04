@@ -474,19 +474,19 @@ server <- function(input, output,session) {
   #  print("Full dbmod")
    # print(dbmod)
     modal_made <<- nrow(check_me()$drugs) 
-   }
-   outname <- paste0("output$",htmlname)
-   assign(outname, renderUI({
+    outname <- paste0("output$",htmlname)
+    assign(outname, renderUI({
   
     
       
-     HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
  
       
     
-    print("New modals made!!!")
-    print(modal_made)
-  })
+      print("New modals made!!!")
+      print(modal_made)
+    }))
+  }
           
   })
   
