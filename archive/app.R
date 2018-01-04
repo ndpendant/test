@@ -489,8 +489,10 @@ server <- function(input, output,session) {
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
     dbm <- tagList(
-              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)) 
+              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)),
+              
                   )
+     
     dbmod = c(dbmod,dbm) 
  #   print("dbmod info")
     print("length of dbmod")
@@ -513,6 +515,7 @@ server <- function(input, output,session) {
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
+   dbm     
 #    print("New modals made!!!")
 #    print(modal_made)       
   })
