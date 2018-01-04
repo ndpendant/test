@@ -504,6 +504,7 @@ server <- function(input, output,session) {
     outname <- paste0("output$",htmlname)
     print("outcome name")
     print(outname)
+    print(dbm)
     collectme <- assign(outname, renderUI({
   
     
