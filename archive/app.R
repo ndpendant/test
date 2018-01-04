@@ -446,7 +446,7 @@ server <- function(input, output,session) {
     found()
  })
       
- output$view_struct <- renderUI({
+ output$view_struct_pt1 <- renderUI({
    check_me()
    #b = input$
    dbmod = NULL
@@ -472,9 +472,25 @@ server <- function(input, output,session) {
     print(length(dbmod))
     print("Full dbmod")
     print(dbmod)
+    modal_made = nrow(check_me()$drugs) 
    }
   })
   
+  print("This is the number of modals made!!!")
+  print(modal_made)
+  output$view_struct_pt2 <- renderUI({
+  
+    for(i in range(1,nrow(check_me()$drugs))) 
+    {
+      htmlname = paste0("pic_",i)
+      
+      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+ 
+      
+    }
+    
+  })  
+      
   output$table2 <-renderDataTable({ 
     input$GO
     check_me()$dt
