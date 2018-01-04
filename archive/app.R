@@ -451,13 +451,13 @@ server <- function(input, output,session) {
    check_me()
    #b = input$
    dbmod = NULL
-   print("dbank info")
-   print("length of dbank")
-   print(length(check_me()))
-   print("Type for dbank")
-   print(typeof(check_me()$drugs))
-   print("Full dbank")
-   print(check_me())
+ #  print("dbank info")
+ #  print("length of dbank")
+ #  print(length(check_me()))
+ #  print("Type for dbank")
+ ##  print(typeof(check_me()$drugs))
+ #  print("Full dbank")
+  # print(check_me())
   
    for(i in range(1,nrow(check_me()$drugs))) 
    {
@@ -468,11 +468,11 @@ server <- function(input, output,session) {
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)) 
                   )
     dbmod = c(dbmod,dbm) 
-    print("dbmod info")
-    print("length of dbmod")
-    print(length(dbmod))
-    print("Full dbmod")
-    print(dbmod)
+ #   print("dbmod info")
+ #   print("length of dbmod")
+  #  print(length(dbmod))
+  #  print("Full dbmod")
+   # print(dbmod)
     modal_made <<- nrow(check_me()$drugs) 
    }
   })
@@ -485,7 +485,9 @@ server <- function(input, output,session) {
   for(i in range(1,modal_made+1))
   {
     outname <- paste0("output$pic_",i)
+    print(outname)
     assign(outname,NULL)
+    print(typeof(outname))
     outname <- renderUI({
   
     
