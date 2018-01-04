@@ -485,6 +485,7 @@ server <- function(input, output,session) {
   for(i in range(1,modal_made+1))
   {
     outname <- paste0("output$pic_",i)
+    assign(outname,NULL)
     outname <- renderUI({
   
     
