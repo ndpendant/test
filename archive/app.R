@@ -479,19 +479,22 @@ server <- function(input, output,session) {
   
   print("This is the number of modals made!!!")
   print(modal_made)
-  output$view_struct_pt2 <- renderUI({
-  
-    for(i in range(1,nrow(check_me()$drugs))) 
-    {
-      htmlname = paste0("pic_",i)
       
-      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+  for(i in range(1,modal_made+1)
+  {
+    outname <- paste0("pic_",i)
+    output$outname <- renderUI({
+  
+    
+      
+     HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
  
       
-    }
+    
     print("New modals made!!!")
     print(modal_made)
   })  
+  }
       
   output$table2 <-renderDataTable({ 
     input$GO
