@@ -13,7 +13,7 @@ db$Drug <- trimws(db$Drug )
 drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
 drug_info$Name <- tolower(drug_info$Name)
 drug_info$Name <- trimws(drug_info$Name)
-
+modal_made = 0
 
 
 kegg_info <- read.csv("keggid_info.csv",fill = TRUE)
