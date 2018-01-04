@@ -390,8 +390,8 @@ server <- function(input, output,session) {
       for(i in range(1,nrow(dbank)))
       {
         print(i)
-        dbct <- paste0("dbstruct_",i)
-        dbs <- shinyInput(actionLink,nrow(dbank),dbct,label = "structure")
+        
+        dbs <- shinyInput(actionLink,1,paste0("dbstruct_",i),label = "structure")
         holddb <- c(holddb,dbs)
       }
       print(nrow(dbank))
