@@ -486,9 +486,8 @@ server <- function(input, output,session) {
   {
     outname <- paste0("output$pic_",i)
     print(outname)
-    assign(outname,NULL)
-    print(typeof(outname))
-    outname <- renderUI({
+    
+    assign(outname, renderUI({
   
     
       
@@ -498,7 +497,7 @@ server <- function(input, output,session) {
     
     print("New modals made!!!")
     print(modal_made)
-  })  
+  }))  
   }
       
   output$table2 <-renderDataTable({ 
