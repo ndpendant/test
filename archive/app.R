@@ -399,6 +399,7 @@ server <- function(input, output,session) {
       print("what is holddb")
       print(holddb)
       dbank$Structure <- holddb
+      holddb <- NULL
       fulldt <- rbind(fulldt,dbank)
       
     }
