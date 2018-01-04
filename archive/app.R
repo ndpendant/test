@@ -474,7 +474,7 @@ server <- function(input, output,session) {
  output$view_struct_pt1 <- renderUI({
  #  check_me()
    #b = input$
-   #dbmod = NULL
+   dbmod = NULL
  #  print("dbank info")
  #  print("length of dbank")
  #  print(length(check_me()))
@@ -488,12 +488,12 @@ server <- function(input, output,session) {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
-    tagList(
+    dbm <- tagList(
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
               
            )
      
-    #dbmod = c(dbmod,dbm) 
+    dbmod <- c(dbmod,dbm) 
  #   print("dbmod info")
     #print("length of dbmod")
     #print(length(dbmod))
@@ -515,7 +515,7 @@ server <- function(input, output,session) {
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
-        
+    dbmod    
 #    print("New modals made!!!")
 #    print(modal_made)       
   })
