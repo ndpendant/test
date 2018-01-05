@@ -538,7 +538,7 @@ server <- function(input, output,session) {
    print(length(newpics))
    newtb <<- NULL
    newtb <<- check_me()$drugs
-   newtb$Structure <<- as.character(dblinks)
+   newtb$Structure <<- dblinks
    print("new table created")
    print(newtb)
 #   newpics
