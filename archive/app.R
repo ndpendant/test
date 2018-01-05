@@ -542,11 +542,12 @@ server <- function(input, output,session) {
    #print(str(reactiveValuesToList(input)))
    #print(dba)
    newtb <<- NULL
-   print(HTML(str(dba)))
+   print(dba[1])
+   print(str(dba[1])
    newtb <<- check_me()$drugs
    for(i in 1:length(dbnames))
    {
-    newtb$Structure[i] <<- HTML(str(dba))
+    newtb$Structure[i] <<- HTML(str(dba[1]))
    }
      print("new table created")
    #print(newtb)
