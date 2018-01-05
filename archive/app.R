@@ -528,7 +528,8 @@ server <- function(input, output,session) {
   }
    print("what happened when assigning (length)??")
    print(length(newpics))
-   check_me()$drugs$Structure <- dbmod
+   newtb <- check_me()$drugs
+   newtb$Structure <- dbmod
 #   newpics
 #    print("New modals made!!!")
 #    print(modal_made)       
