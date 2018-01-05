@@ -555,7 +555,11 @@ server <- function(input, output,session) {
    {
     temp <- paste(dbmod[i],dbmod[i+1])
     another <- paste( unlist(temp), collapse='') 
-    newtb$Structure[i] <<-  #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
+    print("temp")
+    print(temp)
+    print("another")
+     print(another)
+    #newtb$Structure[i] <<-  #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
    }
      print("new table created")
    #print(newtb)
