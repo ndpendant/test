@@ -482,6 +482,7 @@ server <- function(input, output,session) {
    dbmod = NULL
    dblinks = NULL
    newpics = NULL
+   dbnames = NULL
  #  print("dbank info")
  #  print("length of dbank")
  #  print(length(check_me()))
@@ -513,7 +514,7 @@ server <- function(input, output,session) {
     print(dbm)
     print("length of dbmod")
     print(length(dbmod))
-     
+    dbnames <- c(dbnames,dbname) 
 #    modal_made <<- nrow(check_me()$drugs) 
     outname <- paste0("output$",htmlname)
     print("outcome name")
@@ -538,8 +539,11 @@ server <- function(input, output,session) {
    print(length(newpics))
    newtb <<- NULL
    newtb <<- check_me()$drugs
-   newtb$Structure <<- input[[dbname]]
-   print("new table created")
+   for(i in 1:length(dbnames))
+   {
+    newtb$Structure[i] <<- input[[dbnames[i]]]
+   }
+     print("new table created")
    print(newtb)
 #   newpics
 #    print("New modals made!!!")
