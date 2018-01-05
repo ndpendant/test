@@ -497,8 +497,9 @@ server <- function(input, output,session) {
     dbm <- tagList(
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))   
            )
-     dba <- tagList(
-        actionLink(dbname,"stucture"),
+    
+    dba <- tagList(
+        actionLink(dbname,"stucture")
        
        )
      
