@@ -544,10 +544,10 @@ server <- function(input, output,session) {
    #print(dba)
    newtb <<- NULL
    print("my dba")
-   print(dba)
-   another <- paste( unlist(dba), collapse='')
+   #print(dba)
+   #another <- paste( unlist(dba), collapse='')
    print("ANOTHERRRRR")
-   print(another)
+   #print(another)
    #print(str(dba[1]))
    newtb <<- check_me()$drugs
    #for(i in 1:length(dbnames))
