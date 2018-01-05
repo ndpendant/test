@@ -540,13 +540,13 @@ server <- function(input, output,session) {
    print("what happened when assigning (length)??")
    print(length(newpics))
    #print(str(reactiveValuesToList(input)))
-   print(input)
+   print(dba)
    newtb <<- NULL
    
    newtb <<- check_me()$drugs
    for(i in 1:length(dbnames))
    {
-    newtb$Structure[i] <<- dba
+    newtb$Structure[i] <<- unlist(dba)
    }
      print("new table created")
    #print(newtb)
