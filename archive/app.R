@@ -542,7 +542,11 @@ server <- function(input, output,session) {
    #print(str(reactiveValuesToList(input)))
    #print(dba)
    newtb <<- NULL
-   print(dba[1])
+   print("my dba")
+   print(dba)
+   another <- paste( unlist(dba), collapse='')
+   print("ANOTHERRRRR")
+   print(another)
    #print(str(dba[1]))
    newtb <<- check_me()$drugs
    #for(i in 1:length(dbnames))
