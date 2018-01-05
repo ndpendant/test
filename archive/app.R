@@ -555,11 +555,11 @@ server <- function(input, output,session) {
    {
      #temp <- as.character(dbm)
     #temp <- c(paste( unlist(dbmod[i]), collapse=''),paste( unlist(dbmod[i+1]), collapse=''))
-    another <- paste( temp, collapse='') 
+    #another <- paste( temp, collapse='') 
     print("temp")
-    print(temp)
+    #print(temp)
     print("another")
-     print(another)
+     #print(another)
     newtb$Structure[i] <<- dbm #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
    }
      print("new table created")
