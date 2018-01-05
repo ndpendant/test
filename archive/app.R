@@ -556,7 +556,8 @@ server <- function(input, output,session) {
       
   output$table2 <-renderDataTable({ 
     input$GO
-    check_me()$dt
+    newtb
+ #   check_me()$dt
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
     
