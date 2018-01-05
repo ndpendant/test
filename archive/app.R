@@ -495,7 +495,7 @@ server <- function(input, output,session) {
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
     dbm <- tagList(
-              actionLink(dbname,"stucture")
+              actionLink(dbname,"stucture"),
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
               
            )
