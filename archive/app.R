@@ -553,8 +553,8 @@ server <- function(input, output,session) {
    newtb <<- check_me()$drugs
    #for(i in 1:length(dbnames))
    {
-    temp <- paste(dbmod[i],dbmod[i+1])
-    another <- paste( unlist(temp), collapse='') 
+    temp <- c(paste( unlist(dbmod[i]), collapse=''),paste( unlist(dbmod[i+1]), collapse=''))
+    another <- paste( temp, collapse='') 
     print("temp")
     print(temp)
     print("another")
