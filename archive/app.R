@@ -498,7 +498,8 @@ server <- function(input, output,session) {
     htmlname = paste0("pic_",i)
     dbm <- tagList(
               actionLink(dbname,"stucture"),
-              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))   
+              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)),
+              HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
            )
     
    # dba <- tagList(
