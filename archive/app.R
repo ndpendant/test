@@ -498,8 +498,8 @@ server <- function(input, output,session) {
     htmlname = paste0("pic_",i)
     dbm <- tagList(
               actionLink(dbname,"stucture"),
-              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)),
-              HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
+              
            )
     
    # dba <- tagList(
@@ -552,9 +552,11 @@ server <- function(input, output,session) {
    #print(str(dba[1]))
    newtb <<- check_me()$drugs
    #for(i in 1:length(dbnames))
-   #{
-  #  newtb$Structure[i] <<- paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
-  # }
+   {
+    temp <- paste(dbmod[i],dbmod[i+1])
+    another <- paste( unlist(temp), collapse='') 
+    newtb$Structure[i] <<-  #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
+   }
      print("new table created")
    #print(newtb)
 #   newpics
