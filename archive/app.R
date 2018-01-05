@@ -530,6 +530,8 @@ server <- function(input, output,session) {
    print(length(newpics))
    newtb <- check_me()$drugs
    newtb$Structure <- dbmod
+   print("new table created")
+   print(newtb)
 #   newpics
 #    print("New modals made!!!")
 #    print(modal_made)       
