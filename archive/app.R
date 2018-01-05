@@ -497,18 +497,18 @@ server <- function(input, output,session) {
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
     dbm <- tagList(
-             div( actionLink(dbname,"stucture"),
-              div(bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname)))
-                 )
+              actionLink(dbname,"stucture"),
+              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
+                 
               
            )
     
-    dba <- tagList(
-        actionLink(dbname,"stucture")
+    #dba <- tagList(
+    #    actionLink(dbname,"stucture")
        
        )
-    dblinks <- c(dblinks,dba) 
-     blah <- c(as.character(dba),as.character(dbm))
+    #dblinks <- c(dblinks,dba) 
+   #  blah <- c(as.character(dba),as.character(dbm))
     dbmod <- c(dbmod,dbm) 
     print("length of dba")
    # print(length(dba))
@@ -572,7 +572,7 @@ server <- function(input, output,session) {
 #    print("New modals made!!!")
 #    print(modal_made) 
    dbmod
-   dblinks
+ #  dblinks
   })
 #  check_me()$drugs <- newtb
   print("This is the number of modals made!!!")
