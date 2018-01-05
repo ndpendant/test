@@ -530,13 +530,13 @@ server <- function(input, output,session) {
     
       
     }))
+     
      newpics <- c(newpics,collectme)
 #    print("new outname")
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
-   dbmod
-   dblinks
+   
    print("what happened when assigning (length)??")
    print(length(newpics))
    #print(str(reactiveValuesToList(input)))
@@ -557,7 +557,9 @@ server <- function(input, output,session) {
    #print(newtb)
 #   newpics
 #    print("New modals made!!!")
-#    print(modal_made)       
+#    print(modal_made) 
+   dbmod
+   dblinks
   })
 #  check_me()$drugs <- newtb
   print("This is the number of modals made!!!")
