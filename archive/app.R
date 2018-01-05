@@ -537,7 +537,7 @@ server <- function(input, output,session) {
    print("what happened when assigning (length)??")
    print(length(newpics))
    newtb <- check_me()$drugs
-   newtb$Structure <- input$[[dbname]]
+   newtb$Structure <- input[[dbname]]
    print("new table created")
    print(newtb)
 #   newpics
