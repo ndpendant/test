@@ -539,8 +539,10 @@ server <- function(input, output,session) {
    dblinks
    print("what happened when assigning (length)??")
    print(length(newpics))
-   print(str(reactiveValuesToList(input)))
+   #print(str(reactiveValuesToList(input)))
+   print(dynamicInputs)
    newtb <<- NULL
+   
    newtb <<- check_me()$drugs
    for(i in 1:length(dbnames))
    {
