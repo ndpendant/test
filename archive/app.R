@@ -543,7 +543,7 @@ server <- function(input, output,session) {
    #print(dba)
    newtb <<- NULL
    print(dba[1])
-   print(str(dba[1])
+   print(str(dba[1]))
    newtb <<- check_me()$drugs
    for(i in 1:length(dbnames))
    {
