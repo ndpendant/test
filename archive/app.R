@@ -535,6 +535,8 @@ server <- function(input, output,session) {
 #    print(paste0("output$",htmlname))
 #    print(b)
   }
+   dbmod
+   dblinks
    print("what happened when assigning (length)??")
    print(length(newpics))
    newtb <<- NULL
