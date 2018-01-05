@@ -564,6 +564,8 @@ server <- function(input, output,session) {
     newtb$Structure[i] <<- blah #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
    }
      print("new table created")
+    print("blah")
+   print(blah)
    #print(newtb)
 #   newpics
 #    print("New modals made!!!")
