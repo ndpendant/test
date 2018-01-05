@@ -507,7 +507,7 @@ server <- function(input, output,session) {
        
        )
     #dblinks <- c(dblinks,dba) 
-     blah <- paste(as.character(dba),as.character(dbm))
+     blah <- c(as.character(dba),as.character(dbm))
     dbmod <- c(dbmod,dbm) 
     print("length of dba")
    # print(length(dba))
