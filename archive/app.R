@@ -544,11 +544,10 @@ server <- function(input, output,session) {
 #    print("New modals made!!!")
 #    print(modal_made)       
   })
-  
+  check_me()$drugs <- newtb
   print("This is the number of modals made!!!")
   print(modal_made)
   print("This is the type for output$")
-  return(newtb)
   
       
     
