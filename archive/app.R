@@ -540,7 +540,7 @@ server <- function(input, output,session) {
    print("what happened when assigning (length)??")
    print(length(newpics))
    #print(str(reactiveValuesToList(input)))
-   sapply(inputVectorfunction(x){eval(parse(text=x))})
+   print(input)
    newtb <<- NULL
    
    newtb <<- check_me()$drugs
