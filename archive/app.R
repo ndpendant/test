@@ -480,6 +480,7 @@ server <- function(input, output,session) {
  #  check_me()
    #b = input$
    dbmod = NULL
+   dblinks = NULL
    newpics = NULL
  #  print("dbank info")
  #  print("length of dbank")
@@ -502,7 +503,7 @@ server <- function(input, output,session) {
         actionLink(dbname,"stucture")
        
        )
-     
+    dblinks <- c(dblinks,dba) 
     dbmod <- c(dbmod,dbm) 
     print("length of dba")
     print(length(dba))
@@ -536,7 +537,7 @@ server <- function(input, output,session) {
    print("what happened when assigning (length)??")
    print(length(newpics))
    newtb <- check_me()$drugs
-   newtb$Structure <- dba
+   newtb$Structure <- dblinks
    print("new table created")
    print(newtb)
 #   newpics
