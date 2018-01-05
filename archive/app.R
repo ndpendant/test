@@ -490,23 +490,24 @@ server <- function(input, output,session) {
  ##  print(typeof(check_me()$drugs))
  #  print("Full dbank")
   # print(check_me())
-  
+  blah <- NULL
    for(i in 1:nrow(check_me()$drugs)) 
    {
     dbname = paste0("dbstruct_",i)
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
     dbm <- tagList(
-              actionLink(dbname,"stucture"),
+             # actionLink(dbname,"stucture"),
               bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
               
            )
     
-   # dba <- tagList(
-   #     actionLink(dbname,"stucture")
+    dba <- tagList(
+        actionLink(dbname,"stucture")
        
-   #    )
+       )
     #dblinks <- c(dblinks,dba) 
+     blah <- paste(as.character(dba),as.character(dbm))
     dbmod <- c(dbmod,dbm) 
     print("length of dba")
    # print(length(dba))
@@ -560,7 +561,7 @@ server <- function(input, output,session) {
     #print(temp)
     print("another")
      #print(another)
-    newtb$Structure[i] <<- as.character(dbm) #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
+    newtb$Structure[i] <<- blah #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
    }
      print("new table created")
    #print(newtb)
