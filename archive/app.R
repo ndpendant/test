@@ -543,7 +543,7 @@ server <- function(input, output,session) {
    newtb <<- check_me()$drugs
    for(i in 1:length(dbnames))
    {
-    newtb$Structure[i] <<- input[[dbnames[i]]]
+    newtb$Structure[i] <<- dbnames[i]
    }
      print("new table created")
    print(newtb)
