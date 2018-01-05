@@ -560,7 +560,7 @@ server <- function(input, output,session) {
     #print(temp)
     print("another")
      #print(another)
-    newtb$Structure[i] <<- as.character(dbmod[i]) #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
+    newtb$Structure[i] <<- as.character(dbm) #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
    }
      print("new table created")
    #print(newtb)
