@@ -495,17 +495,23 @@ server <- function(input, output,session) {
     mname = paste0("modal_",i)
     htmlname = paste0("pic_",i)
     dbm <- tagList(
-              actionLink(dbname,"stucture"),
-              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
-              
+              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))   
            )
+     dba <- tagList(
+        actionLink(dbname,"stucture"),
+       
+       )
      
     dbmod <- c(dbmod,dbm) 
- #   print("dbmod info")
-    #print("length of dbmod")
-    #print(length(dbmod))
-  #  print("Full dbmod")
-   # print(dbmod)
+    print("length of dba")
+    print(length(dba))
+    print(dba)
+    print("length of dbm")
+    print(length(dbm))
+    print(dbm)
+    print("length of dbmod")
+    print(length(dbmod))
+     
 #    modal_made <<- nrow(check_me()$drugs) 
     outname <- paste0("output$",htmlname)
     print("outcome name")
@@ -529,7 +535,7 @@ server <- function(input, output,session) {
    print("what happened when assigning (length)??")
    print(length(newpics))
    newtb <- check_me()$drugs
-   newtb$Structure <- dbmod
+   newtb$Structure <- dba
    print("new table created")
    print(newtb)
 #   newpics
