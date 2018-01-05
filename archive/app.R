@@ -564,7 +564,7 @@ server <- function(input, output,session) {
     #print(temp)
     print("another")
      #print(another)
-    newtb$Structure[i] <<- as.character(paste(HTML(dbmod[count]),HTML(dbmod[count+1])))#paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
+    newtb$Structure[i] <<-paste(HTML(dbmod[count]),HTML(dbmod[count+1]))#paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
     count=count+2
    }
      print("new table created")
