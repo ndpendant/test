@@ -553,7 +553,7 @@ server <- function(input, output,session) {
    #print(another)
    #print(str(dba[1]))
    newtb <<- check_me()$drugs
-   #for(i in 1:length(dbnames))
+   for(i in 1:length(dbnames))
    {
      #temp <- as.character(dbm)
     #temp <- c(paste( unlist(dbmod[i]), collapse=''),paste( unlist(dbmod[i+1]), collapse=''))
@@ -562,7 +562,7 @@ server <- function(input, output,session) {
     #print(temp)
     print("another")
      #print(another)
-    newtb$Structure[i] <<- dbmod #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
+    newtb$Structure[i] <<- as.character(dbmod[i]) #paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
    }
      print("new table created")
     print("blah")
