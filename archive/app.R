@@ -539,7 +539,7 @@ server <- function(input, output,session) {
    dblinks
    print("what happened when assigning (length)??")
    print(length(newpics))
-   print(input$dbnames[i])
+   print(str(reactiveValuesToList(input)))
    newtb <<- NULL
    newtb <<- check_me()$drugs
    for(i in 1:length(dbnames))
@@ -547,7 +547,7 @@ server <- function(input, output,session) {
     newtb$Structure[i] <<- input$dbnames[i]
    }
      print("new table created")
-   print(newtb)
+   #print(newtb)
 #   newpics
 #    print("New modals made!!!")
 #    print(modal_made)       
