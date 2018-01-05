@@ -506,7 +506,7 @@ server <- function(input, output,session) {
     #dba <- tagList(
     #    actionLink(dbname,"stucture")
        
-       )
+    #   )
     #dblinks <- c(dblinks,dba) 
    #  blah <- c(as.character(dba),as.character(dbm))
     dbmod <- c(dbmod,dbm) 
