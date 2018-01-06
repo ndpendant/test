@@ -438,7 +438,7 @@ server <- function(input, output,session) {
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
     fulldt <- fulldt[(order(fulldt$Enzyme)),]
-    list(drugs = dbank,dt = fulldt)
+    list(drugs = fulldt)
     
   })
   
