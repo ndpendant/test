@@ -468,7 +468,7 @@ server <- function(input, output,session) {
       selectedRow <- as.numeric(strsplit(input$select_button, "_")[[1]][2])
       modal_view <<- check_me()$drugs[selectedRow,11]
       showModal(myModal)
-  }
+  
     
     })
   
