@@ -417,7 +417,7 @@ server <- function(input, output,session) {
       print("KEGG KIDS!!")
       print(length(kids))
       print(kids)
-     # k$DrugID <- kids
+      k$DrugID <- kids
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("https://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,"/image.svg")
@@ -602,7 +602,7 @@ server <- function(input, output,session) {
   output$table2 <-renderDataTable({ 
     input$GO
  #   newtb
-    check_me()$drugs#[c(1,2,3,4,6,12)]
+    check_me()$drugs[c(1,2,3,4,6,12)]
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
     
