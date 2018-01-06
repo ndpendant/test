@@ -466,7 +466,7 @@ server <- function(input, output,session) {
     
   })
   
-  myModal = modalDialog(title=modal_name,htmlOutput("pic"),footer=modal_name)    
+  myModal = modalDialog(title=paste(modal_name),htmlOutput("pic"),footer=modal_name)    
       
   observeEvent(input$select_button, {
       selectedRow <- as.numeric(strsplit(input$select_button, "_")[[1]][2])
