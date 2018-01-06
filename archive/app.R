@@ -467,7 +467,7 @@ server <- function(input, output,session) {
   })
   
   mod <- reactive({
-    myModal = modalDialog(title=paste(modal_name),htmlOutput("pic"),easyclose=TRUE,footer=paste("source:",modal_view))    
+    myModal = modalDialog(title=paste(modal_name),htmlOutput("pic"),easyClose=TRUE,footer=paste("source:",modal_view))    
     })  
       
   observeEvent(input$select_button, {
