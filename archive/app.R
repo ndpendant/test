@@ -464,8 +464,21 @@ server <- function(input, output,session) {
     list(drugs = dbank,dt = fulldt)
     
   })
+  observeEvent(input$select_button, {
+      selectedRow <- as.numeric(strsplit(input$select_button, "_")[[1]][2])
+      modal_view <<- check_me()$drugs[selectedRow,11]
+      showModal(myModal)
+  }
+    
+    })
   
-  
+  myModal = modalDialog(HTML(readLines(modal_view))
+)
+  output$pic <- renderUI({
+    
+      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+  })
+      
   output$image <- renderImage({
   list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
     
