@@ -466,11 +466,12 @@ server <- function(input, output,session) {
     
   })
   
-  myModal = modalDialog(htmlOutput("pic"),title="Hello")    
+  myModal = modalDialog(htmlOutput("pic"),title=check_me()$drugs[selectedRow,1])    
       
   observeEvent(input$select_button, {
       selectedRow <- as.numeric(strsplit(input$select_button, "_")[[1]][2])
       modal_view <<- check_me()$drugs[selectedRow,11]
+      
       print("MODAL VIEW!!!!!") 
       print(modal_view)
       showModal(myModal)
