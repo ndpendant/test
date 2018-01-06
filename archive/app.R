@@ -411,7 +411,11 @@ server <- function(input, output,session) {
       {
         temp <-kegg_info[kegg_info$DrugName == k$Drug,]$DrugID
         kids <- c(kids,temp)
+        
       }
+      print("KEGG KIDS!!")
+      print(length(kids))
+      print(kids)
       k$DrugID <- kids
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
