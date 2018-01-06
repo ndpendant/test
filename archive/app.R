@@ -381,41 +381,15 @@ server <- function(input, output,session) {
     
     if(sum(str_detect(test$Database,"DrugBank")>0))
     {
-    #link_db <- paste0("https://www.drugbank.ca/drugs/",test$DrugID)
-      #aaaaa <- NULL
+    
       dbank <- test[test$Database == "DrugBank",]
       dbank$Extra <- paste0("https://www.drugbank.ca/drugs/",dbank$DrugID)
       dbank$Database <- paste0("<a href='",dbank$Extra,"'>DrugBank</a>")
-      #aaaaa<- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
-     # aaaaa[1:8] <- actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")
-      #print("this is the aaaas")
-      #print(length(aaaaa))
-      #print(aaaaa)
       dbank$Extra2 <- paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")
       
       #####I WORK FINE####### ->  dbank$Structure <- paste0("<a href='",dbank$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
       dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      holddb <- NULL
-     # for(i in 1:nrow(dbank))
-      #{
-       # print(i)
-       # dbadd <- actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' ))
-       # ala <- input$dbadd$attribs$id
-      #  aaaaa<- urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
-       # holddb <- c(holddb,aaaaa)
-        #dbs <- shinyInput(actionLink,1,paste0("dbstruct_",i),label = "structure")
-      #  holddb <- c(holddb,dbs)
-       # holddb <- c(holddb,ala)
-       ## print("ala is")
-       # print(ala)
-      #}
-     # print(nrow(dbank))
-     # print("length of holddb")
-     # print(length(holddb))
-     # print("what is holddb")
-     # print(holddb)
-      #dbank$Structure <- holddb
-     # holddb <- NULL
+      holddb <- NULL   
       fulldt <- rbind(fulldt,dbank)
       
     }
@@ -429,14 +403,16 @@ server <- function(input, output,session) {
 #      fulldt <- rbind(fulldt,sc)
 #    }
     
-#    if(sum(str_detect(test$Database,"KEGG")>0))
-#    {
-#      k <- test[test$Database == "KEGG",]
-#      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
-#      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
-#      k$Structure <- "Not Available"
-#      fulldt <- rbind(fulldt,k)
-#    }
+    if(sum(str_detect(test$Database,"KEGG")>0))
+    {
+      k <- test[test$Database == "KEGG",]
+      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
+      k$Extra2 <- paste0("https://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug]$DrugID,"/image.svg")
+      k$Structure <- shinyInput(actionLink,nrow(dbank),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+
+      fulldt <- rbind(fulldt,k)
+    }
     
  #   if(sum(str_detect(test$Database,"Indiana University")>0))
  #   {  
