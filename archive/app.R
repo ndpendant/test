@@ -411,7 +411,7 @@ server <- function(input, output,session) {
       kids <- NULL
       #for(i in 1:nrow(k))
       #{
-        temp <-kegg_info[kegg_info$DrugName == k$Drug,]$DrugID
+        temp <-kegg_info[k$Drug,]$DrugID
         print("my temp for kegg")
         print(temp)
      #   print(k$Drug[i])
