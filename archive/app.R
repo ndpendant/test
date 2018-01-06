@@ -406,6 +406,8 @@ server <- function(input, output,session) {
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
+      print("this is k")
+      print(k)
       kids <- NULL
       for(i in 1:nrow(k))
       {
@@ -423,7 +425,7 @@ server <- function(input, output,session) {
       k$Extra2 <- paste0("https://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,"/image.svg")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       print("KEGG TABLE!!!!")
-      print(k)
+      #print(k)
       fulldt <- rbind(fulldt,k)
     }
     
