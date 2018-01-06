@@ -482,7 +482,7 @@ server <- function(input, output,session) {
 
   output$pic <- renderUI({
     
-      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
+      HTML(readLines(modal_view))
   })
       
   output$image <- renderImage({
