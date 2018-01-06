@@ -476,7 +476,7 @@ server <- function(input, output,session) {
 
   output$pic <- renderUI({
     
-      HTML(readLines(modal_view))
+      HTML(readLines(modal_stuff$modal_view))
   })
       
   output$image <- renderImage({
