@@ -466,7 +466,9 @@ server <- function(input, output,session) {
     
   })
   
-  myModal = modalDialog(title=paste(modal_name),htmlOutput("pic"),footer=modal_name)    
+  mod <- reactive({
+    myModal = modalDialog(title=paste(modal_name),htmlOutput("pic"),footer=modal_name)    
+    })  
       
   observeEvent(input$select_button, {
       selectedRow <- as.numeric(strsplit(input$select_button, "_")[[1]][2])
@@ -474,7 +476,7 @@ server <- function(input, output,session) {
       modal_name <<- check_me()$drugs[selectedRow,1]
       print(modal_name)
       
-      showModal(myModal)
+      showModal(mod())
   
     
     })
