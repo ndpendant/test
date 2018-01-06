@@ -473,7 +473,7 @@ server <- function(input, output,session) {
     
     })
   
-  myModal = modalDialog(HTML(readLines(modal_view))
+  myModal = modalDialog(title="Hello")
 )
   output$pic <- renderUI({
     
