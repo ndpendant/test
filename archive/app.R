@@ -474,7 +474,7 @@ server <- function(input, output,session) {
     })
   
   myModal = modalDialog(title="Hello")
-)
+
   output$pic <- renderUI({
     
       HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
