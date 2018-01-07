@@ -64,7 +64,8 @@ ui <- fluidPage(
       tabsetPanel(id = "tabs", 
                   tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
-                           p(textOutput("home_body1"))
+                           p(textOutput("home_body1")),
+                           imageOutput("ddi_home1")
                             ),
                   tabPanel("DDI",value="DDI",
                   
@@ -476,6 +477,11 @@ server <- function(input, output,session) {
       
   output$image <- renderImage({
   list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
+    
+  },deleteFile = FALSE)
+      
+  output$ddi_home1 <- renderImage({
+  list(src = "www/ddi_home.png",contentType = "image/png",width= "100%" )  
     
   },deleteFile = FALSE)
   
