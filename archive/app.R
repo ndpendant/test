@@ -415,7 +415,8 @@ server <- function(input, output,session) {
       k$Extra2 <- paste0("https://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,"/image.svg")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       print("KEGG TABLE!!!!")
-      #print(k)
+      print(k)
+      print(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID)
       fulldt <- rbind(fulldt,k)
     }
     
@@ -483,107 +484,7 @@ server <- function(input, output,session) {
     found()
  })
       
- output$view_struct_pt1 <- renderUI({
- #  check_me()
-   #b = input$
-   dbmod = NULL
-   dblinks = NULL
-   newpics = NULL
-   dbnames = NULL
- #  print("dbank info")
- #  print("length of dbank")
- #  print(length(check_me()))
- #  print("Type for dbank")
- ##  print(typeof(check_me()$drugs))
- #  print("Full dbank")
-  # print(check_me())
-  blah <- NULL
-   for(i in 1:nrow(check_me()$drugs)) 
-   {
-    dbname = paste0("dbstruct_",i)
-    mname = paste0("modal_",i)
-    htmlname = paste0("pic_",i)
-    dbm <- tagList(
-              actionLink(dbname,"stucture"),
-              bsModal(mname, "Drug Bank Structure", dbname, size = "medium",htmlOutput(htmlname))
-                 
-              
-           )
-    
-    #dba <- tagList(
-    #    actionLink(dbname,"stucture")
-       
-    #   )
-    #dblinks <- c(dblinks,dba) 
-   #  blah <- c(as.character(dba),as.character(dbm))
-    dbmod <- c(dbmod,dbm) 
-    print("length of dba")
-   # print(length(dba))
-   # print(dba)
-    print("length of dbm")
-    print(length(dbm))
-    print(dbm)
-    print("length of dbmod")
-    print(length(dbmod))
-    dbnames <- c(dbnames,dbname) 
-#    modal_made <<- nrow(check_me()$drugs) 
-    outname <- paste0("output$",htmlname)
-    print("outcome name")
-    print(outname)
-    print(dbm)
-    collectme <- assign(outname, renderUI({
-  
-    
-      
-      HTML(readLines("https://www.drugbank.ca/structures/DB06777/image.svg"))
  
-      
-    
-      
-    }))
-     
-     newpics <- c(newpics,collectme)
-#    print("new outname")
-#    print(paste0("output$",htmlname))
-#    print(b)
-  }
-   
-   print("what happened when assigning (length)??")
-   print(length(newpics))
-   #print(str(reactiveValuesToList(input)))
-   #print(dba)
-   newtb <<- NULL
-   print("my dba")
-   #print(dba)
-   #another <- paste( unlist(dba), collapse='')
-   print("ANOTHERRRRR")
-   #print(another)
-   #print(str(dba[1]))
-   newtb <<- check_me()$drugs
-   count = 1
-   for(i in 1:length(dbnames))
-   {
-     
-     #temp <- as.character(dbm)
-    #temp <- c(paste( unlist(dbmod[i]), collapse=''),paste( unlist(dbmod[i+1]), collapse=''))
-    #another <- paste( temp, collapse='') 
-    print("temp")
-    #print(temp)
-    print("another")
-     #print(another)
-    newtb$Structure[i] <<-paste((dbmod[count]),(dbmod[count+1]))#paste0("<a id='",dbnames[i],"' href='","#","' class='","action-button","'>stucture</a>")
-    count=count+2
-   }
-     print("new table created")
-    print("blah")
-   print(blah)
-   #print(newtb)
-#   newpics
-#    print("New modals made!!!")
-#    print(modal_made) 
-   dbmod
- #  dblinks
-  })
 #  check_me()$drugs <- newtb
   print("This is the number of modals made!!!")
   print(modal_made)
