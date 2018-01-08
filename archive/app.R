@@ -419,14 +419,17 @@ server <- function(input, output,session) {
       k$Structure <- shinyInput(actionButton,nrow(k),"kstruct_",rownames(k),label = "structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       for(i in k$Drug)
       {
+        print(i)
+        print(length(k$Drug))
+        print(kegg_info[kegg_info$DrugName == i,])
         k_temp <- NULL
-        k_temp <- c(k_temp,unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID))
+        k_temp <- c(k_temp,unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
       }
       k$DrugID <- k_temp
       print("KEGG info TABLE!!!!")
       
-      print(k)
-      print(kegg_info[kegg_info$DrugName == k$Drug,])
+      #print(k)
+      #print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
     }
     
