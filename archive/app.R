@@ -458,8 +458,8 @@ server <- function(input, output,session) {
    
   observeEvent(input$select_button1, {
       selectedRow <- as.numeric(strsplit(input$select_button1, "_")[[1]][2])
-      modal_stuff$modal_view <<- check_me()$drugs[selectedRow,11]
-      modal_stuff$modal_name <<- check_me()$drugs[selectedRow,1]
+      modal_view <<- check_me()$drugs[selectedRow,11]
+      modal_name <<- check_me()$drugs[selectedRow,1]
       
       print("selected Row DrugBank")
       print(selectedRow)
@@ -473,8 +473,8 @@ server <- function(input, output,session) {
     })
     observeEvent(input$select_button2, {
       selectedRow <- as.numeric(strsplit(input$select_button2, "_")[[1]][2])
-      modal_stuff$modal_view <<- check_me()$drugs[selectedRow,11]
-      modal_stuff$modal_name <<- check_me()$drugs[selectedRow,1]
+      modal_view <<- check_me()$drugs[selectedRow,11]
+      modal_name <<- check_me()$drugs[selectedRow,1]
       
       print("selected Row for SuperCYP")
       print(selectedRow)
@@ -488,8 +488,8 @@ server <- function(input, output,session) {
     })
     observeEvent(input$select_button3, {
       selectedRow <- as.numeric(strsplit(input$select_button3, "_")[[1]][2])
-      modal_stuff$modal_view <<- check_me()$drugs[selectedRow,11]
-      modal_stuff$modal_name <<- check_me()$drugs[selectedRow,1]
+      modal_view <<- check_me()$drugs[selectedRow,11]
+      modal_name <<- check_me()$drugs[selectedRow,1]
       
       print("selected Row for kegg")
       print(selectedRow)
