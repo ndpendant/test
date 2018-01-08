@@ -422,6 +422,8 @@ server <- function(input, output,session) {
         print(i)
         print(length(k$Drug))
         print(kegg_info[kegg_info$DrugName == i,])
+        print(kegg_info[kegg_info$DrugName == i,]$DrugID)
+        print(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
         k_temp <- NULL
         k_temp <- c(k_temp,unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
       }
