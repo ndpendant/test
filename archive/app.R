@@ -452,8 +452,8 @@ server <- function(input, output,session) {
     list(drugs = fulldt)
     
   })
-  
-  mod <- reactive({
+  mod <- observe({
+  #mod <- reactive({
     myModal = modalDialog(title=paste(modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))
     
     })  
