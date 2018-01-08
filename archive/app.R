@@ -452,7 +452,7 @@ server <- function(input, output,session) {
   })
   
   mod <- reactive({
-    myModal = modalDialog(title=paste(modal_stuff$modal_name),HTML(readLines(modal_stuff$modal_view)),easyClose=TRUE,footer=paste("source:",modal_stuff$modal_view))    
+    myModal = modalDialog(title=paste(modal_stuff$modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))    
     })  
   modal_stuff <- reactiveValues()
    
@@ -464,9 +464,9 @@ server <- function(input, output,session) {
       print("selected Row DrugBank")
       print(selectedRow)
       print("link to row")
-      print(modal_stuff$modal_view)
+      print(modal_view)
       print("Drug Name")
-      print(modal_stuff$modal_name)
+      print(modal_name)
       showModal(mod())
   
     
@@ -479,9 +479,9 @@ server <- function(input, output,session) {
       print("selected Row for SuperCYP")
       print(selectedRow)
       print("link to row")
-      print(modal_stuff$modal_view)
+      print(modal_view)
       print("Drug Name")
-      print(modal_stuff$modal_name)
+      print(modal_name)
       showModal(mod())
   
     
@@ -494,9 +494,9 @@ server <- function(input, output,session) {
       print("selected Row for kegg")
       print(selectedRow)
       print("link to row")
-      print(modal_stuff$modal_view)
+      print(modal_view)
       print("Drug Name")
-      print(modal_stuff$modal_name)
+      print(modal_name)
       showModal(mod())
   
     
