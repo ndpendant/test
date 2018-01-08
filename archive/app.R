@@ -470,7 +470,7 @@ server <- function(input, output,session) {
       print(modal_view)
       print("Drug Name")
       print(modal_name)
-      showModal(mod())
+      showModal(mod)
       modal_name <<- NULL
       modal_view <<- NULL
   
