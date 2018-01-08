@@ -415,12 +415,18 @@ server <- function(input, output,session) {
       #k$DrugID <- kids
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
-      k$Extra2 <- paste0("https://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
+      k$Extra2 <- paste0("www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
       k$Structure <- shinyInput(actionButton,nrow(k),"kstruct_",rownames(k),label = "structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      for(i in k$Drug)
+      {
+        k_temp <- NULL
+        k_temp <- c(k_temp,unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID))
+      }
+      k$DrugID <- k_temp
       print("KEGG info TABLE!!!!")
-      print(kegg_info)
+      
       print(k)
-      print(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID)
+      print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
     }
     
