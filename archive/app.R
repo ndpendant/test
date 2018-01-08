@@ -429,7 +429,8 @@ server <- function(input, output,session) {
       }
       k$DrugID <- k_temp
       print("KEGG info TABLE!!!!")
-      
+      print(k_temp)
+      print(k$DrugID)
       #print(k)
       #print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
