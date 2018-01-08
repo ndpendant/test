@@ -486,6 +486,8 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       showModal(mod())
+      modal_name <<- NULL
+      modal_view <<- NULL
   
     
     })
@@ -501,6 +503,8 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       showModal(mod())
+      modal_name <<- NULL
+      modal_view <<- NULL
   
     
     })  
