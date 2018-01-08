@@ -389,7 +389,7 @@ server <- function(input, output,session) {
       dbank$Extra2 <- paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")
       
       #####I WORK FINE####### ->  dbank$Structure <- paste0("<a href='",dbank$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
-      dbank$Structure <- shinyInput(actionButton,nrow(dbank),"dbstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      dbank$Structure <- shinyInput(actionButton,nrow(dbank),"dbstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button1\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       holddb <- NULL   
       fulldt <- rbind(fulldt,dbank)
       
@@ -401,7 +401,7 @@ server <- function(input, output,session) {
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       sc$Extra2 <- "Not Available"
-      sc$Structure <- shinyInput(actionButton,nrow(sc),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      sc$Structure <- shinyInput(actionButton,nrow(sc),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
 
       fulldt <- rbind(fulldt,sc)
     }
@@ -414,7 +414,7 @@ server <- function(input, output,session) {
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("https://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,"/image.svg")
-      k$Structure <- shinyInput(actionButton,nrow(k),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      k$Structure <- shinyInput(actionButton,nrow(k),"kstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       print("KEGG TABLE!!!!")
       print(k)
       print(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID)
@@ -456,12 +456,12 @@ server <- function(input, output,session) {
     })  
   modal_stuff <- reactiveValues()
    
-  observeEvent(input$select_button, {
-      selectedRow <- as.numeric(strsplit(input$select_button, "_")[[1]][2])
+  observeEvent(input$select_button1, {
+      selectedRow <- as.numeric(strsplit(input$select_button1, "_")[[1]][2])
       modal_stuff$modal_view <- check_me()$drugs[selectedRow,11]
       modal_stuff$modal_name <- check_me()$drugs[selectedRow,1]
       
-      print("selected Row")
+      print("selected Row DrugBank")
       print(selectedRow)
       print("link to row")
       print(modal_stuff$modal_view)
@@ -471,7 +471,36 @@ server <- function(input, output,session) {
   
     
     })
+    observeEvent(input$select_button2, {
+      selectedRow <- as.numeric(strsplit(input$select_button2, "_")[[1]][2])
+      modal_stuff$modal_view <- check_me()$drugs[selectedRow,11]
+      modal_stuff$modal_name <- check_me()$drugs[selectedRow,1]
+      
+      print("selected Row for SuperCYP")
+      print(selectedRow)
+      print("link to row")
+      print(modal_stuff$modal_view)
+      print("Drug Name")
+      print(modal_stuff$modal_name)
+      showModal(mod())
   
+    
+    })
+    observeEvent(input$select_button3, {
+      selectedRow <- as.numeric(strsplit(input$select_button3, "_")[[1]][2])
+      modal_stuff$modal_view <- check_me()$drugs[selectedRow,11]
+      modal_stuff$modal_name <- check_me()$drugs[selectedRow,1]
+      
+      print("selected Row for kegg")
+      print(selectedRow)
+      print("link to row")
+      print(modal_stuff$modal_view)
+      print("Drug Name")
+      print(modal_stuff$modal_name)
+      showModal(mod())
+  
+    
+    })  
   
 
   output$pic <- renderUI({
