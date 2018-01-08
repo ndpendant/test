@@ -452,7 +452,7 @@ server <- function(input, output,session) {
   })
   
   mod <- reactive({
-    myModal = modalDialog(title=paste(modal_stuff$modal_name),htmlOutput("pic"),easyClose=TRUE,footer=paste("source:",modal_stuff$modal_view))    
+    myModal = modalDialog(title=paste(modal_stuff$modal_name),HTML(readLines(modal_stuff$modal_view)),easyClose=TRUE,footer=paste("source:",modal_stuff$modal_view))    
     })  
   modal_stuff <- reactiveValues()
    
