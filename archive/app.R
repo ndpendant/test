@@ -389,8 +389,10 @@ server <- function(input, output,session) {
       dbank$Extra2 <- paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")
       
       #####I WORK FINE####### ->  dbank$Structure <- paste0("<a href='",dbank$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
-      dbank$Structure <- shinyInput(actionButton,nrow(dbank),"dbstruct_",label = "structure",onclick = 'Shiny.onInputChange(\"select_button1\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      holddb <- NULL   
+      dbank$Structure <- shinyInput(actionButton,nrow(dbank),"dbstruct_",,label = "structure",onclick = 'Shiny.onInputChange(\"select_button1\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      holddb <- NULL
+      print("These are the rows associated with dbank")
+      print(rownames(dbank))
       fulldt <- rbind(fulldt,dbank)
       
     }
