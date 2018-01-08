@@ -452,8 +452,8 @@ server <- function(input, output,session) {
     list(drugs = fulldt)
     
   })
-  mod <- observe({
-  #mod <- reactive({
+  #mod <- observe({
+  mod <- reactive({
     myModal = modalDialog(title=paste(modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))
     
     },suspended=TRUE)  
@@ -461,9 +461,10 @@ server <- function(input, output,session) {
    
   observeEvent(input$select_button1, {
       selectedRow <- as.numeric(strsplit(input$select_button1, "_")[[1]][2])
+      observe({
       modal_view <<- check_me()$drugs[paste(selectedRow),11]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
-      
+      })
       print("selected Row DrugBank")
       print(selectedRow)
       print("link to row")
@@ -478,9 +479,10 @@ server <- function(input, output,session) {
     })
     observeEvent(input$select_button2, {
       selectedRow <- as.numeric(strsplit(input$select_button2, "_")[[1]][2])
+      observe({
       modal_view <<- check_me()$drugs[paste(selectedRow),11]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
-      
+      })
       print("selected Row for SuperCYP")
       print(selectedRow)
       print("link to row")
@@ -495,9 +497,10 @@ server <- function(input, output,session) {
     })
     observeEvent(input$select_button3, {
       selectedRow <- as.numeric(strsplit(input$select_button3, "_")[[1]][2])
+      observe({
       modal_view <<- check_me()$drugs[paste(selectedRow),11]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
-      
+      })
       print("selected Row for kegg")
       print(selectedRow)
       print("link to row")
