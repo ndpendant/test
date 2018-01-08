@@ -461,7 +461,7 @@ server <- function(input, output,session) {
       modal_stuff$modal_view <- check_me()$drugs[selectedRow,11]
       modal_stuff$modal_name <- check_me()$drugs[selectedRow,1]
       
-      print(modal_name)
+      print(modal_stuff)
       
       showModal(mod())
   
