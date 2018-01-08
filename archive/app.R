@@ -453,8 +453,7 @@ server <- function(input, output,session) {
   
   mod <- reactive({
     myModal = modalDialog(title=paste(modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))
-    modal_name <<- NULL
-    modal_view <<- NULL
+    
     })  
   modal_stuff <- reactiveValues()
    
@@ -470,6 +469,8 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       showModal(mod())
+      modal_name <<- NULL
+      modal_view <<- NULL
   
     
     })
