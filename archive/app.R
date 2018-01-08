@@ -452,11 +452,11 @@ server <- function(input, output,session) {
     list(drugs = fulldt)
     
   })
-  mod <- observe({
-  #mod <- reactive({
+  #mod <- observe({
+  mod <- reactive({
     myModal = modalDialog(title=paste(modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))
     
-    },suspended=TRUE)  
+    })  
   modal_stuff <- reactiveValues()
    
   observeEvent(input$select_button1, {
@@ -471,7 +471,7 @@ server <- function(input, output,session) {
       print(modal_view)
       print("Drug Name")
       print(modal_name)
-      showModal(mod)
+      showModal(mod())
       modal_name <<- NULL
       modal_view <<- NULL
   
