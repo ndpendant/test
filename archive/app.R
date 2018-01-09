@@ -11,6 +11,7 @@ db <- read.csv("db1-9.csv",fill=TRUE,quote="",sep=",")
 #db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
 db$Drug <- trimws(db$Drug )
+db$Database <- trimws(db$Database)
 
 drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
 drug_info$Name <- tolower(drug_info$Name)
