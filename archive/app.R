@@ -538,7 +538,7 @@ server <- function(input, output,session) {
   #})
       
   output$pic <- renderImage({ 
-    list(src = modal_view)
+    plot(as.raster(modal_view))
     },deleteFile = FALSE)
       
   output$image <- renderImage({
