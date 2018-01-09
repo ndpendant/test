@@ -523,7 +523,7 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       
-      showModal(modalDialog(title=paste(modal_name),tags$img(src = modal_view,tags$style(HTML("padding-left: 200px"))),easyClose=TRUE,footer=paste("source:",modal_view))    
+      showModal(modalDialog(title=paste(modal_name),tags$style(HTML("padding-left: 200px")),tags$img(src = modal_view),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
       modal_name <<- NULL
       modal_view <<- NULL
