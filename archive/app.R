@@ -39,8 +39,8 @@ ui <- fluidPage(
       imageOutput("image",height = "35vh"),
       selectInput("search",label = "Search Type:", choices = c('Drug_Name','CYP')),
       conditionalPanel("input.search == 'Drug_Name' ",
-      selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
-      selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5)
+      selectInput("Drug_1",label = "Drug 1", choices = order(unique(db$Drug)),selectize = FALSE, size = 5),
+      selectInput("Drug_2",label = "Drug 2", choices = order(unique(db$Drug)),selectize = FALSE,size = 5)
       ),
       conditionalPanel("input.search == 'CYP' ",
       selectInput("CYP_1",label = "CYP 1", choices = unique(db$CYP...)),
@@ -459,7 +459,7 @@ server <- function(input, output,session) {
      
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
-    fulldt <- fulldt[(order(fulldt$Enzyme)),]
+    fulldt <- fulldt[(order(fulldt$CYP***)),]
     list(drugs = fulldt)
     
   })
