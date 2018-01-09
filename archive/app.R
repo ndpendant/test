@@ -6,7 +6,7 @@ library(shiny)
 library(DT)
 library(stringr)
 library(stringi)
-db <- read.csv("db1-9.csv",fill=TRUE,quote="\"",sep=",")
+db <- read.csv("db1-9.csv",fill=TRUE,quote="",sep=",")
 #DR.CHENG COPY
 #db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
