@@ -539,7 +539,7 @@ server <- function(input, output,session) {
       
   output$pic <- renderImage({ 
     list(src = modal_view)
-    }deleteFile = FALSE)
+    },deleteFile = FALSE)
       
   output$image <- renderImage({
   list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
