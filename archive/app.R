@@ -6,8 +6,9 @@ library(shiny)
 library(DT)
 library(stringr)
 library(stringi)
-
-db <- read.csv("db12-4.csv",fill = TRUE)
+db <- read.csv("db1-9.csv",fill=TRUE)
+#DR.CHENG COPY
+#db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
 db$Drug <- trimws(db$Drug )
 
@@ -402,7 +403,7 @@ server <- function(input, output,session) {
       sc <- test[test$Database == "SuperCYP",]
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
-      sc$Extra2 <- "Not Available" #paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",000058946,".jpeg")
+      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//", sc$DrugID,".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"kstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
 
       fulldt <- rbind(fulldt,sc)
@@ -417,20 +418,7 @@ server <- function(input, output,session) {
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      k_temp <- NULL
-      kcount = 1
-      for(i in k$Drug)
-      {
-        print(i)
-        print(length(k$Drug))
-        print(kegg_info[kegg_info$DrugName == i,])
-        print(kegg_info[kegg_info$DrugName == i,]$DrugID)
-        print(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
-        ktp <- unique(kegg_info[kegg_info$DrugName == i,]$DrugID)
-        k$DrugID[kcount] = paste(ktp)
-        k_temp <- c(k_temp,unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
-        kcount= kcount + 1
-      }
+     
       #k$DrugID <- k_temp
       print("KEGG info TABLE!!!!")
       print(k_temp)
