@@ -427,7 +427,7 @@ server <- function(input, output,session) {
         print(kegg_info[kegg_info$DrugName == i,]$DrugID)
         print(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
         ktp <- unique(kegg_info[kegg_info$DrugName == i,]$DrugID)
-        k$DrugID[kcount] = ktp
+        k$DrugID[kcount] = paste(ktp)
         k_temp <- c(k_temp,unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
         kcount= kcount + 1
       }
