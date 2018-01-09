@@ -389,7 +389,7 @@ server <- function(input, output,session) {
       dbank$Extra2 <- paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")
       
       #####I WORK FINE####### ->  dbank$Structure <- paste0("<a href='",dbank$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
-      dbank$Structure <- shinyInput(actionButton,nrow(dbank),"dbstruct_",rownames(dbank),label = "structure",onclick = 'Shiny.onInputChange(\"select_button1\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",rownames(dbank),icon = "www/chemical.png",label = "structure",onclick = 'Shiny.onInputChange(\"select_button1\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       holddb <- NULL
       print("These are the rows associated with dbank")
       print(rownames(dbank))
@@ -403,7 +403,7 @@ server <- function(input, output,session) {
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       sc$Extra2 <- "Not Available"
-      sc$Structure <- shinyInput(actionButton,nrow(sc),"kstruct_",rownames(sc),label = "structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      sc$Structure <- shinyInput(actionButton,nrow(sc),"kstruct_",rownames(sc),icon = "www/chemical.png",label = "structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
 
       fulldt <- rbind(fulldt,sc)
     }
@@ -416,7 +416,7 @@ server <- function(input, output,session) {
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
-      k$Structure <- shinyInput(actionButton,nrow(k),"kstruct_",rownames(k),label = "structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      k$Structure <- shinyInput(actionButton,nrow(k),"kstruct_",rownames(k),icon = "www/chemical.png",label = "structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       for(i in k$Drug)
       {
         print(i)
