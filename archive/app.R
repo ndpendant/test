@@ -450,7 +450,8 @@ server <- function(input, output,session) {
       
    }  
       
-    
+    print("I made it here")
+    print(fulldt)
      
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
