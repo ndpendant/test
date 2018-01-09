@@ -523,7 +523,7 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       ir <- image_read(modal_view)
-      showModal(modalDialog(title=paste(modal_name),imageOutput("pic"),easyClose=TRUE,footer=paste("source:",modal_view))    
+      showModal(modalDialog(title=paste(modal_name),HTML(tags$img(src = modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
       modal_name <<- NULL
       modal_view <<- NULL
