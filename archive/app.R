@@ -395,6 +395,7 @@ server <- function(input, output,session) {
       print("These are the rows associated with dbank")
       print(rownames(dbank))
       fulldt <- rbind(fulldt,dbank)
+      print(dbank)
       
     }
       
