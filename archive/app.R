@@ -398,7 +398,7 @@ server <- function(input, output,session) {
       print(dbank)
       
     }
-      
+    print("after DB")  
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
       print("Made it to SuperCYP")
@@ -412,7 +412,7 @@ server <- function(input, output,session) {
       
       fulldt <- rbind(fulldt,sc)
     }
-    
+    print("after SUP")
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
@@ -431,7 +431,7 @@ server <- function(input, output,session) {
       #print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
     }
-    
+    print("after KEGG")
     if(sum(str_detect(test$Database,"Indiana University")>0))
     {  
       iu <- test[test$Database == "Indiana University",]
@@ -441,7 +441,7 @@ server <- function(input, output,session) {
       iu$Structure <- "Not Available"
       fulldt <- rbind(fulldt,iu)
     }  
-      
+    print("after Indi")
     if(sum(str_detect(test$Database,"ildcare")>0))
     {  
       ild <- test[test$Database == "ildcare",]
