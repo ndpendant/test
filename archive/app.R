@@ -401,13 +401,15 @@ server <- function(input, output,session) {
       
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
+      print("Made it to SuperCYP")
       sc <- test[test$Database == "SuperCYP",]
+      print("This is supercyp")
+      print(sc)
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//", sc$DrugID,".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"kstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      print("MADE IT TO SUPERCYP")
-      print(sc)
+      
       fulldt <- rbind(fulldt,sc)
     }
     
