@@ -523,7 +523,7 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       ir <- image_read(modal_view)
-      showModal(modalDialog(title=paste(modal_name),image_browse(ir),easyClose=TRUE,footer=paste("source:",modal_view))    
+      showModal(modalDialog(title=paste(modal_name),plot(as.raster(ir)),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
       modal_name <<- NULL
       modal_view <<- NULL
