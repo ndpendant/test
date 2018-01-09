@@ -523,7 +523,7 @@ server <- function(input, output,session) {
       print("Drug Name")
       print(modal_name)
       ir <- image_read(modal_view)
-      showModal(modalDialog(title=paste(modal_name),plot(as.raster(ir)),easyClose=TRUE,footer=paste("source:",modal_view))    
+      showModal(modalDialog(title=paste(modal_name),imageOutput(pic),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
       modal_name <<- NULL
       modal_view <<- NULL
@@ -532,10 +532,14 @@ server <- function(input, output,session) {
     })  
   
 
-  output$pic <- renderUI({
+  #output$pic <- renderUI({
     
-      HTML(readLines(modal_stuff$modal_view))
-  })
+  #    HTML(readLines(modal_view))
+  #})
+      
+  output$pic <- renderImage({ 
+    list(src = modal_view)
+    }deleteFile = FALSE)
       
   output$image <- renderImage({
   list(src = "www/pills.png",contentType = "image/png",width= "100%" )  
