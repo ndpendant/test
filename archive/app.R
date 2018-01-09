@@ -416,8 +416,8 @@ server <- function(input, output,session) {
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
-      
-      #k$DrugID <- kids
+      print("made it to KEGG")
+      print(k$DrugID)
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",k$DrugID,".gif")
