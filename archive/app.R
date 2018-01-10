@@ -6,24 +6,27 @@ library(shiny)
 library(DT)
 library(stringr)
 library(stringi)
-db <- read.csv("db1-9.csv",fill=TRUE,quote="")
-#DR.CHENG COPY
-#db <- read.csv("db12-4.csv",fill = TRUE)
+#db <- read.csv("db1-9.csv",fill=TRUE,quote="")
+#DR.CHENG COPY BELOW
+db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
-db$Drug <- trimws(db$Drug,which = c("both"))
 db$Database <- trimws(db$Database)
 
 drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
 drug_info$Name <- tolower(drug_info$Name)
 drug_info$Name <- trimws(drug_info$Name)
-modal_made = 0
-modal_view <- "www.google.com"
-modal_name <- NULL
 
 kegg_info <- read.csv("keggid_info.csv",fill = TRUE)
 kegg_info$DrugName <- tolower(kegg_info$DrugName)
 kegg_info$DrugName <- trimws(kegg_info$DrugName)
 
+supcyp_info <- read.csv("Supercyp_1-9.csv",fill = TRUE)
+supcyp_info$DrugName <- tolower(supcyp_info$DrugName)
+supcyp_info$DrugName <- trimws(supcyp_info$DrugName)
+
+modal_made = 0
+modal_view <- "www.google.com"
+modal_name <- NULL
 #former color for .well background: rgb(216, 31, 31)
 
 
@@ -408,7 +411,7 @@ server <- function(input, output,session) {
       print(sc)
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
-      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//", sc$DrugID,".jpeg")
+      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",unique(supcyp_info[supcyp_info$DrugName == sc$DrugName,]$DrugID),".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"kstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       
       fulldt <- rbind(fulldt,sc)
@@ -422,7 +425,7 @@ server <- function(input, output,session) {
       print(k)
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
-      k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",k$DrugID,".gif")
+      k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",unique(kegg_info[kegg_info$DrugName == k$DrugName,]$DrugID),".gif")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
      
       #k$DrugID <- k_temp
@@ -568,7 +571,7 @@ server <- function(input, output,session) {
   output$table2 <-renderDataTable({ 
     input$GO
  #   newtb
-    check_me()$drugs[c(1,2,3,5,6,12)]
+    check_me()$drugs[c(1,2,3,4,6,12)]
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
     
