@@ -436,10 +436,16 @@ server <- function(input, output,session) {
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       k$DrugID[kegg_info$DrugName == k$Drug,] <- paste(unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID))
-      #k$DrugID <- k_temp
+      k_temp <- NULL
       print("KEGG DRUG IDS!!!!")
-      
-      print(k$DrugID)
+      kd <- k$Drug
+      for(i in kd)
+      {
+        temp <- paste(kegg_info[kegg_info$DrugName == i,]$DrugID)
+        k_temp <- c(k_temp,temp)
+      } 
+      print("K_TEMP INFO")
+      print(k_temp)
       #print(k)
       #print("KEGG info TABLE!!!!")
       #print(kegg_info[kegg_info$DrugName == k$Drug,])
