@@ -435,7 +435,7 @@ server <- function(input, output,session) {
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      k$DrugID[kegg_info$DrugName == k$Drug,] <- unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID)
+      k$DrugID[kegg_info$DrugName == k$Drug,] <- paste(unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID))
       #k$DrugID <- k_temp
       print("KEGG DRUG IDS!!!!")
       
