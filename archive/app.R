@@ -24,7 +24,7 @@ kegg_info$DrugName <- trimws(kegg_info$DrugName)
 supcyp_info <- read.csv("Supercyp_1-9.csv",fill = TRUE)
 supcyp_info$DrugName <- tolower(supcyp_info$DrugName)
 supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("both"))
-
+supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("r"))
 modal_made = 0
 modal_view <- "www.google.com"
 modal_name <- NULL
