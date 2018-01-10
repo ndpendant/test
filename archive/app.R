@@ -412,7 +412,7 @@ server <- function(input, output,session) {
       print(sc)
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
-      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",supcyp_info[supcyp_info$DrugName == sc$DrugName,]$DrugID,".jpeg")
+      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",supcyp_info[supcyp_info$DrugName == sc$Drug,]$DrugID,".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"kstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       
       fulldt <- rbind(fulldt,sc)
@@ -426,15 +426,16 @@ server <- function(input, output,session) {
       print(k)
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
-      k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$DrugName,]$DrugID,".gif")
+      k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
      
       #k$DrugID <- k_temp
-      print("KEGG info TABLE!!!!")
+      print("KEGG test TABLE!!!!")
       
-      print(k$DrugID)
-      #print(k)
-      #print(kegg_info[kegg_info$DrugName == k$Drug,])
+      #print(k$DrugID)
+      print(k)
+      print("KEGG info TABLE!!!!")
+      print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
     }
     print("after KEGG")
