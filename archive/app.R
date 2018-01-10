@@ -441,7 +441,7 @@ server <- function(input, output,session) {
       kd <- k$Drug
       for(i in kd)
       {
-        temp <- paste(kegg_info[kegg_info$DrugName == i,]$DrugID)
+        temp <- paste(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
         k_temp <- c(k_temp,temp)
       } 
       print("K_TEMP INFO")
