@@ -421,7 +421,7 @@ server <- function(input, output,session) {
       scd <- sc$Drug
       for(i in scd)
       {
-        temp <- paste(unique(supcyp_info[supcyp_info$DrugName == sc$Drug,]$CASNumber))
+        temp <- paste(unique(supcyp_info[supcyp_info$DrugName == i,]$CASNumber))
         sc_temp <- c(sc_temp,temp)
       }
       sc$DrugID <- sc_temp
