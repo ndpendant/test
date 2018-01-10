@@ -6,11 +6,11 @@ library(shiny)
 library(DT)
 library(stringr)
 library(stringi)
-db <- read.csv("db1-9.csv",fill=TRUE,quote="",sep=",")
+db <- read.csv("db1-9.csv",fill=TRUE,quote="")
 #DR.CHENG COPY
 #db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
-db$Drug <- trimws(db$Drug )
+db$Drug <- trimws(db$Drug)
 db$Database <- trimws(db$Database)
 
 drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
@@ -417,6 +417,7 @@ server <- function(input, output,session) {
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
+      k$DrugID <- trimws(k$DrugID)
       print("made it to KEGG")
       print(k)
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
