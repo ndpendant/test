@@ -419,6 +419,8 @@ server <- function(input, output,session) {
       
       sc_temp <- NULL
       scd <- sc$Drug
+      print(length(scd))
+      print(scd)
       for(i in scd)
       {
         temp <- paste(unique(supcyp_info[supcyp_info$DrugName == i,]$CASNumber))
