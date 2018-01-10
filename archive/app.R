@@ -419,7 +419,7 @@ server <- function(input, output,session) {
       print("sc info table")
       print(supcyp_info[supcyp_info$DrugName == "warfarin",])
       print("sc drug names")
-      print(supcyp_info$DrugName)
+      print(supcyp_info$DrugName[631])
       fulldt <- rbind(fulldt,sc)
     }
     print("after SUP")
