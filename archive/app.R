@@ -417,7 +417,7 @@ server <- function(input, output,session) {
       print("sc test table")
       print(sc)
       print("sc info table")
-      print(supcyp_info[supcyp_info$DrugName == sc$Drug,])
+      print(supcyp_info[supcyp_info$DrugName == "warfarin",])
       fulldt <- rbind(fulldt,sc)
     }
     print("after SUP")
@@ -433,12 +433,12 @@ server <- function(input, output,session) {
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
      
       #k$DrugID <- k_temp
-      print("KEGG test TABLE!!!!")
+      #print("KEGG test TABLE!!!!")
       
       #print(k$DrugID)
-      print(k)
-      print("KEGG info TABLE!!!!")
-      print(kegg_info[kegg_info$DrugName == k$Drug,])
+      #print(k)
+      #print("KEGG info TABLE!!!!")
+      #print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
     }
     print("after KEGG")
@@ -463,8 +463,8 @@ server <- function(input, output,session) {
       
    }  
       
-    print("I made it here")
-    print(fulldt)
+    #print("I made it here")
+    #print(fulldt)
      
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
