@@ -406,6 +406,16 @@ server <- function(input, output,session) {
     print("after DB")  
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
+      sc_temp <- NULL
+      scd <- sc$Drug
+      print(length(scd))
+      print(scd)
+      for(i in scd)
+      {
+        temp <- paste(unique(supcyp_info[supcyp_info$DrugName == i,]$CASNumber))
+        sc_temp <- c(sc_temp,temp)
+      }
+      sc$DrugID <- sc_temp
       print("Made it to SuperCYP")
       sc <- test[test$Database == "SuperCYP",]
       print("This is supercyp")
