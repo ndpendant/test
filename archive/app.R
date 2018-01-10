@@ -441,14 +441,6 @@ server <- function(input, output,session) {
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
-      #k$DrugID <- trimws(k$DrugID)
-      print("made it to KEGG")
-      print(k)
-      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
-      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
-      k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
-      k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      #k$DrugID[kegg_info$DrugName == k$Drug,] <- paste(unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID))
       k_temp <- NULL
       print("KEGG DRUG IDS!!!!")
       kd <- k$Drug
@@ -459,8 +451,15 @@ server <- function(input, output,session) {
         k_temp <- c(k_temp,temp)
       }
       k$DrugID <- k_temp
-      print("K_TEMP INFO")
-      print(k_temp)
+      #k$DrugID <- trimws(k$DrugID)
+      print("made it to KEGG")
+      print(k)
+      k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
+      k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
+      k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",k$DrugID,".gif")
+      k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
+      #k$DrugID[kegg_info$DrugName == k$Drug,] <- paste(unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID))
+     
       #print(k)
       #print("KEGG info TABLE!!!!")
       #print(kegg_info[kegg_info$DrugName == k$Drug,])
