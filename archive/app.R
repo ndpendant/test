@@ -406,6 +406,7 @@ server <- function(input, output,session) {
     print("after DB")  
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
+      sc <- test[test$Database == "SuperCYP",]
       sc_temp <- NULL
       scd <- sc$Drug
       print(length(scd))
@@ -417,7 +418,7 @@ server <- function(input, output,session) {
       }
       sc$DrugID <- sc_temp
       print("Made it to SuperCYP")
-      sc <- test[test$Database == "SuperCYP",]
+      
       print("This is supercyp")
       print(sc)
       sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
