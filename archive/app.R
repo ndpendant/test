@@ -414,7 +414,10 @@ server <- function(input, output,session) {
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",supcyp_info[supcyp_info$DrugName == sc$Drug,]$CASNumber,".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"scstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      
+      print("sc test table")
+      print(sc)
+      print("sc info table")
+      print(supcyp_info[supcyp_info$DrugName == sc$Drug,])
       fulldt <- rbind(fulldt,sc)
     }
     print("after SUP")
