@@ -416,12 +416,12 @@ server <- function(input, output,session) {
       print("before extra2")
       sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",unique(supcyp_info[supcyp_info$DrugName == sc$Drug,]$CASNumber),".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"scstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-      print("sc test table")
-      print(sc)
-      print("sc info table")
-      print(supcyp_info[supcyp_info$DrugName == "warfarin",])
-      print("sc drug names")
-      print(supcyp_info$DrugName[631])
+      #print("sc test table")
+      #print(sc)
+      #print("sc info table")
+      #print(supcyp_info[supcyp_info$DrugName == "warfarin",])
+      #rint("sc drug names")
+      #print(supcyp_info$DrugName[631])
       fulldt <- rbind(fulldt,sc)
     }
     print("after SUP")
@@ -435,11 +435,11 @@ server <- function(input, output,session) {
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",kegg_info[kegg_info$DrugName == k$Drug,]$DrugID,".gif")
       k$Structure <- shinyInput(actionLink,nrow(k),"kstruct_",rownames(k),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button3\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
-     
+      k$DrugID[kegg_info$DrugName == k$Drug,] <- unique(kegg_info[kegg_info$DrugName == k$Drug,]$DrugID)
       #k$DrugID <- k_temp
-      #print("KEGG test TABLE!!!!")
+      print("KEGG DRUG IDS!!!!")
       
-      #print(k$DrugID)
+      print(k$DrugID)
       #print(k)
       #print("KEGG info TABLE!!!!")
       #print(kegg_info[kegg_info$DrugName == k$Drug,])
@@ -455,7 +455,7 @@ server <- function(input, output,session) {
       iu$Structure <- "Not Available"
       fulldt <- rbind(fulldt,iu)
     }  
-    print("after Indi")
+    #print("after Indi")
     if(sum(str_detect(test$Database,"ildcare")>0))
     {  
       ild <- test[test$Database == "ildcare",]
@@ -468,7 +468,7 @@ server <- function(input, output,session) {
    }  
       
     #print("I made it here")
-    print(fulldt)
+    #print(fulldt)
      
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
