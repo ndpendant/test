@@ -414,7 +414,7 @@ server <- function(input, output,session) {
       print("before database")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       print("before extra2")
-      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",unique(supcyp_info[supcyp_info$DrugName == sc$Drug,]$CASNumber),".jpeg")
+      sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",supcyp_info[supcyp_info$DrugName == sc$Drug,]$CASNumber,".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"scstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       
       sc_temp <- NULL
