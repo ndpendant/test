@@ -439,6 +439,7 @@ server <- function(input, output,session) {
       k_temp <- NULL
       print("KEGG DRUG IDS!!!!")
       kd <- k$Drug
+      print(length(kd))
       for(i in kd)
       {
         temp <- paste(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
