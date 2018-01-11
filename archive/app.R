@@ -127,7 +127,7 @@ server <- function(input, output,session) {
   })
   
   
-   output$atable1 <- renderUI {
+   output$atable1 <- renderUI ({
     text <- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
