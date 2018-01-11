@@ -142,7 +142,8 @@ server <- function(input, output,session) {
   
   output$AText <- renderText ({
     mytext <- c(mytext,input$ADrug_2)
-    mytext
+    print(mytext)
+    paste(mytext)
       
   
   })
