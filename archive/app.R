@@ -130,8 +130,9 @@ server <- function(input, output,session) {
     text <- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
+     print(db$Drug[grep(text, db$Drug)])
      tagList(
-     selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug[grep(text, db$Drug)]),selectize = FALSE,size = 5)
+     selectInput("ADrug_2",label = "Select the drug name from the list", choices = db$Drug[grep(text, db$Drug)],selectize = FALSE,size = 5)
       )                     
   })
   found <- reactive({
