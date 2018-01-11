@@ -85,7 +85,7 @@ ui <- fluidPage(
                   
                           ),
                   tabPanel("DDI_Advanced", value="DDI Advanced",
-                           textInput("ADrug_1",label = "Type in the name of the drug", choices = unique(db$Drug),selectize = FALSE, size = 1),
+                           textInput("ADrug_1",label = "Type in the name of the drug" ),
                            selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            actionButton("GO2","Cocktail",icon("refresh"))
