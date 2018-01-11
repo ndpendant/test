@@ -41,16 +41,16 @@ ui <- fluidPage(
       
       width = 3,
       imageOutput("image",height = "35vh"),
-      selectInput("search",label = "Search Type:", choices = c('Drug_Name','CYP')),
-      conditionalPanel("input.search == 'Drug_Name' ",
+      selectInput("search",label = "Search Type:", choices = c('DDI_Basic','DDI_Advanced')),
+      conditionalPanel("input.search == 'DDI_Basic' ",
       selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
-      selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5)
-      ),
-      conditionalPanel("input.search == 'CYP' ",
-      selectInput("CYP_1",label = "CYP 1", choices = unique(db$CYP...)),
-      selectInput("CYP_2",label = "CYP 2", choices = unique(db$CYP...))
-      ),
+      selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
       actionButton("GO","Search",icon("refresh"))
+      ),
+      conditionalPanel("input.search == 'DDI_Advanced' ",
+      actionButton("Begin","Begin",icon("refresh"))
+      )
+      
           
     ),
     
@@ -73,7 +73,7 @@ ui <- fluidPage(
                            p(textOutput("home_body1")),
                            imageOutput("ddi_home1",height = "80vh")
                             ),
-                  tabPanel("DDI",value="DDI",
+                  tabPanel("DDI_Basic",value="DDI Basic",
                   
         
                   h3(textOutput("DDI_header1")),
@@ -82,11 +82,20 @@ ui <- fluidPage(
                   h3(textOutput("DDI_header2")),
                   dataTableOutput("table2"),
                   uiOutput("view_struct_pt1")
-                  #uiOutput("view_struct_pt2")
-                  #bsModal("modalExample", "Your plot", "struct", size = "medium",htmlOutput("pic"))
-                          )
-                  )
-              )
+                  
+                          ),
+                  tabPanel("DDI_Advanced", value="DDI Advanced",
+                           textInput("ADrug_1",label = "Type in the name of the drug", choices = unique(db$Drug),selectize = FALSE, size = 1),
+                           selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
+                           #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
+                           actionButton("GO2","Cocktail",icon("refresh"))
+                           ),
+                  tabPanel("Advanced2", value="DDI Advanced table",
+                           dataTableOutput("advance_table1"),
+                           dataTableOutput("advance_table2")
+                           )
+                 )
+        )
     )
     
  )
@@ -421,7 +430,8 @@ server <- function(input, output,session) {
       
       print("This is supercyp")
       print(sc)
-      sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+      #sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
+      sc$Extra <- paste0("http://bioinformatics.charite.de/supercyp/index.php?site=fullinfo&cas=",sc$DrugID)
       print("before database")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
       print("before extra2")
