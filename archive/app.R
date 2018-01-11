@@ -129,7 +129,7 @@ server <- function(input, output,session) {
   
   
    output$AText_1 <- renderUI ({
-    text <- paste0("^",input$ADrug_1)
+    text <<- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
      print(unique(db$Drug[grep(text, db$Drug)]))
@@ -141,7 +141,8 @@ server <- function(input, output,session) {
   })
   
   output$AText <- renderText ({
-    mytext <- c(mytext,input$ADrug_2)
+    print("made it to ATExt")
+    mytext <- c(mytext,text)
     print(mytext)
     paste(mytext)
       
