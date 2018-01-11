@@ -121,12 +121,12 @@ server <- function(input, output,session) {
   
   observeEvent(input$begin, {
     updateTabsetPanel(session, "tabs",
-      selected = "DDI_Advanced"
+      selected = "DDI Advanced"
     )
   })
   
   
-   observeEvent(input$ADrug_1, {
+   observe(input$ADrug_1, {
     text <- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
