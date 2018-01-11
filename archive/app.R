@@ -121,7 +121,7 @@ server <- function(input, output,session) {
     )
   })
   
-  observeEvent(input$begin, {
+  observeEvent(input$Begin, {
     updateTabsetPanel(session, "tabs",
       selected = "DDI Advanced"
     )
@@ -129,7 +129,7 @@ server <- function(input, output,session) {
   
   
    output$AText_1 <- renderUI ({
-    text <<- paste0("^",input$ADrug_1)
+    text <- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
      print(unique(db$Drug[grep(text, db$Drug)]))
@@ -140,12 +140,17 @@ server <- function(input, output,session) {
      )                     
   })
   
+  at <- reactive({
+  print("made it to reactive world :)")
+  print(input$ADrug_2)
+    #mytext <- c(mytext,text)
+  })
   output$AText <- renderText ({
-    print("made it to ATExt")
-    mytext <- c(mytext,text)
-    print(mytext)
-    paste(mytext)
-      
+    #print("made it to ATExt")
+    #mytext <- c(mytext,text)
+    #print(mytext)
+    #paste(mytext)
+     at() 
   
   })
   
