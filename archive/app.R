@@ -129,7 +129,7 @@ server <- function(input, output,session) {
    observeEvent(input$ADrug_1, {
     text <- paste0("^",input$ADrug_1)
      tagList(
-     selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug[grep(text, db$Drug)]),selectize = FALSE,size = 5),
+     selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug[grep(text, db$Drug)]),selectize = FALSE,size = 5)
       )                     
   })
   found <- reactive({
