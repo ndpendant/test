@@ -89,6 +89,7 @@ ui <- fluidPage(
                            textInput("ADrug_1",label = "Type in the name of the drug" , value = "warfarin"),
                            uiOutput("AText_1"),
                            uiOutput("AText_2"),
+                           verbatimTextOutput("Atext"), 
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            actionButton("GO2","Cocktail",icon("refresh"))
@@ -135,8 +136,8 @@ server <- function(input, output,session) {
      print(unique(db$Drug[grep(text, db$Drug)]))
      picks <- unique(db$Drug[grep(text, db$Drug)])
      tagList(
-     selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5),
-     verbatimTextOutput("Atext") 
+     selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
+     
      )                     
   })
   
