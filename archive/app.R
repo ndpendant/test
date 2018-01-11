@@ -87,6 +87,7 @@ ui <- fluidPage(
                           ),
                   tabPanel("DDI_Advanced", value="DDI Advanced",
                            textInput("ADrug_1",label = "Type in the name of the drug" , value = "warfarin"),
+                           uiOutput("atable1"),
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            actionButton("GO2","Cocktail",icon("refresh"))
@@ -126,7 +127,7 @@ server <- function(input, output,session) {
   })
   
   
-   observe(input$ADrug_1, {
+   output$atable1 <- renderUI {
     text <- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
