@@ -115,7 +115,7 @@ server <- function(input, output,session) {
   
   observeEvent(input$GO, {
     updateTabsetPanel(session, "tabs",
-      selected = "DDI_Basic"
+      selected = "DDI Basic"
     )
   })
   
