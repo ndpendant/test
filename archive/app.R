@@ -28,6 +28,7 @@ supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("r"))
 modal_made = 0
 modal_view <- "www.google.com"
 modal_name <- NULL
+cocktail <- NULL
 #former color for .well background: rgb(216, 31, 31)
 
 
@@ -114,8 +115,22 @@ server <- function(input, output,session) {
   
   observeEvent(input$GO, {
     updateTabsetPanel(session, "tabs",
-      selected = "DDI"
+      selected = "DDI_Basic"
     )
+  })
+  
+  observeEvent(input$begin, {
+    updateTabsetPanel(session, "tabs",
+      selected = "DDI_Advanced"
+    )
+  })
+  
+  
+   observeEvent(input$ADrug_1, {
+    text <- paste0("^",input$ADrug_1)
+     tagList(
+     selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug[grep(text, db$Drug)]),selectize = FALSE,size = 5),
+      )                     
   })
   found <- reactive({
     choice <- input$search
@@ -388,6 +403,10 @@ server <- function(input, output,session) {
       #test2 <- db[db$Drug %in% input$Drug_2,]
                 
     }
+    else(
+      test <- db[db$Drug %in% cocktail,]
+      
+      )
     fulldt <- NULL
    # else
    # {
