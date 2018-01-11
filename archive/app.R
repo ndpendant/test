@@ -144,7 +144,8 @@ server <- function(input, output,session) {
   at <- reactive({
   print("made it to reactive world :)")
   print(input$ADrug_2)
-    #mytext <- c(mytext,text)
+  mytext <- c(mytext,text)
+  mytext  
   })
   output$AText <- renderText ({
     #print("made it to ATExt")
