@@ -135,7 +135,7 @@ server <- function(input, output,session) {
      print(unique(db$Drug[grep(text, db$Drug)]))
      picks <- unique(db$Drug[grep(text, db$Drug)])
      tagList(
-     selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
+     selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5),
      verbatimTextOutput("Atext") 
      )                     
   })
