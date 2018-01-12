@@ -142,6 +142,11 @@ server <- function(input, output,session) {
      
      )                     
   })
+  observeEvent(input$ADrug_2, {
+    updateTabsetPanel(session, "tabs",
+      selected = "DDI Advanced"
+    )
+  })
   
   at <- reactive({
   print("made it to reactive world :)")
@@ -149,13 +154,13 @@ server <- function(input, output,session) {
   mytext <- c(mytext,input$ADrug_2)
    
   })
-  output$AText <- renderText ({
+  output$Atext <- renderText ({
     #print("made it to ATExt")
     #mytext <- c(mytext,text)
     #print(mytext)
     #paste(mytext)
      input$ADrug_2
-    
+    at()
   
   })
   
