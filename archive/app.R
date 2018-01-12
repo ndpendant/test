@@ -142,11 +142,7 @@ server <- function(input, output,session) {
      
      )                     
   })
-  observeEvent(input$ADrug_2, {
-    updateTabsetPanel(session, "tabs",
-      selected = "DDI Advanced"
-    )
-  })
+  
   
   at <- reactive({
   print("made it to reactive world :)")
