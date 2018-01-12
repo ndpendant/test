@@ -133,6 +133,13 @@ server <- function(input, output,session) {
     )
   })
   
+   observeEvent(input$GO2, {
+    updateTabsetPanel(session, "tabs",
+      selected = "DDI Advanced table"
+    )
+  })
+  
+  
   observeEvent(input$GO3, {
     mytext <<- NULL
   })
