@@ -134,7 +134,7 @@ server <- function(input, output,session) {
   })
   
   observeEvent(input$GO3, {
-    current <<- NULL
+    mytext <<- NULL
   })
   
   output$AText_1 <- renderUI ({
@@ -152,22 +152,10 @@ server <- function(input, output,session) {
   
   at <- reactive({
   
-  if(current == NULL)
-  {
-    mytext <- NULL
-    current <- input$ADrug_2
-    mytext
-  }
-  else
-  {
-    
-  
-  #ttemp <- mytext
-  #print("made it to reactive world :)")
-  #print(input$ADrug_2)  
+ 
   mytext <<- unique(c(mytext,input$ADrug_2))
-  current <<- mytext
-  }
+  
+  
   
   })
   
