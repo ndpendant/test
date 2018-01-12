@@ -29,6 +29,7 @@ modal_made = 0
 modal_view <- "www.google.com"
 modal_name <- NULL
 cocktail <- NULL
+mytext <- NULL
 #former color for .well background: rgb(216, 31, 31)
 
 
@@ -147,6 +148,7 @@ server <- function(input, output,session) {
   at <- reactive({
   print("made it to reactive world :)")
   print(input$ADrug_2)
+    
   mytext <- c(mytext,input$ADrug_2)
    
   })
