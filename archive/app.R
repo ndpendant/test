@@ -149,7 +149,7 @@ server <- function(input, output,session) {
   print("made it to reactive world :)")
   print(input$ADrug_2)
     
-  mytext <- c(mytext,input$ADrug_2)
+  mytext <<- c(mytext,input$ADrug_2)
    
   })
   output$Atext <- renderText ({
