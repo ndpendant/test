@@ -448,7 +448,7 @@ server <- function(input, output,session) {
                 
     }
     else(
-      test <- db[db$Drug %in% cocktail,]
+      test <- db[db$Drug %in% mytext,]
       
       )
     fulldt <- NULL
