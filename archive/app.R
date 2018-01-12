@@ -154,7 +154,7 @@ server <- function(input, output,session) {
     #mytext <- c(mytext,text)
     #print(mytext)
     #paste(mytext)
-     at()
+     input$ADrug_2
     
   
   })
