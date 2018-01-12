@@ -696,6 +696,11 @@ server <- function(input, output,session) {
     
   },escape=FALSE)
   
+  output$advance_table2 <- renderDataTable({
+  check_me()$drugs[c(1,2,3,4,6,12)]
+  
+  },escape=FALSE)    
+      
   output$DDI_header1 <- renderText({
     
     "Results of search: "
