@@ -87,8 +87,10 @@ ui <- fluidPage(
                           ),
                   tabPanel("DDI_Advanced", value="DDI Advanced",
                            textInput("ADrug_1",label = "Type in the name of the drug" , value = "warfarin"),
-                           uiOutput("AText_1"),
-                           uiOutput("AText_2"),
+                           #uiOutput("AText_1"),
+                           #uiOutput("AText_2"),
+                           #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
+                           
                            verbatimTextOutput("Atext"), 
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
@@ -129,17 +131,17 @@ server <- function(input, output,session) {
   })
   
   
-   output$AText_1 <- renderUI ({
-    text <- paste0("^",input$ADrug_1)
-     print("my text is")
-     print(text)
-     print(unique(db$Drug[grep(text, db$Drug)]))
-     picks <- unique(db$Drug[grep(text, db$Drug)])
-     tagList(
-     selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
+  # output$AText_1 <- renderUI ({
+  #  text <- paste0("^",input$ADrug_1)
+  #   print("my text is")
+  #   print(text)
+  #   print(unique(db$Drug[grep(text, db$Drug)]))
+  #   picks <- unique(db$Drug[grep(text, db$Drug)])
+  #   tagList(
+  #   selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
      
-     )                     
-  })
+ #    )                     
+#  })
   
   at <- reactive({
   print("made it to reactive world :)")
