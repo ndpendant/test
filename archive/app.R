@@ -30,6 +30,7 @@ modal_view <- "www.google.com"
 modal_name <- NULL
 cocktail <- NULL
 mytext <- NULL
+current <- NULL
 #former color for .well background: rgb(216, 31, 31)
 
 
@@ -132,7 +133,7 @@ server <- function(input, output,session) {
   })
   
   observeEvent(input$ADrug_1, {
-    mytext <<- c(mytext,input$ADrug_2)
+    mytext <<- c(mytext,current)
   })
   
   output$AText_1 <- renderUI ({
@@ -149,11 +150,12 @@ server <- function(input, output,session) {
   
   
   at <- reactive({
-  print("made it to reactive world :)")
-  print(input$ADrug_2)
-    
- # mytext <<- c(mytext,input$ADrug_2)
- 
+  current <<- input$ADrug_2
+  #ttemp <- mytext
+  #print("made it to reactive world :)")
+  #print(input$ADrug_2)  
+  #mytext <<- c(mytext,input$ADrug_2)
+  current
   })
   
   output$Atext <- renderText ({
@@ -162,7 +164,7 @@ server <- function(input, output,session) {
     #print(mytext)
     #paste(mytext)
     #input$ADrug_2
-    mytext
+    at()
   
   })
   
