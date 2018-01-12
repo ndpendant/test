@@ -448,8 +448,12 @@ server <- function(input, output,session) {
                 
     }
     else(
-      test <- db[db$Drug %in% mytext,]
-      
+      test<-NULL
+      for(i in mytext)
+      {
+        temp <- db[db$Drug %in% i,]
+        test <- rbind(temp,test)
+      }
       )
     fulldt <- NULL
    # else
