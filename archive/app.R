@@ -131,6 +131,9 @@ server <- function(input, output,session) {
     )
   })
   
+  observeEvent(input$ADrug_1, {
+    mytext <<- c(mytext,input$ADrug_2)
+  })
   
   output$AText_1 <- renderUI ({
     text <- paste0("^",input$ADrug_1)
@@ -139,8 +142,8 @@ server <- function(input, output,session) {
      print(unique(db$Drug[grep(text, db$Drug)]))
      picks <- unique(db$Drug[grep(text, db$Drug)])
      tagList(
-     #selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
-     checkboxGroupInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks))
+     selectInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
+     #checkboxGroupInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks))
      )                     
   })
   
@@ -149,15 +152,16 @@ server <- function(input, output,session) {
   print("made it to reactive world :)")
   print(input$ADrug_2)
     
-  mytext <<- c(mytext,input$ADrug_2)
-   
+ # mytext <<- c(mytext,input$ADrug_2)
+ 
   })
+  
   output$Atext <- renderText ({
     #print("made it to ATExt")
     #mytext <- c(mytext,text)
     #print(mytext)
     #paste(mytext)
-     input$ADrug_2
+    #input$ADrug_2
     at()
   
   })
