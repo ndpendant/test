@@ -147,14 +147,14 @@ server <- function(input, output,session) {
   print("made it to reactive world :)")
   print(input$ADrug_2)
   mytext <- c(mytext,input$ADrug_2)
-  list(txt = mytext)  
+   
   })
   output$AText <- renderText ({
     #print("made it to ATExt")
     #mytext <- c(mytext,text)
     #print(mytext)
     #paste(mytext)
-     at()$txt 
+     at()
     
   
   })
