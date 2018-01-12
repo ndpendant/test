@@ -150,12 +150,12 @@ server <- function(input, output,session) {
   
   
   at <- reactive({
-  current <- c(mytext,input$ADrug_2)
+  #current <- c(mytext,input$ADrug_2)
   #ttemp <- mytext
   #print("made it to reactive world :)")
   #print(input$ADrug_2)  
-  mytext <<- c(mytext,input$ADrug_2)
-  current
+  mytext <<- unique(c(mytext,input$ADrug_2))
+  
   })
   
   output$Atext <- renderText ({
