@@ -96,7 +96,8 @@ ui <- fluidPage(
                            verbatimTextOutput("Atext"), 
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
-                           actionButton("GO2","Cocktail",icon("refresh"))
+                           actionButton("GO2","Cocktail",icon("refresh")),
+                           actionButton("GO3","Clear",icon("ban"))
                            ),
                   tabPanel("Advanced2", value="DDI Advanced table",
                            dataTableOutput("advance_table1"),
@@ -132,8 +133,8 @@ server <- function(input, output,session) {
     )
   })
   
-  observeEvent(input$ADrug_1, {
-    mytext <<- c(mytext,current)
+  observeEvent(input$GO3, {
+    mytext <<- NULL
   })
   
   output$AText_1 <- renderUI ({
