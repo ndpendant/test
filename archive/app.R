@@ -447,14 +447,14 @@ server <- function(input, output,session) {
       #test2 <- db[db$Drug %in% input$Drug_2,]
                 
     }
-    else(
+    else{
       test<-NULL
       for(i in mytext)
       {
         temp <- db[db$Drug %in% i,]
         test <- rbind(temp,test)
       }
-      )
+      }
     fulldt <- NULL
    # else
    # {
