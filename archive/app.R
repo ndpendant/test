@@ -579,7 +579,9 @@ server <- function(input, output,session) {
    #####ADVANCED TABS#####
    afound <- reactive({
     choice <- input$search
-    
+    print("This is what was chosen")
+    print(mytext)
+    print(check_me()$drugs$Drug)
     test<-NULL
     for(i in mytext)
     {
