@@ -765,7 +765,7 @@ server <- function(input, output,session) {
             
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
               row2 <- c(i,paste(m,j,pt1),paste(n,tk,pt2), s)
-              print(row2)
+              #print(row2)
               holding <- rbind(holding,row2)
             }
           }
