@@ -849,7 +849,7 @@ server <- function(input, output,session) {
     #rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
-    mytable <- mytable[!duplicated(mytable$Drug_1 & mytable$Drug_2),]
+   # mytable <- mytable[!duplicated(mytable$Drug_1 & mytable$Drug_2),]
        
   })
       
