@@ -454,7 +454,7 @@ server <- function(input, output,session) {
         temp <- db[db$Drug %in% i,]
         test <- rbind(temp,test)
       }
-      }
+    }
     fulldt <- NULL
    # else
    # {
@@ -573,6 +573,289 @@ server <- function(input, output,session) {
     list(drugs = fulldt)
     
   })
+      
+      
+      
+   #####ADVANCED TABS#####
+   afound <- reactive({
+    choice <- input$search
+    
+    test<-NULL
+    for(i in mytext)
+    {
+        temp <- db[db$Drug %in% i,]
+        test <- rbind(temp,test)
+    }
+     
+
+    cyps <- unique(test$Enzyme)
+
+    
+    holding <- NULL
+    for(i in cyps)
+    {
+      for(j in temp$Drug)
+      {
+        for(k in temp$Drug)
+        {  
+          tb1 <- db[db$Drug %in% j & db$Enzyme %in% i,]
+      #}
+      
+      #if(sum(str_detect(db$Drug, input$Drug_2)) > 0)
+      #{
+          tb2 <- db[db$Drug %in% k & db$Enzyme %in% i,]
+      #}
+      
+    #else
+    #{
+      #if(sum(str_detect(db$CYP..., input$CYP_1)) > 0)
+      #{
+     #   tb1 <- db[db$CYP... %in% input$CYP_1,]
+      #}
+   
+      #if(sum(str_detect(db$CYP..., input$CYP_2)) > 0)
+      #{
+      #  tb2 <- db[db$CYP... %in% input$CYP_2,]
+      #}
+    #}
+    
+      inhibitor1 <- sum(str_detect(tb1$Action,"inhibitor"))
+      substrate1 <- sum(str_detect(tb1$Action,"substrate"))
+      inducer1 <-sum(str_detect(tb1$Action,"inducer"))
+    
+      inhibitor2 <- sum(str_detect(tb2$Action,"inhibitor"))
+      substrate2 <- sum(str_detect(tb2$Action,"substrate"))
+      inducer2 <-sum(str_detect(tb2$Action,"inducer"))
+    
+      #one outcome
+      if(inhibitor1 > substrate1 && inhibitor1 > inducer1)
+      {
+        action1 = c("inhibitor")
+      }
+    
+      else if(substrate1 > inhibitor1 && substrate1 > inducer1)
+      {
+        action1 = c("substrate")
+      }
+    
+      else if(inducer1 > substrate1 && inducer1 > inhibitor1)
+      {
+        action1 = c("inducer")
+      }
+        
+      #two outcomes  
+      else if(inhibitor1 == substrate1 && inhibitor1 > inducer1)
+      {
+        action1 = c("inhibitor","substrate")
+      }
+    
+      else if(inhibitor1 == inducer1 && inhibitor1 > substrate1)
+      {
+        action1 = c("inhibitor","inducer")
+      }
+    
+      else if(inducer1 == substrate1 && inducer1 > inhibitor1)
+      {
+        action1 = c("inducer","substrate")
+      }
+      
+      #three outcomes
+      else if(inducer1 == substrate1 && inducer1 == inhibitor1)
+      {
+        action1 = c("inducer","substrate","inhibitor")
+      }
+    
+      #one outcome
+      if(inhibitor2 > substrate2 && inhibitor2 > inducer2)
+      {
+        action2 = c("inhibitor")
+      }
+    
+      else if(substrate2 > inhibitor2 && substrate2 > inducer2)
+      {
+        action2 = c("substrate")
+      }
+    
+      else if(inducer2 > substrate2 && inducer2 > inhibitor2)
+      {
+        action2 = c("inducer")
+      }
+        
+      #two outcomes  
+      else if(inhibitor2 == substrate2 && inhibitor2 > inducer2)
+      {
+        action2 = c("inhibitor","substrate")
+      }
+    
+      else if(inhibitor2 == inducer2 && inhibitor2 > substrate2)
+      {
+        action2 = c("inhibitor","inducer")
+      }
+    
+      else if(inducer2 == substrate2 && inducer2 > inhibitor2)
+      {
+        action2 = c("inducer","substrate")
+      }
+      
+      #three outcomes
+      else if(inducer2 == substrate2 && inducer2 == inhibitor2)
+      {
+        action2 = c("inducer","substrate","inhibitor")
+      }
+      
+        
+        
+      #pt1 <- max(inducer1,substrate1,inhibitor1)
+      # pt2 <- max(inducer2,substrate2,inhibitor2)
+      # score <- sqrt(pt1*pt2)
+      
+      #appending rows to table
+      if(length(action1) < length(action2))
+      {
+        
+        for(j in action1)
+        {
+          for(k in action2)
+          {
+            if(j == "inducer")
+            {
+              pt1 <- inducer1
+            }
+            else if(j == "substrate")
+            {
+              pt1 <- substrate1 
+            }
+            else
+            {
+              pt1 <- inhibitor1
+            }
+            if(k == "inducer")
+            {
+              pt2 <- inducer2
+            }
+            else if(k == "substrate")
+            {
+              pt2 <- substrate2 
+            }
+            else
+            {
+              pt2 <- inhibitor2
+            }
+            
+            
+            score <- sqrt(pt1*pt2)
+            tk = k
+            s = score
+            if(pt1 == 0)
+            {
+              tk = "No Matches"
+            }
+            if(pt2 == 0)
+            {
+              tk = "No Matches"
+            }
+            if((j == "substrate" && k == "substrate") | (j != "substrate" && k != "substrate"))
+            {
+              s = 0
+            }
+     # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
+            
+    #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
+            row2 <- c(i,paste(j,pt1),paste(tk,pt2), s)
+            print(row2)
+            holding <- rbind(holding,row2)
+          }
+        }
+      }
+      else
+      {
+        for(j in action2)
+        {
+          for(k in action1)
+          {
+            if(k == "inducer")
+            {
+              pt1 <- inducer1
+            }
+            else if(k == "substrate")
+            {
+              pt1 <- substrate1 
+            }
+            else
+            {
+              pt1 <- inhibitor1
+            }
+            if(j == "inducer")
+            {
+              pt2 <- inducer2
+            }
+            else if(j == "substrate")
+            {
+              pt2 <- substrate2 
+            }
+            else
+            {
+              pt2 <- inhibitor2
+            }
+            
+            score <- sqrt(pt1*pt2)
+            tk = k
+            s = score
+            if(pt1 == 0)
+            {
+              tk = "No Matches"
+            }
+            if(pt2 == 0)
+            {
+              tk = "No Matches"
+            }
+            if((k == "substrate" && j == "substrate") | (k != "substrate" && j != "substrate"))
+            {
+              s = 0
+            }
+     # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
+      
+    #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
+            row2 <- c(i,paste(k,pt1),paste(j,pt2), s)
+            print(row2)
+            holding <- rbind(holding,row2)
+          }
+        }   
+      }  
+    }
+        }
+        }
+    #table <- rbind(row1,row2)
+    #mytable <- data.frame(row)
+     mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
+    #if(choice == "Drug_Name")
+    #{
+      colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
+     # rownames(mytable) <- cyps
+      #cyp <- rownames(mytable[mytable[,4] > 0,])
+    #}
+    #else
+    #{
+    # colnames(mytable) <- c(input$CYP_1,input$CYP_2,"Drug Score")
+
+   # }
+    mytable <- mytable[mytable[,4] > 0,]
+    #cyp <- rownames(mytable)
+    mytable <- matrix(mytable,ncol = 4)
+    colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
+    #rownames(mytable) <- cyp
+    mytable <- data.frame(mytable)
+    mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
+    #mytable <- mytable[which(mytable[,3]>0),]
+   
+  })
+      
+      
+      
+      
+      
+      
+      
   #mod <- observe({
   mod <- reactive({
     myModal = modalDialog(title=paste(modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))    
@@ -700,10 +983,17 @@ server <- function(input, output,session) {
     
   },escape=FALSE)
   
+        
+        
+        
   output$advance_table2 <- renderDataTable({
   check_me()$drugs[c(1,2,3,4,6,12)]
   
-  },escape=FALSE)    
+  },escape=FALSE) 
+        
+  output$advance_table1 <- renderDataTable({
+  afound()
+  })
       
   output$DDI_header1 <- renderText({
     
