@@ -619,10 +619,7 @@ server <- function(input, output,session) {
       #}
     #}
         
-        print("THIS IS TB1")
-        print(tb1)
-        print("This is TB2")
-        print(tb2)  
+         
           
           
         inhibitor1 <- sum(str_detect(tb1$Action,"inhibitor"))
@@ -767,7 +764,7 @@ server <- function(input, output,session) {
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
             
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-              row2 <- c(i,paste(j,pt1),paste(tk,pt2), s)
+              row2 <- c(i,paste(m,j,pt1),paste(n,tk,pt2), s)
               print(row2)
               holding <- rbind(holding,row2)
             }
@@ -822,7 +819,7 @@ server <- function(input, output,session) {
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-              row2 <- c(i,paste(k,pt1),paste(j,pt2), s)
+              row2 <- c(i,paste(n,k,pt1),paste(m,j,pt2), s)
               #print(row2)
               holding <- rbind(holding,row2)
             }
@@ -853,8 +850,7 @@ server <- function(input, output,session) {
     mytable <- data.frame(mytable)
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
     #mytable <- mytable[which(mytable[,3]>0),]
-    print("This is my new table!!!!")
-    print(mytable)      
+       
   })
       
       
