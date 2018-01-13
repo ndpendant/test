@@ -594,9 +594,9 @@ server <- function(input, output,session) {
     holding <- NULL
     for(i in cyps)
     {
-      for(m in temp$Drug)
+      for(m in test$Drug)
       {
-        for(n in temp$Drug)
+        for(n in test$Drug)
         {  
           tb1 <- db[db$Drug %in% m & db$Enzyme %in% i,]
       #}
