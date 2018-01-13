@@ -156,6 +156,9 @@ server <- function(input, output,session) {
      )                     
   })
   
+  observe({ 
+    at()
+  })
   
   at <- reactive({
   
@@ -992,13 +995,13 @@ server <- function(input, output,session) {
         
         
   output$advance_table2 <- renderDataTable({
-  input$GO2
+  check_me()
   check_me()$drugs[c(1,2,3,4,6,12)]
   
   },escape=FALSE) 
         
   output$advance_table1 <- renderDataTable({
-  input$GO2
+  afound()
   afound()
   })
       
