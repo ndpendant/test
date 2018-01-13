@@ -833,7 +833,7 @@ server <- function(input, output,session) {
      mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
     #if(choice == "Drug_Name")
     #{
-      colnames(mytable) <- c("Enzyme","Drug 1","Drug 2","R_Score")
+      colnames(mytable) <- c("Enzyme","Drug_1","Drug_2","R_Score")
      # rownames(mytable) <- cyps
       #cyp <- rownames(mytable[mytable[,4] > 0,])
     #}
@@ -845,11 +845,11 @@ server <- function(input, output,session) {
     mytable <- mytable[mytable[,4] > 0,]
     #cyp <- rownames(mytable)
     mytable <- matrix(mytable,ncol = 4)
-    colnames(mytable) <- c("Enzyme","Drug 1","Drug 2","R_Score")
+    colnames(mytable) <- c("Enzyme","Drug_1","Drug_2","R_Score")
     #rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
-    #mytable <- mytable[which(mytable[,3]>0),]
+    mytable <- mytable[!duplicated(mytable$Drug_1 && mytable$Drug_2),]
        
   })
       
