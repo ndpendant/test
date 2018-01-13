@@ -584,7 +584,8 @@ server <- function(input, output,session) {
     choice <- input$search
     print("This is what was chosen")
     print(mytext)
-    print(check_me()$drugs$Drug)
+    print("TRYING TO MAKE IT REACT!!")
+    print(input$ADrug_2)
     test<-NULL
     for(i in mytext)
     {
