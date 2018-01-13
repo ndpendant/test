@@ -618,7 +618,13 @@ server <- function(input, output,session) {
       #  tb2 <- db[db$CYP... %in% input$CYP_2,]
       #}
     #}
-    
+        
+        print("THIS IS TB1")
+        print(tb1)
+        print("This is TB2")
+        print(tb2)  
+          
+          
         inhibitor1 <- sum(str_detect(tb1$Action,"inhibitor"))
         substrate1 <- sum(str_detect(tb1$Action,"substrate"))
         inducer1 <-sum(str_detect(tb1$Action,"inducer"))
@@ -842,7 +848,7 @@ server <- function(input, output,session) {
     mytable <- mytable[mytable[,4] > 0,]
     #cyp <- rownames(mytable)
     mytable <- matrix(mytable,ncol = 4)
-    colnames(mytable) <- c("Enzyme",input$Drug_1,input$Drug_2,"R_Score")
+    colnames(mytable) <- c("Enzyme","Drug 1","Drug 2","R_Score")
     #rownames(mytable) <- cyp
     mytable <- data.frame(mytable)
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
