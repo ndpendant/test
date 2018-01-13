@@ -847,7 +847,8 @@ server <- function(input, output,session) {
     mytable <- data.frame(mytable)
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
     #mytable <- mytable[which(mytable[,3]>0),]
-   print("This is my new table!!!!")
+    print("This is my new table!!!!")
+    print(mytable)      
   })
       
       
