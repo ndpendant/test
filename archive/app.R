@@ -839,7 +839,9 @@ server <- function(input, output,session) {
     print(holding)
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
-     mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
+    mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
+    print("STEP 1")
+    print(mytable)
     #if(choice == "Drug_Name")
     #{
       colnames(mytable) <- c("Enzyme","Drug_1","Drug_2","R_Score")
@@ -853,10 +855,16 @@ server <- function(input, output,session) {
    # }
     mytable <- mytable[mytable[,4] > 0,]
     #cyp <- rownames(mytable)
+    print("STEP 2")
+    print(mytable)
     mytable <- matrix(mytable,ncol = 4)
     colnames(mytable) <- c("Enzyme","Drug_1","Drug_2","R_Score")
     #rownames(mytable) <- cyp
+    print("STEP 3")
+    print(mytable)      
     mytable <- data.frame(mytable)
+    print("STEP 4")
+    print(mytable) 
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
     mytable <- mytable[!duplicated(mytable$Drug_1 & mytable$Drug_2),]
     print("THIS IS THE FINAL TABLE")
