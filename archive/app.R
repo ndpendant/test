@@ -88,13 +88,13 @@ ui <- fluidPage(
                   
                           ),
                   tabPanel("DDI_Advanced", value="DDI Advanced",
-                           h1(textOutput("advanced_1")),
+                           textOutput("advanced_1"),
                            textInput("ADrug_1",label = NULL, value = "warfarin"),
-                           h1(textOutput("advanced_2")),
+                           textOutput("advanced_2"),
                            uiOutput("AText_1"),
                            #uiOutput("AText_2"),
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
-                           h1(textOutput("advanced_3")),
+                           textOutput("advanced_3"),
                            verbatimTextOutput("Atext"), 
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
@@ -153,7 +153,7 @@ server <- function(input, output,session) {
      print(unique(db$Drug[grep(text, db$Drug)]))
      picks <- unique(db$Drug[grep(text, db$Drug)])
      tagList(
-     selectInput("ADrug_2", choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
+     selectInput("ADrug_2", label = NULL,choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
      #checkboxGroupInput("ADrug_2",label = "Select the drug name from the list", choices = c(picks))
      )                     
   })
