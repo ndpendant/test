@@ -70,7 +70,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(139, 8, 8) ; color:#FFF ;}"),
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
      
-      navbarPage("DRUGS!",
+      navbarPage(
                   tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
                            p(textOutput("home_body1")),
