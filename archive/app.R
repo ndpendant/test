@@ -442,7 +442,7 @@ server <- function(input, output,session) {
   })
   
   check_me <- reactive({
-    
+    print(input$ADrug_1)
     choice <- input$search
     if(choice == "Drug_Name")
     {
