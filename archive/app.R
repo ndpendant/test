@@ -70,42 +70,49 @@ ui <- fluidPage(
       tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(139, 8, 8) ; color:#FFF ;}"),
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
      
-      tabsetPanel(id = "tabs", 
+      navbarPage(“DRUGS!”,
                   tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
                            p(textOutput("home_body1")),
                            imageOutput("ddi_home1",height = "80vh")
                             ),
-                  tabPanel("DDI_Basic",value="DDI Basic",
-                  
-        
-                  h3(textOutput("DDI_header1")),
-                  dataTableOutput("table1"),
-                  textOutput("verbose"),
-                  h3(textOutput("DDI_header2")),
-                  dataTableOutput("table2"),
-                  uiOutput("view_struct_pt1")
-                  
-                          ),
-                  tabPanel("DDI_Advanced", value="DDI Advanced",
-                           textOutput("advanced_1"),
-                           textInput("ADrug_1",label = NULL, value = "warfarin"),
-                           textOutput("advanced_2"),
-                           uiOutput("AText_1"),
+                  navbarMenu(“Basic”,
+
+                           tabPanel("DDI_Basic1",value="R score (Basic)",
+                                h3(textOutput("DDI_header1")),
+                                dataTableOutput("table1")
+                                ),
+                           tabPanel(“DD_Basic2”,value="Resources (Basic)",
+                 # textOutput("verbose"),
+    
+                                  h3(textOutput("DDI_header2")),
+                                  dataTableOutput("table2"),
+                                  uiOutput("view_struct_pt1")
+                                  )
+                            ),
+                  navbarMenu("Advanced",
+                            tabPanel("DDI_Advanced", value="DDI Advanced",
+                                  textOutput("advanced_1"),
+                                  textInput("ADrug_1",label = NULL, value = "warfarin"),
+                                  textOutput("advanced_2"),
+                                  uiOutput("AText_1"),
                            #uiOutput("AText_2"),
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
-                           textOutput("advanced_3"),
-                           verbatimTextOutput("Atext"), 
+                                  textOutput("advanced_3"),
+                                  verbatimTextOutput("Atext"), 
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
-                           actionButton("GO2","Cocktail",icon("refresh")),
-                           actionButton("GO3","Clear",icon("ban"))
-                           ),
-                  tabPanel("Advanced2", value="DDI Advanced table",
-                           dataTableOutput("advance_table1"),
-                           dataTableOutput("advance_table2")
-                           )
-                 )
+                                  actionButton("GO2","Cocktail",icon("refresh")),
+                                  actionButton("GO3","Clear",icon("ban"))
+	                                ),
+                            tabPanel("Advancedt1", value="DDI Advanced table 1",
+                                  dataTableOutput("advance_table1")
+	                                ),
+                            tabPanel("Advancedt2", value="DDI Advanced table 2",
+                                  dataTableOutput("advance_table2")
+                                  )
+                            )
+
         )
     )
     
