@@ -82,7 +82,7 @@ ui <- fluidPage(
                                 h3(textOutput("DDI_header1")),
                                 dataTableOutput("table1")
                                 ),
-                           tabPanel(“DD_Basic2”,value="Resources (Basic)",
+                           tabPanel("DDI_Basic2",value="Resources (Basic)",
                  # textOutput("verbose"),
     
                                   h3(textOutput("DDI_header2")),
