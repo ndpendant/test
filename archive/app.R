@@ -1011,7 +1011,7 @@ server <- function(input, output,session) {
         
         
   output$advance_table2 <- renderDataTable({
-  check_me()
+
   check_me()$drugs[c(1,2,3,4,6,12)]
   
   },escape=FALSE) 
