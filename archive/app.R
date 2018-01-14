@@ -859,6 +859,8 @@ server <- function(input, output,session) {
     mytable <- data.frame(mytable)
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
     mytable <- mytable[!duplicated(mytable$Drug_1 & mytable$Drug_2),]
+    print("THIS IS THE FINAL TABLE")
+    print(mytable)
        
   })
       
