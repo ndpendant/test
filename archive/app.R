@@ -833,7 +833,10 @@ server <- function(input, output,session) {
         }  
       }
         }
+          print("INSIDE LOOP")
         }
+    print("This is hold after loop")
+    print(holding)
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
      mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
