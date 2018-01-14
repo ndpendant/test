@@ -868,9 +868,9 @@ server <- function(input, output,session) {
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
     print("STEP 5")
     print(mytable) 
-    mytable <- mytable[!duplicated(mytable$Drug_1 & mytable$Drug_2),]
-    print("THIS IS THE FINAL TABLE")
-    print(mytable)
+    #mytable <- mytable[!duplicated(mytable$Drug_1 & mytable$Drug_2),]
+    #print("THIS IS THE FINAL TABLE")
+    #print(mytable)
        
   })
       
