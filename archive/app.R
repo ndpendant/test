@@ -112,7 +112,7 @@ ui <- fluidPage(
                                   dataTableOutput("advance_table2")
                                   )
                             )
-
+		)
         )
     )
     
