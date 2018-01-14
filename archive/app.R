@@ -88,11 +88,13 @@ ui <- fluidPage(
                   
                           ),
                   tabPanel("DDI_Advanced", value="DDI Advanced",
-                           textInput("ADrug_1",label = "Type in the name of the drug" , value = "warfarin"),
+                           h1(textOutput("advanced_1")),
+                           textInput("ADrug_1", value = "warfarin"),
+                           h1(textOutput("advanced_2")),
                            uiOutput("AText_1"),
                            #uiOutput("AText_2"),
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
-                           
+                           h1(textOutput("advanced_3")),
                            verbatimTextOutput("Atext"), 
                            #selectInput("ADrug_2",label = "Select the drug name from the list", choices = unique(db$Drug),selectize = FALSE,size = 5),
                            #selectInput("ADrug_",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
@@ -1036,7 +1038,24 @@ server <- function(input, output,session) {
     "Welcome to the USF webserver! " 
   
 })
+  output$advanced_1 <- renderText({
+    
+    "Type in the name of the drug:" 
   
+})
+  output$advanced_2 <- renderText({
+    
+    "Select the drug name from the list\n(for multiple selections hold ctrl):" 
+  
+})
+ output$advanced_3 <- renderText({
+    
+    "Verify selected drugs below:" 
+  
+})
+        
+        
+
   output$verbose <- renderText({
     found()
     
