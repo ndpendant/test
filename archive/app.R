@@ -1045,7 +1045,7 @@ server <- function(input, output,session) {
 })
   output$advanced_2 <- renderText({
     
-    "Select the drug name from the list\n(for multiple selections hold ctrl):" 
+    "Select the drug name from the list:" 
   
 })
  output$advanced_3 <- renderText({
