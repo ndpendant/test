@@ -73,7 +73,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
      
       navbarPage(
-                  tabPanel("Home",value="home",
+	      tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
                            p(textOutput("home_body1")),
                            imageOutput("ddi_home1",height = "80vh")
