@@ -79,9 +79,11 @@ ui <- fluidPage(
                            imageOutput("ddi_home1",height = "80vh")
                             ),
                   navbarMenu("Basic",
-			   tabPanel("Basic1",value="DDI Basic",
-				selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
-      				selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
+			   tabPanel("Basic_Search",value="DDI Basic",
+				textOutput("basic_drug_1"),
+				selectInput("Drug_1", choices = unique(db$Drug),selectize = FALSE, size = 5),
+				textOutput("basic_drug_2"),    
+      				selectInput("Drug_2", choices = unique(db$Drug),selectize = FALSE,size = 5),
       				actionButton("GO5","Search",icon("refresh"))
 				),
                            tabPanel("DDI_Basic1",value="R score (Basic)",
@@ -153,7 +155,6 @@ server <- function(input, output,session) {
       selected = "DDI Advanced table"
     )
   })
-  
   
   observeEvent(input$GO3, {
     mytext <<- NULL
@@ -1068,7 +1069,19 @@ server <- function(input, output,session) {
 })
         
         
-
+	      
+  output$basic_drug_1 <- renderText({
+    
+    "Drug 1:" 
+  
+})
+ output$basic_drug_2 <- renderText({
+    
+    "Drug 2:" 
+  
+})	    
+	      
+	      
   output$verbose <- renderText({
     found()
     
