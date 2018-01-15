@@ -81,9 +81,9 @@ ui <- fluidPage(
                   navbarMenu("Basic",
 			   tabPanel("Basic_Search",value="DDI Basic",
 				textOutput("basic_drug_1"),
-				selectInput("Drug_1", choices = unique(db$Drug),selectize = FALSE, size = 5),
+				selectInput("Drug_1",label = NULL, choices = unique(db$Drug),selectize = FALSE, size = 5),
 				textOutput("basic_drug_2"),    
-      				selectInput("Drug_2", choices = unique(db$Drug),selectize = FALSE,size = 5),
+      				selectInput("Drug_2",label = NULL, choices = unique(db$Drug),selectize = FALSE,size = 5),
       				actionButton("GO5","Search",icon("refresh"))
 				),
                            tabPanel("DDI_Basic1",value="R score (Basic)",
