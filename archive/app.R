@@ -48,8 +48,8 @@ ui <- fluidPage(
       imageOutput("image",height = "35vh"),
       selectInput("search",label = "Search Type:", choices = c('DDI_Basic','DDI_Advanced')),
       conditionalPanel("input.search == 'DDI_Basic' ",
-      selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
-      selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
+      #selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
+      #selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
       actionButton("GO","Search",icon("refresh"))
       ),
       conditionalPanel("input.search == 'DDI_Advanced' ",
@@ -79,7 +79,11 @@ ui <- fluidPage(
                            imageOutput("ddi_home1",height = "80vh")
                             ),
                   navbarMenu("Basic",
-
+			   tabPanel("Basic1",value="DDI Basic",
+				selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
+      				selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
+      				actionButton("GO5","Search",icon("refresh"))
+				),
                            tabPanel("DDI_Basic1",value="R score (Basic)",
                                 h3(textOutput("DDI_header1")),
                                 dataTableOutput("table1")
