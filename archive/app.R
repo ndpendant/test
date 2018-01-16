@@ -128,7 +128,12 @@ ui <- fluidPage(
 				  actionButton("as_tb1","R Score",icon("refresh")),    
 				  actionButton("as_hm2","Home",icon("refresh")) 
                                   )
-                            )
+                            ),
+		 tabPanel("About_Us",value="About US",
+                           h3(textOutput("about_header1")),
+                           p(textOutput("about_body1"))
+			  )
+		 
 		)
         )
     )
@@ -1171,7 +1176,20 @@ observeEvent(input$as_tb1, {
 the metabolisms of the drugs interact with each other. By typing in the first few letters of the drug or utilizing the drop down selection
 , you can choose 2 or more drugs from our database and determine a Reliability score. Choose one of the options on the left side bar panel to begin."
 
-  })  
+  }) 
+	     
+	      output$about_header1 <- renderText({
     
+    "Reliability Computation for Pharmocokinetic DDI" 
+  
+})
+	      
+    output$about_body1 <- renderText({
+    
+    "Identifying drug-drug interaction (DDI) is an important topic for the development of safe
+Pharmaceutical drugs and for the optimization of multidrug regimens for complex diseases. Poly-pharmacy increases the risk of DDIs. A pharmacokinetic interaction may occur if one drug affects the absorption, distribution, metabolism, or excretion (ADME) of another drug when two drugs given together. In this project, we construct a web server for predicting and showing possible pharmacokinetic DDIs between two drugs. We also introduced a reliability score to evaluate the probability of these DDIs. Our web server has the potential to help users better understand the mechanism of a pharmacokinetic DDI.
+" 
+  
+})
 }
 shinyApp(ui,server)
