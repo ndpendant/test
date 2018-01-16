@@ -543,7 +543,7 @@ observeEvent(input$as_tb1, {
   })
   
   check_me <- reactive({
-   # print(input$ADrug_1)
+    print(input$ADrug_1)
     choice <- input$search
     if(choice == "DDI_Basic")
     {
