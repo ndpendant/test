@@ -84,11 +84,12 @@ ui <- fluidPage(
 				selectInput("Drug_1",label = NULL, choices = unique(db$Drug),selectize = FALSE, size = 5),
 				textOutput("basic_drug_2"),    
       				selectInput("Drug_2",label = NULL, choices = unique(db$Drug),selectize = FALSE,size = 5),
-      				actionButton("bs-tb1","Search",icon("refresh"))
+      				actionButton("bs_tb1","Search",icon("refresh"))
 				),
                            tabPanel("DDI_Basic1",value="R score (Basic)",
                                 h3(textOutput("DDI_header1")),
-                                dataTableOutput("table1")
+                                dataTableOutput("table1"),
+				actionButton("bs_tb2","Search",icon("refresh"))    
                                 ),
                            tabPanel("DDI_Basic2",value="Resources (Basic)",
                  # textOutput("verbose"),
@@ -150,17 +151,17 @@ server <- function(input, output,session) {
     )
   })
   
-   observeEvent(input$bs-tb1, {
-    updateNavbarPage(session, "tabs",
+   observeEvent(input$bs_tb1, {
+    updateNavbarPage(session, "menu",
       selected = "R score (Basic)"
     )
   })
 
-  #observeEvent(input$bs-tb1, {
-   # updateNavbarPage(session, "tabs",
-  #    selected = "DDI Advanced table"
-  #  )
- # })
+  observeEvent(input$bs_tb2, {
+    updateNavbarPage(session, "menu",
+      selected = "Resources (Basic)"
+    )
+  })
   
   observeEvent(input$GO3, {
     mytext <<- NULL
