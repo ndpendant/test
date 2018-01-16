@@ -89,14 +89,18 @@ ui <- fluidPage(
                            tabPanel("DDI_Basic1",value="R score (Basic)",
                                 h3(textOutput("DDI_header1")),
                                 dataTableOutput("table1"),
-				actionButton("bs_tb2","Search",icon("refresh"))    
+				actionButton("bs_tb2","Resources",icon("refresh")),
+				actionButton("bs_hm1","Home",icon("refresh")) 
                                 ),
                            tabPanel("DDI_Basic2",value="Resources (Basic)",
                  # textOutput("verbose"),
     
                                   h3(textOutput("DDI_header2")),
                                   dataTableOutput("table2"),
-                                  uiOutput("view_struct_pt1")
+                                  uiOutput("view_struct_pt1"),
+				  actionButton("bs_tb1a","Search",icon("refresh")),
+				  actionButton("bs_hm2","Home",icon("refresh"))
+				  
                                   )
                             ),
                   navbarMenu("Advanced",
@@ -115,10 +119,14 @@ ui <- fluidPage(
                                   actionButton("GO3","Clear",icon("ban"))
 	                                ),
                             tabPanel("Advancedt1", value="DDI Advanced table 1",
-                                  dataTableOutput("advance_table1")
+                                  dataTableOutput("advance_table1"),
+				  actionButton("as_tb2","Home",icon("refresh")), 
+				  actionButton("as_hm1","Home",icon("refresh")) 
 	                                ),
                             tabPanel("Advancedt2", value="DDI Advanced table 2",
-                                  dataTableOutput("advance_table2")
+                                  dataTableOutput("advance_table2"),
+				  actionButton("as_tb1","Home",icon("refresh")),    
+				  actionButton("as_hm2","Home",icon("refresh")) 
                                   )
                             )
 		)
@@ -138,7 +146,9 @@ server <- function(input, output,session) {
       }
       inputs
     }
-  
+	
+  #BUTTONS FOR SIDE PANEL
+	
   observeEvent(input$side_basic, {
     updateNavbarPage(session, "menu",
       selected = "DDI Basic"
@@ -150,19 +160,68 @@ server <- function(input, output,session) {
       selected = "DDI Advanced"
     )
   })
-  
+
+	
+  #BUTTONS FOR DDI BASIC TABS
+	
    observeEvent(input$bs_tb1, {
     updateNavbarPage(session, "menu",
       selected = "R score (Basic)"
     )
   })
 
+ observeEvent(input$bs_tb1a, {
+    updateNavbarPage(session, "menu",
+      selected = "R score (Basic)"
+    )
+  })
+	
   observeEvent(input$bs_tb2, {
     updateNavbarPage(session, "menu",
       selected = "Resources (Basic)"
     )
   })
-  
+
+ observeEvent(input$bs_hm1, {
+    updateNavbarPage(session, "menu",
+      selected = "DDI Basic"
+    )
+  })	
+
+ observeEvent(input$bs_hm2, {
+    updateNavbarPage(session, "menu",
+      selected = "DDI Basic"
+    )
+  })	
+	
+	
+	
+#Advanced Buttons
+observeEvent(input$as_tb1, {
+    updateNavbarPage(session, "menu",
+      selected = "DDI Advanced table 1"
+    )
+  })
+
+  observeEvent(input$as_tb2, {
+    updateNavbarPage(session, "menu",
+      selected = "DDI Advanced table 2"
+    )
+  })
+
+ observeEvent(input$as_hm1, {
+    updateNavbarPage(session, "menu",
+      selected = "DDI Advanced"
+    )
+  })	
+
+ observeEvent(input$as_hm2, {
+    updateNavbarPage(session, "menu",
+      selected = "DDI Advanced"
+    )
+  })	
+	
+	
   observeEvent(input$GO3, {
     mytext <<- NULL
   })
@@ -1050,12 +1109,12 @@ server <- function(input, output,session) {
       
   output$DDI_header1 <- renderText({
     
-    "Results of search: "
+    "R Score Results: "
   })
   
   output$DDI_header2 <- renderText({
     
-    "Full list of results:"
+    "Full list of resources:"
   })
   
   output$home_header1 <- renderText({
