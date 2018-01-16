@@ -1137,12 +1137,12 @@ observeEvent(input$as_tb1, {
 })
   output$advanced_1 <- renderText({
     
-    "Type in the name of the drug:" 
+    "STEP 1.) Type in the name of the drug:" 
   
 })
   output$advanced_2 <- renderText({
     
-    "Select the drug name from the list:" 
+    "STEP 2.) Select the drug name from the list:" 
   
 })
  output$advanced_3 <- renderText({
