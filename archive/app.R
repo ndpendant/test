@@ -72,7 +72,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(139, 8, 8) ; color:#FFF ;}"),
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
      
-      navbarPage(id="menu",title="Welcome to the USF webserver!",theme = shinytheme("simplex"),
+      navbarPage(id="menu",title="Welcome to the USF Web Server!",theme = shinytheme("simplex"),
 	      tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
                            p(textOutput("home_body1")),
@@ -1127,7 +1127,7 @@ observeEvent(input$as_tb1, {
   
   output$home_header1 <- renderText({
     
-    "Reliability Computation for Pharmocokinetic DDI" 
+    "Pharmocokinetic DDIs" 
   
 })
   output$advanced_1 <- renderText({
@@ -1169,7 +1169,7 @@ observeEvent(input$as_tb1, {
     
     "With the help of this tool it is possible to search for a drug-cocktail to check whether 
 the metabolisms of the drugs interact with each other. By typing in the first few letters of the drug or utilizing the drop down selection
-, you can choose 2 drugs from our database and determine a Reliability score. If you have chosen your drugs, click on the *Search* button."
+, you can choose 2 or more drugs from our database and determine a Reliability score. Choose one of the options on the left side bar panel to begin."
 
   })  
     
