@@ -119,11 +119,13 @@ ui <- fluidPage(
                                   actionButton("GO3","Clear",icon("ban"))
 	                                ),
                             tabPanel("Advancedt1", value="DDI Advanced table 1",
+				  h3(textOutput("advance_header1")),   
                                   dataTableOutput("advance_table1"),
 				  actionButton("as_tb2","Resources",icon("refresh")), 
 				  actionButton("as_hm1","Home",icon("refresh")) 
 	                                ),
                             tabPanel("Advancedt2", value="DDI Advanced table 2",
+				  h3(textOutput("advance_header2")),   
                                   dataTableOutput("advance_table2"),
 				  actionButton("as_tb1","R Score",icon("refresh")),    
 				  actionButton("as_hm2","Home",icon("refresh")) 
@@ -684,7 +686,7 @@ observeEvent(input$as_tb1, {
    # print("This is what was chosen")
   #  print(mytext)
   #  print("TRYING TO MAKE IT REACT!!")
-  #  print(input$ADrug_2)
+    print(input$ADrug_2)
     test<-NULL
     for(i in mytext)
     {
@@ -1126,6 +1128,16 @@ observeEvent(input$as_tb1, {
     "Full list of resources:"
   })
   
+  output$advance_header1 <- renderText({
+    
+    "R Score Results: "
+  })
+  
+  output$advance_header2 <- renderText({
+    
+    "Full list of resources:"
+  })
+	      
   output$home_header1 <- renderText({
     
     "Pharmocokinetic DDIs" 
