@@ -964,10 +964,10 @@ observeEvent(input$as_tb1, {
     mytable <- data.frame(mytable)
   #  print("STEP 4")
    # print(mytable) 
-   # mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
+    mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
   #  print("STEP 5")
    # print(mytable) 
-    mytable <- mytable[!(duplicated(mytable[,2:3])),]
+  #  mytable <- mytable[!(duplicated(mytable[,2:3])),]
     #print("THIS IS THE FINAL TABLE")
     #print(mytable)
        
