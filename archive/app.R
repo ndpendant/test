@@ -120,12 +120,12 @@ ui <- fluidPage(
 	                                ),
                             tabPanel("Advancedt1", value="DDI Advanced table 1",
                                   dataTableOutput("advance_table1"),
-				  actionButton("as_tb2","Home",icon("refresh")), 
+				  actionButton("as_tb2","Resources",icon("refresh")), 
 				  actionButton("as_hm1","Home",icon("refresh")) 
 	                                ),
                             tabPanel("Advancedt2", value="DDI Advanced table 2",
                                   dataTableOutput("advance_table2"),
-				  actionButton("as_tb1","Home",icon("refresh")),    
+				  actionButton("as_tb1","R Score",icon("refresh")),    
 				  actionButton("as_hm2","Home",icon("refresh")) 
                                   )
                             )
