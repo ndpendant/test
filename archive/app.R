@@ -161,7 +161,9 @@ server <- function(input, output,session) {
   })
   
   output$AText_1 <- renderUI ({
-    text <- paste0("^",input$ADrug_1)
+     print("ALL REACTIVE VALUES")
+     print(str(reactiveValuesToList(input)))
+     text <- paste0("^",input$ADrug_1)
      print("my text is")
      print(text)
      print(unique(db$Drug[grep(text, db$Drug)]))
