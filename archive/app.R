@@ -50,10 +50,10 @@ ui <- fluidPage(
       conditionalPanel("input.search == 'DDI_Basic' ",
       #selectInput("Drug_1",label = "Drug 1", choices = unique(db$Drug),selectize = FALSE, size = 5),
       #selectInput("Drug_2",label = "Drug 2", choices = unique(db$Drug),selectize = FALSE,size = 5),
-      actionButton("GO","Search",icon("refresh"))
+      actionButton("side_basic","Begin",icon("refresh"))
       ),
       conditionalPanel("input.search == 'DDI_Advanced' ",
-      actionButton("Begin","Begin",icon("refresh"))
+      actionButton("side_advanced","Begin",icon("refresh"))
       )
       
           
@@ -138,13 +138,13 @@ server <- function(input, output,session) {
       inputs
     }
   
-  observeEvent(input$GO, {
+  observeEvent(input$side_basic, {
     updateTabsetPanel(session, "tabs",
       selected = "DDI Basic"
     )
   })
   
-  observeEvent(input$Begin, {
+  observeEvent(input$side_advanced, {
     updateTabsetPanel(session, "tabs",
       selected = "DDI Advanced"
     )
