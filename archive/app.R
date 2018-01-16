@@ -72,7 +72,7 @@ ui <- fluidPage(
       tags$style(type="text/css"," .nav-tabs>li>a {background-color:rgb(139, 8, 8) ; color:#FFF ;}"),
       tags$style(type="text/css"," .dataTables_wrapper .dataTables_paginate .paginate_button {color: #FFF;}"),
      
-      navbarPage(title=NULL,theme = shinytheme("simplex"),
+      navbarPage(id="menu",title=NULL,theme = shinytheme("simplex"),
 	      tabPanel("Home",value="home",
                            h3(textOutput("home_header1")),
                            p(textOutput("home_body1")),
@@ -139,19 +139,19 @@ server <- function(input, output,session) {
     }
   
   observeEvent(input$side_basic, {
-    updateTabsetPanel(session, "tabs",
+    updateNavbarPage(session, "menu",
       selected = "DDI Basic"
     )
   })
   
   observeEvent(input$side_advanced, {
-    updateTabsetPanel(session, "tabs",
+    updateNavbarPage(session, "menu",
       selected = "DDI Advanced"
     )
   })
   
    observeEvent(input$GO2, {
-    updateTabsetPanel(session, "tabs",
+    updateNavbarPage(session, "tabs",
       selected = "DDI Advanced table"
     )
   })
