@@ -150,17 +150,17 @@ server <- function(input, output,session) {
     )
   })
   
-   observeEvent(input$DDI_Basic1, {
+   observeEvent(input$bs-tb1, {
     updateNavbarPage(session, "tabs",
       selected = "R score (Basic)"
     )
   })
 
-  observeEvent(input$bs-tb1, {
-    updateNavbarPage(session, "tabs",
-      selected = "DDI Advanced table"
-    )
-  })
+  #observeEvent(input$bs-tb1, {
+   # updateNavbarPage(session, "tabs",
+  #    selected = "DDI Advanced table"
+  #  )
+ # })
   
   observeEvent(input$GO3, {
     mytext <<- NULL
