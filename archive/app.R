@@ -242,12 +242,12 @@ observeEvent(input$as_tb1, {
  
   
   output$AText_1 <- renderUI ({
-     print("ALL REACTIVE VALUES")
-     print(str(reactiveValuesToList(input)))
+   #  print("ALL REACTIVE VALUES")
+  #   print(str(reactiveValuesToList(input)))
      text <- paste0("^",input$ADrug_1)
-     print("my text is")
-     print(text)
-     print(unique(db$Drug[grep(text, db$Drug)]))
+  #   print("my text is")
+  #   print(text)
+  #   print(unique(db$Drug[grep(text, db$Drug)]))
      picks <- unique(db$Drug[grep(text, db$Drug)])
      tagList(
      selectInput("ADrug_2", label = NULL,choices = c(picks),multiple = TRUE,selectize = FALSE,size = 5)
@@ -454,7 +454,7 @@ observeEvent(input$as_tb1, {
             
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
             row2 <- c(i,paste(j,pt1),paste(tk,pt2), s)
-            print(row2)
+        #    print(row2)
             holding <- rbind(holding,row2)
           }
         }
@@ -509,7 +509,7 @@ observeEvent(input$as_tb1, {
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
             row2 <- c(i,paste(k,pt1),paste(j,pt2), s)
-            print(row2)
+        #    print(row2)
             holding <- rbind(holding,row2)
           }
         }   
@@ -541,7 +541,7 @@ observeEvent(input$as_tb1, {
   })
   
   check_me <- reactive({
-    print(input$ADrug_1)
+   # print(input$ADrug_1)
     choice <- input$search
     if(choice == "DDI_Basic")
     {
@@ -575,35 +575,35 @@ observeEvent(input$as_tb1, {
       #####I WORK FINE####### ->  dbank$Structure <- paste0("<a href='",dbank$Extra2,"'>structure</a>") #actionLink(paste0("dbstruct_",rownames(dbank)),label = "structure")#urlModal(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg"), title = "Bookmarked application link", subtitle = NULL)
       dbank$Structure <- shinyInput(actionLink,nrow(dbank),"dbstruct_",rownames(dbank),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button1\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       holddb <- NULL
-      print("These are the rows associated with dbank")
-      print(rownames(dbank))
+   #   print("These are the rows associated with dbank")
+   #   print(rownames(dbank))
       fulldt <- rbind(fulldt,dbank)
-      print(dbank)
+   #   print(dbank)
       
     }
-    print("after DB")  
+   # print("after DB")  
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
       sc <- test[test$Database == "SuperCYP",]
       sc_temp <- NULL
       scd <- sc$Drug
-      print(length(scd))
-      print(scd)
+   #   print(length(scd))
+   #   print(scd)
       for(i in scd)
       {
         temp <- paste(unique(supcyp_info[supcyp_info$DrugName == i,]$CASNumber))
         sc_temp <- c(sc_temp,temp)
       }
       sc$DrugID <- sc_temp
-      print("Made it to SuperCYP")
+   #   print("Made it to SuperCYP")
       
-      print("This is supercyp")
-      print(sc)
+   #   print("This is supercyp")
+   #   print(sc)
       #sc$Extra <- paste0("http://bioinformatics.charite.de/transformer/index.php?site=drug_search")
       sc$Extra <- paste0("http://bioinformatics.charite.de/supercyp/index.php?site=fullinfo&cas=",sc$DrugID)
-      print("before database")
+    #  print("before database")
       sc$Database <- paste0("<a href='",sc$Extra,"'>SuperCYP</a>")
-      print("before extra2")
+   #   print("before extra2")
       sc$Extra2 <- paste0("http://bioinformatics.charite.de/supercyp/img//jpeg_ohne_h//",sc$DrugID,".jpeg")#supcyp_info[supcyp_info$DrugName == sc$Drug,]$CASNumber,".jpeg")
       sc$Structure <- shinyInput(actionLink,nrow(sc),"scstruct_",rownames(sc),icon("expand"),label = "View Structure",onclick = 'Shiny.onInputChange(\"select_button2\",  this.id)' )#$#HTML(readLines(paste0("https://www.drugbank.ca/structures/",dbank$DrugID,"/image.svg")))
       
@@ -616,14 +616,14 @@ observeEvent(input$as_tb1, {
       #print(supcyp_info$DrugName[631])
       fulldt <- rbind(fulldt,sc)
     }
-    print("after SUP")
+  #  print("after SUP")
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
       k_temp <- NULL
-      print("KEGG DRUG IDS!!!!")
+    #  print("KEGG DRUG IDS!!!!")
       kd <- k$Drug
-      print(length(kd))
+   #   print(length(kd))
       for(i in kd)
       {
         temp <- paste(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
@@ -631,8 +631,8 @@ observeEvent(input$as_tb1, {
       }
       k$DrugID <- k_temp
       #k$DrugID <- trimws(k$DrugID)
-      print("made it to KEGG")
-      print(k)
+   #   print("made it to KEGG")
+   #   print(k)
       k$Extra <- paste0("http://www.kegg.jp/kegg-bin/search_pathway_text?map=map&keyword=",k$Drug,"&mode=1&viewImage=true")
       k$Database <- paste0("<a href='",k$Extra,"'>KEGG</a>")
       k$Extra2 <- paste0("http://www.kegg.jp/Fig/drug/",k$DrugID,".gif")
@@ -644,7 +644,7 @@ observeEvent(input$as_tb1, {
       #print(kegg_info[kegg_info$DrugName == k$Drug,])
       fulldt <- rbind(fulldt,k)
     }
-    print("after KEGG")
+    #print("after KEGG")
     if(sum(str_detect(test$Database,"Indiana University")>0))
     {  
       iu <- test[test$Database == "Indiana University",]
@@ -681,10 +681,10 @@ observeEvent(input$as_tb1, {
    #####ADVANCED TABS#####
    afound <- reactive({
     choice <- input$search
-    print("This is what was chosen")
-    print(mytext)
-    print("TRYING TO MAKE IT REACT!!")
-    print(input$ADrug_2)
+   # print("This is what was chosen")
+  #  print(mytext)
+  #  print("TRYING TO MAKE IT REACT!!")
+  #  print(input$ADrug_2)
     test<-NULL
     for(i in mytext)
     {
@@ -932,15 +932,15 @@ observeEvent(input$as_tb1, {
         }  
       }
         }
-          print("INSIDE LOOP")
+  #        print("INSIDE LOOP")
         }
-    print("This is hold after loop")
-    print(holding)
+  #  print("This is hold after loop")
+   # print(holding)
     #table <- rbind(row1,row2)
     #mytable <- data.frame(row)
     mytable <- matrix(holding,ncol = 4)#,byrow = TRUE)
-    print("STEP 1")
-    print(mytable)
+    #print("STEP 1")
+   # print(mytable)
     #if(choice == "Drug_Name")
     #{
       colnames(mytable) <- c("Enzyme","Drug_1","Drug_2","R_Score")
@@ -954,19 +954,19 @@ observeEvent(input$as_tb1, {
    # }
     mytable <- mytable[mytable[,4] > 0,]
     #cyp <- rownames(mytable)
-    print("STEP 2")
-    print(mytable)
+ #   print("STEP 2")
+ #   print(mytable)
     mytable <- matrix(mytable,ncol = 4)
     colnames(mytable) <- c("Enzyme","Drug_1","Drug_2","R_Score")
     #rownames(mytable) <- cyp
-    print("STEP 3")
-    print(mytable)      
+ #   print("STEP 3")
+  #  print(mytable)      
     mytable <- data.frame(mytable)
-    print("STEP 4")
-    print(mytable) 
-    mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
-    print("STEP 5")
-    print(mytable) 
+  #  print("STEP 4")
+   # print(mytable) 
+   # mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
+  #  print("STEP 5")
+   # print(mytable) 
     mytable <- mytable[!(duplicated(mytable[,2:3])),]
     #print("THIS IS THE FINAL TABLE")
     #print(mytable)
@@ -992,12 +992,12 @@ observeEvent(input$as_tb1, {
       modal_view <<- check_me()$drugs[paste(selectedRow),11]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
       
-      print("selected Row DrugBank")
-      print(selectedRow)
-      print("link to row")
-      print(modal_view)
-      print("Drug Name")
-      print(modal_name)
+    #  print("selected Row DrugBank")
+    #  print(selectedRow)
+   #   print("link to row")
+   #   print(modal_view)
+   #   print("Drug Name")
+    #  print(modal_name)
       showModal(modalDialog(title=paste(modal_name),HTML(readLines(modal_view)),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
       modal_name <<- NULL
@@ -1011,12 +1011,12 @@ observeEvent(input$as_tb1, {
       modal_view <<- check_me()$drugs[paste(selectedRow),11]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
      
-      print("selected Row for SuperCYP")
-      print(selectedRow)
-      print("link to row")
-      print(modal_view)
-      print("Drug Name")
-      print(modal_name)
+   #   print("selected Row for SuperCYP")
+    #  print(selectedRow)
+   #   print("link to row")
+    #  print(modal_view)
+    #  print("Drug Name")
+    #  print(modal_name)
       showModal(modalDialog(title=paste(modal_name),tags$img(src = modal_view,style="padding-left:200px;"),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
       modal_name <<- NULL
@@ -1030,12 +1030,12 @@ observeEvent(input$as_tb1, {
       modal_view <<- check_me()$drugs[paste(selectedRow),11]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
       
-      print("selected Row for kegg")
-      print(selectedRow)
-      print("link to row")
-      print(modal_view)
-      print("Drug Name")
-      print(modal_name)
+    #  print("selected Row for kegg")
+    #  print(selectedRow)
+    #  print("link to row")
+    #  print(modal_view)
+     # print("Drug Name")
+     # print(modal_name)
       
       showModal(modalDialog(title=paste(modal_name),tags$img(src = modal_view,style="padding-left:200px;"),easyClose=TRUE,footer=paste("source:",modal_view))    
 )
@@ -1070,11 +1070,7 @@ observeEvent(input$as_tb1, {
     found()
  })
       
- 
-#  check_me()$drugs <- newtb
-  print("This is the number of modals made!!!")
-  print(modal_made)
-  print("This is the type for output$")
+
   
       
     
