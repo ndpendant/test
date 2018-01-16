@@ -166,7 +166,7 @@ server <- function(input, output,session) {
     mytext <<- NULL
   })
 	
-  DDI_Basic1
+ 
   
   output$AText_1 <- renderUI ({
      print("ALL REACTIVE VALUES")
