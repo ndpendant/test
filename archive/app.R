@@ -197,6 +197,14 @@ server <- function(input, output,session) {
 	
 	
 #Advanced Buttons
+observeEvent(input$GO2,{
+    updateNavbarPage(session, "menu",
+      selected = "DDI Advanced table 1"
+    )
+  })
+	     
+	     
+	     
 observeEvent(input$as_tb1, {
     updateNavbarPage(session, "menu",
       selected = "DDI Advanced table 1"
