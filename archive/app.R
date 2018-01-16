@@ -84,7 +84,7 @@ ui <- fluidPage(
 				selectInput("Drug_1",label = NULL, choices = unique(db$Drug),selectize = FALSE, size = 5),
 				textOutput("basic_drug_2"),    
       				selectInput("Drug_2",label = NULL, choices = unique(db$Drug),selectize = FALSE,size = 5),
-      				actionButton("GO5","Search",icon("refresh"))
+      				actionButton("bs-tb1","Search",icon("refresh"))
 				),
                            tabPanel("DDI_Basic1",value="R score (Basic)",
                                 h3(textOutput("DDI_header1")),
@@ -150,7 +150,13 @@ server <- function(input, output,session) {
     )
   })
   
-   observeEvent(input$GO2, {
+   observeEvent(input$DDI_Basic1, {
+    updateNavbarPage(session, "tabs",
+      selected = "R score (Basic)"
+    )
+  })
+
+  observeEvent(input$bs-tb1, {
     updateNavbarPage(session, "tabs",
       selected = "DDI Advanced table"
     )
@@ -159,6 +165,8 @@ server <- function(input, output,session) {
   observeEvent(input$GO3, {
     mytext <<- NULL
   })
+	
+  DDI_Basic1
   
   output$AText_1 <- renderUI ({
      print("ALL REACTIVE VALUES")
@@ -1074,12 +1082,12 @@ server <- function(input, output,session) {
 	      
   output$basic_drug_1 <- renderText({
     
-    "Drug 1:" 
+    "Select Drug 1:" 
   
 })
  output$basic_drug_2 <- renderText({
     
-    "Drug 2:" 
+    "Select Drug 2:" 
   
 })	    
 	      
