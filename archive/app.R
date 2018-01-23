@@ -673,7 +673,7 @@ observeEvent(input$as_tb1, {
      
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
-    fulldt <- fulldt[(order(fulldt$Enzyme)),]
+    fulldt <- fulldt[(order(fulldt$Enzyme)),
     list(drugs = fulldt)
     
   })
@@ -967,6 +967,11 @@ observeEvent(input$as_tb1, {
   #  print("STEP 4")
    # print(mytable) 
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
+   
+    toDelete <- seq(0, nrow(mytable),2)
+
+    mytable <- mytable[ -toDelete,]    
+    
   #  print("STEP 5")
    # print(mytable) 
   #  mytable <- mytable[!(duplicated(mytable[,2:3])),]
@@ -1109,10 +1114,8 @@ observeEvent(input$as_tb1, {
         
   output$advance_table2 <- renderDataTable({
   input$ADrug_1
-  a <- check_me()$drugs[c(1,2,3,4,6,12)]
-  toDelete <- seq(0, nrow(a),2)	  
-  a <- a[-toDelete,]
-  a
+  check_me()$drugs[c(1,2,3,4,6,12)]
+  
   },escape=FALSE) 
         
   output$advance_table1 <- renderDataTable({
