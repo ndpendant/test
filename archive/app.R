@@ -673,7 +673,7 @@ observeEvent(input$as_tb1, {
      
     #fulldt <- data.frame(fulldt[1:5])
     fulldt <- data.frame(fulldt)                          
-    fulldt <- fulldt[(order(fulldt$Enzyme)),
+    fulldt <- fulldt[(order(fulldt$Enzyme)),]
     list(drugs = fulldt)
     
   })
