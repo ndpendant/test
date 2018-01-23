@@ -1109,8 +1109,10 @@ observeEvent(input$as_tb1, {
         
   output$advance_table2 <- renderDataTable({
   input$ADrug_1
-  check_me()$drugs[c(1,2,3,4,6,12)]
-  
+  a <- check_me()$drugs[c(1,2,3,4,6,12)]
+  toDelete <- seq(0, nrow(a),2)	  
+  a <- a[-toDelete,]
+  a
   },escape=FALSE) 
         
   output$advance_table1 <- renderDataTable({
