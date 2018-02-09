@@ -926,7 +926,7 @@ observeEvent(input$as_tb1, {
      # enz <- tb1[tb1$Enzyme %in% tb2$Enzyme]$Enzyme
       
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
-              row2 <- c(i,paste(n,k,pt1),paste(m,j,pt2), s)
+              row2 <- c(i,paste(m,k,pt1),paste(n,j,pt2), s)
               #print(row2)
               holding <- rbind(holding,row2)
             }
