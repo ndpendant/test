@@ -814,7 +814,10 @@ observeEvent(input$as_tb1, {
         }
       
         
-        
+       print("This is action 1")
+       print(action1)
+       print("This is action 2")
+       print(action2)
       #pt1 <- max(inducer1,substrate1,inhibitor1)
       # pt2 <- max(inducer2,substrate2,inhibitor2)
       # score <- sqrt(pt1*pt2)
