@@ -952,6 +952,7 @@ observeEvent(input$as_tb1, {
 	      print(n)
 	      print("Drug 2")
 	      print(m)
+		}
             }
           }   
         }
