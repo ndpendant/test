@@ -701,10 +701,15 @@ observeEvent(input$as_tb1, {
     holding <- NULL
     for(i in cyps)
     {
+      count = 0
+      limit = 0
       for(m in unique(test$Drug))
       {
+	count = 0
         for(n in unique(test$Drug))
-        {  
+        {
+	  if(count >= limit)
+	  {
           tb1 <- db[db$Drug %in% m & db$Enzyme %in% i,]
       #}
       
@@ -949,8 +954,10 @@ observeEvent(input$as_tb1, {
 	      print(m)
             }
           }   
-        }  
+        }
+	count = count + 1
       }
+      limit = limit + 1
         }
   #        print("INSIDE LOOP")
         }
