@@ -968,9 +968,9 @@ observeEvent(input$as_tb1, {
    # print(mytable) 
     mytable <- mytable[(order(mytable$R_Score, decreasing = TRUE)),]
    
-    toDelete <- seq(0, nrow(mytable),2)
+    #toDelete <- seq(0, nrow(mytable),2)
 
-    mytable <- mytable[ -toDelete,]    
+    #mytable <- mytable[ -toDelete,]    
     
   #  print("STEP 5")
    # print(mytable) 
