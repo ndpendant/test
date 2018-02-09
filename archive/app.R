@@ -814,10 +814,7 @@ observeEvent(input$as_tb1, {
         }
       
         
-       print("This is action 1")
-       print(action1)
-       print("This is action 2")
-       print(action2)
+       
       #pt1 <- max(inducer1,substrate1,inhibitor1)
       # pt2 <- max(inducer2,substrate2,inhibitor2)
       # score <- sqrt(pt1*pt2)
@@ -875,8 +872,16 @@ observeEvent(input$as_tb1, {
             
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
               row2 <- c(i,paste(n,j,pt2),paste(m,tk,pt1), s)
-              #print(row2)
+              print("First case loop")
               holding <- rbind(holding,row2)
+	      print("This is action 1")
+       	      print(action1)
+              print("This is action 2")
+              print(action2)
+	      print("Drug 1")
+	      print(n)
+	      print("Drug 2")
+	      print(m)
             }
           }
         }
@@ -932,6 +937,16 @@ observeEvent(input$as_tb1, {
               row2 <- c(i,paste(m,k,pt1),paste(n,j,pt2), s)
               #print(row2)
               holding <- rbind(holding,row2)
+	      print("Second case loop")
+              holding <- rbind(holding,row2)
+	      print("This is action 1")
+       	      print(action1)
+              print("This is action 2")
+              print(action2)
+	      print("Drug 1")
+	      print(n)
+	      print("Drug 2")
+	      print(m)
             }
           }   
         }  
