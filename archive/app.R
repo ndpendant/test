@@ -8,7 +8,7 @@ library(DT)
 library(stringr)
 library(stringi)
 library(shinythemes)
-db <- read.csv("db2-10.csv",fill=TRUE,quote="")
+db <- read.csv("db2-10.csv",fill=TRUE)
 #DR.CHENG COPY BELOW
 #db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
