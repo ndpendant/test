@@ -1023,7 +1023,7 @@ observeEvent(input$as_tb1, {
   observeEvent(input$select_button1, {
       selectedRow <- as.numeric(strsplit(input$select_button1, "_")[[1]][2])
       
-      modal_view <<- check_me()$drugs[paste(selectedRow),11]
+      modal_view <<- check_me()$drugs[paste(selectedRow),7]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
       
     #  print("selected Row DrugBank")
@@ -1042,7 +1042,7 @@ observeEvent(input$as_tb1, {
     observeEvent(input$select_button2, {
       selectedRow <- as.numeric(strsplit(input$select_button2, "_")[[1]][2])
      
-      modal_view <<- check_me()$drugs[paste(selectedRow),11]
+      modal_view <<- check_me()$drugs[paste(selectedRow),7]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
      
    #   print("selected Row for SuperCYP")
@@ -1061,7 +1061,7 @@ observeEvent(input$as_tb1, {
     observeEvent(input$select_button3, {
       selectedRow <- as.numeric(strsplit(input$select_button3, "_")[[1]][2])
    
-      modal_view <<- check_me()$drugs[paste(selectedRow),11]
+      modal_view <<- check_me()$drugs[paste(selectedRow),7]
       modal_name <<- check_me()$drugs[paste(selectedRow),1]
       
     #  print("selected Row for kegg")
