@@ -879,16 +879,7 @@ observeEvent(input$as_tb1, {
             
     #row1 <- c(input$Drug_1b,input$Drug_2b,"Reliability score")
               row2 <- c(i,paste(n,j,pt2),paste(m,tk,pt1), s)
-              print("First case loop")
-              holding <- rbind(holding,row2)
-	      print("This is action 1")
-       	      print(action1)
-              print("This is action 2")
-              print(action2)
-	      print("Drug 1")
-	      print(n)
-	      print("Drug 2")
-	      print(m)
+              
             }
           }
         }
@@ -1115,7 +1106,7 @@ observeEvent(input$as_tb1, {
   output$table2 <-renderDataTable({ 
     input$GO
  #   newtb
-    print(colnames(check_me()$drugs))
+    
     check_me()$drugs[c(1,2,3,4,5,8)]
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
