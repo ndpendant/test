@@ -8,25 +8,25 @@ library(DT)
 library(stringr)
 library(stringi)
 library(shinythemes)
-#db <- read.csv("db1-9.csv",fill=TRUE,quote="")
+db <- read.csv("db2-10.csv",fill=TRUE,quote="")
 #DR.CHENG COPY BELOW
-db <- read.csv("db12-4.csv",fill = TRUE)
+#db <- read.csv("db12-4.csv",fill = TRUE)
 db$Drug <- tolower(db$Drug)
 db$Drug <- trimws(db$Drug)
 db$Database <- trimws(db$Database)
 
-drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
-drug_info$Name <- tolower(drug_info$Name)
-drug_info$Name <- trimws(drug_info$Name)
+#drug_info <- read.csv("drugbankid_info.csv",fill = TRUE)
+#drug_info$Name <- tolower(drug_info$Name)
+#drug_info$Name <- trimws(drug_info$Name)
 
-kegg_info <- read.csv("keggid_info.csv",fill = TRUE)
-kegg_info$DrugName <- tolower(kegg_info$DrugName)
-kegg_info$DrugName <- trimws(kegg_info$DrugName)
+#kegg_info <- read.csv("keggid_info.csv",fill = TRUE)
+#kegg_info$DrugName <- tolower(kegg_info$DrugName)
+#kegg_info$DrugName <- trimws(kegg_info$DrugName)
 
-supcyp_info <- read.csv("Supercyp_1-9.csv",fill = TRUE)
-supcyp_info$DrugName <- tolower(supcyp_info$DrugName)
-supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("both"))
-supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("r"))
+#supcyp_info <- read.csv("Supercyp_1-9.csv",fill = TRUE)
+#supcyp_info$DrugName <- tolower(supcyp_info$DrugName)
+#supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("both"))
+#supcyp_info$DrugName <- trimws(supcyp_info$DrugName,which=c("r"))
 modal_made = 0
 modal_view <- "www.google.com"
 modal_name <- NULL
@@ -587,16 +587,16 @@ observeEvent(input$as_tb1, {
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
       sc <- test[test$Database == "SuperCYP",]
-      sc_temp <- NULL
-      scd <- sc$Drug
+     # sc_temp <- NULL
+     # scd <- sc$Drug
    #   print(length(scd))
    #   print(scd)
-      for(i in scd)
-      {
-        temp <- paste(unique(supcyp_info[supcyp_info$DrugName == i,]$CASNumber))
-        sc_temp <- c(sc_temp,temp)
-      }
-      sc$DrugID <- sc_temp
+     # for(i in scd)
+     # {
+      #  temp <- paste(unique(supcyp_info[supcyp_info$DrugName == i,]$CASNumber))
+      #  sc_temp <- c(sc_temp,temp)
+      #}
+      #sc$DrugID <- sc_temp
    #   print("Made it to SuperCYP")
       
    #   print("This is supercyp")
@@ -622,16 +622,16 @@ observeEvent(input$as_tb1, {
     if(sum(str_detect(test$Database,"KEGG")>0))
     {
       k <- test[test$Database == "KEGG",]
-      k_temp <- NULL
+     # k_temp <- NULL
     #  print("KEGG DRUG IDS!!!!")
-      kd <- k$Drug
+     # kd <- k$Drug
    #   print(length(kd))
-      for(i in kd)
+    #  for(i in kd)
       {
-        temp <- paste(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
-        k_temp <- c(k_temp,temp)
-      }
-      k$DrugID <- k_temp
+    #    temp <- paste(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
+    #    k_temp <- c(k_temp,temp)
+    #  }
+    #  k$DrugID <- k_temp
       #k$DrugID <- trimws(k$DrugID)
    #   print("made it to KEGG")
    #   print(k)
@@ -1113,7 +1113,8 @@ observeEvent(input$as_tb1, {
   output$table2 <-renderDataTable({ 
     input$GO
  #   newtb
-    check_me()$drugs[c(1,2,3,4,6,12)]
+    print(colnames(check_me()$drugs))
+    #check_me()$drugs[c(1,2,3,4,6,12)]
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
     
@@ -1141,7 +1142,7 @@ observeEvent(input$as_tb1, {
         
   output$advance_table2 <- renderDataTable({
   input$ADrug_1
-  check_me()$drugs[c(1,2,3,4,6,12)]
+  #check_me()$drugs[c(1,2,3,4,6,12)]
   
   },escape=FALSE) 
         
