@@ -587,6 +587,7 @@ observeEvent(input$as_tb1, {
     if(sum(str_detect(test$Database,"SuperCYP")>0))
     {
       sc <- test[test$Database == "SuperCYP",]
+      sc$DrugID <- paste0("0",sc$DrugID)
      # sc_temp <- NULL
      # scd <- sc$Drug
    #   print(length(scd))
