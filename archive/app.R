@@ -627,7 +627,7 @@ observeEvent(input$as_tb1, {
      # kd <- k$Drug
    #   print(length(kd))
     #  for(i in kd)
-      {
+     # {
     #    temp <- paste(unique(kegg_info[kegg_info$DrugName == i,]$DrugID))
     #    k_temp <- c(k_temp,temp)
     #  }
