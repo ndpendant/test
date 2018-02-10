@@ -1114,7 +1114,7 @@ observeEvent(input$as_tb1, {
     input$GO
  #   newtb
     print(colnames(check_me()$drugs))
-    #check_me()$drugs[c(1,2,3,4,6,12)]
+    check_me()$drugs[c(1,2,3,4,5,8)]
  #   print("Type received from check_me()")
  #   print(typeof(check_me()))
     
@@ -1142,7 +1142,7 @@ observeEvent(input$as_tb1, {
         
   output$advance_table2 <- renderDataTable({
   input$ADrug_1
-  #check_me()$drugs[c(1,2,3,4,6,12)]
+  check_me()$drugs[c(1,2,3,4,5,8)]
   
   },escape=FALSE) 
         
