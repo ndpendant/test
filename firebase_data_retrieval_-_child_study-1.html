@@ -1,0 +1,1886 @@
+<html>
+    <head>
+	<style>
+	.container { 
+	  height: 200px;
+	  position: relative;
+	  border: 3px solid green; 
+	}
+
+	.center {
+	  margin: 20px;
+	  position: relative;
+	  
+	}
+	
+	button {
+		width: 250px;
+	}
+	
+	</style>
+        <script> 
+			
+			var mini, comp, fat, studies
+			
+			
+			var myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+			var requestOptions = {
+				method: "get",
+				headers: myHeaders,
+				redirect: "follow",
+				
+			};
+			
+			
+			var user_data = [
+				{id_user:"15",id_role:"2",username:"lucasdall2",email:"lucasdall+2@gmail.com",name:"\N",signup_prof:"proflucas",signup_group:"cs101",date_created:"10/27/2020 18:06",date_updated:"10/27/2020 18:06"},
+				{id_user:"1975",id_role:"2",username:"Patrick",email:"patrickaboujaoude3@gmail.com",name:"\N",signup_prof:"swallace21",signup_group:"ucf_medical_pilot",date_created:"3/26/2021 21:20",date_updated:"3/26/2021 21:20"},
+				{id_user:"1977",id_role:"2",username:"Franka91",email:"franka91@gmail.com",name:"\N",signup_prof:"swallace21",signup_group:"ucf_medical_pilot",date_created:"3/27/2021 16:10",date_updated:"3/27/2021 16:10"},
+				{id_user:"1979",id_role:"2",username:"Rey0508",email:"rey_05_08@hotmail.com",name:"\N",signup_prof:"swallace21",signup_group:"ucf_medical_pilot",date_created:"3/28/2021 3:04",date_updated:"3/28/2021 3:04"},
+				{id_user:"5223",id_role:"2",username:"testingstudent",email:"girouxae@outlook.com",name:"\N",signup_prof:"girouxae",signup_group:"test_classroom",date_created:"2/14/2022 14:16",date_updated:"2/14/2022 14:16"},
+				{id_user:"5232",id_role:"2",username:"studenttesting",email:"testing@outlook.com",name:"\N",signup_prof:"girouxae",signup_group:"6-8_classroom",date_created:"2/14/2022 15:05",date_updated:"2/14/2022 15:05"},
+				{id_user:"5361",id_role:"2",username:"testing2",email:"testing2@outlook.com",name:"\N",signup_prof:"testingstudent",signup_group:"example_group",date_created:"2/21/2022 14:14",date_updated:"2/21/2022 14:14"},
+				{id_user:"5428",id_role:"2",username:"studenttest",email:"testing5@outlook.com",name:"\N",signup_prof:"tutortest",signup_group:"grade_group",date_created:"2/22/2022 15:08",date_updated:"2/22/2022 15:08"},
+				{id_user:"5446",id_role:"2",username:"testingkiddo",email:"testing7@outlook.com",name:"\N",signup_prof:"testingstudent",signup_group:"testing6-8",date_created:"2/22/2022 20:56",date_updated:"2/22/2022 20:56"},
+				{id_user:"5447",id_role:"2",username:"TestStudent1",email:"stephanielday123@gmail.com",name:"\N",signup_prof:"StephanieDay",signup_group:"vrl_child_classroom_demo",date_created:"2/22/2022 20:56",date_updated:"2/22/2022 20:56"},
+				{id_user:"5734",id_role:"2",username:"marlana1",email:"awinbush@live.com",name:"Marlana Winbush",signup_prof:"torrem228",signup_group:"coach_marta",date_created:"3/11/2022 12:59",date_updated:"3/11/2022 12:59"},
+				{id_user:"5802",id_role:"2",username:"Julianna.diaz",email:"arelis.guerra@aol.com",name:"Julianna Diaz",signup_prof:"DMartorell",signup_group:"coach_dawn's_reading_all_stars",date_created:"3/14/2022 21:01",date_updated:"3/14/2022 21:01"},
+				{id_user:"5975",id_role:"2",username:"Connor2009",email:"sarahekdahl@gmail.com",name:"Connor Tarbox",signup_prof:"Kellyabc123",signup_group:"kelly's_kiddos",date_created:"3/27/2022 21:33",date_updated:"3/27/2022 21:33"},
+				{id_user:"5999",id_role:"2",username:"testingkiddo3",email:"testing10@outlook.com",name:"Name Name",signup_prof:"testingstudent",signup_group:"testing3-5",date_created:"3/28/2022 20:42",date_updated:"3/28/2022 20:42"},
+				{id_user:"6080",id_role:"2",username:"AllenWilliamson",email:"lisawilliamson07@hotmail.com",name:"Allen Williamson",signup_prof:"Kellyabc123",signup_group:"kelly’s_kids",date_created:"4/1/2022 10:28",date_updated:"4/1/2022 10:28"},
+				{id_user:"6086",id_role:"2",username:"EPDopp",email:"stibaldeo@hotmail.com",name:"Ethan Dopp",signup_prof:"Kellyabc123",signup_group:"kelly's_3-5_graders",date_created:"4/1/2022 12:49",date_updated:"4/1/2022 12:49"},
+				{id_user:"6154",id_role:"2",username:"limara100",email:"wamara@cfl.rr.com",name:"Liam Mara",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:45",date_updated:"4/5/2022 16:45"},
+				{id_user:"6155",id_role:"2",username:"trryan100",email:"ramonamryan@gmail.com",name:"Triston Ryan",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:46",date_updated:"4/5/2022 16:46"},
+				{id_user:"6156",id_role:"2",username:"suminor100",email:"steveminor.md@me.com",name:"Summer Minor",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:46",date_updated:"4/5/2022 16:46"},
+				{id_user:"6157",id_role:"2",username:"magoebel100",email:"cgoebel@stbrendanormond.org",name:"Makenzie Goebel",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:47",date_updated:"4/5/2022 16:47"},
+				{id_user:"6158",id_role:"2",username:"olmclaughlin100",email:"ashleigh.mclaughlin@imcoinc.com",name:"Olivia Mclaughlin",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:48",date_updated:"4/5/2022 16:48"},
+				{id_user:"6159",id_role:"2",username:"isferro100",email:"Maegannp@gmail.com",name:"Isabella Ferro",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:49",date_updated:"4/5/2022 16:49"},
+				{id_user:"6160",id_role:"2",username:"cohorrell100",email:"barrettd1152@ymail.com",name:"Colton Horrell",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:49",date_updated:"4/5/2022 16:49"},
+				{id_user:"6161",id_role:"2",username:"gaward100",email:"gordons13600@sbcglobal.net",name:"Gavin Ward",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:50",date_updated:"4/5/2022 16:50"},
+				{id_user:"6162",id_role:"2",username:"mawatts100",email:"awatts5014@gmail.com",name:"Madison Watts",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:51",date_updated:"4/5/2022 16:51"},
+				{id_user:"6163",id_role:"2",username:"mosteinemann100",email:"gardenita@gmail.com",name:"Monica Steinemann",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:52",date_updated:"4/5/2022 16:52"},
+				{id_user:"6164",id_role:"2",username:"macornwell100",email:"breannajohnsonx@gmail.com",name:"Marlena Cornwell",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:55",date_updated:"4/5/2022 16:55"},
+				{id_user:"6165",id_role:"2",username:"romattingly100",email:"Kristamattingly227@yahoo.com",name:"Robert Mattingly",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 16:58",date_updated:"4/5/2022 16:58"},
+				{id_user:"6166",id_role:"2",username:"owalbert100",email:"ashhelgemo@hotmail.com",name:"Owen Albert",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 17:01",date_updated:"4/5/2022 17:01"},
+				{id_user:"6167",id_role:"2",username:"tawade100",email:"jwade@fatherlopez.org",name:"Talton Wade",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 17:04",date_updated:"4/5/2022 17:04"},
+				{id_user:"6168",id_role:"2",username:"emkline100",email:"kmccabemd@gmail.com",name:"Emerson Kline",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 17:05",date_updated:"4/5/2022 17:05"},
+				{id_user:"6169",id_role:"2",username:"jamills100",email:"tomalipit@gmail.com",name:"Jack Mills",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 17:09",date_updated:"4/5/2022 17:09"},
+				{id_user:"6170",id_role:"2",username:"frives100",email:"Ivesliliana@gmail.com",name:"Fritz Ives",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 17:09",date_updated:"4/5/2022 17:09"},
+				{id_user:"6172",id_role:"2",username:"viadamovich100",email:"vadamovich@outlook.com",name:"Victoria Adamovich",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 17:10",date_updated:"4/5/2022 17:10"},
+				{id_user:"6173",id_role:"2",username:"testingduplicateemailsolution",email:"vrlchildstudy+username@gmail.com",name:"Testing Testing",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 17:27",date_updated:"4/5/2022 17:27"},
+				{id_user:"6195",id_role:"2",username:"romara100",email:"vrlchildstudy+romara100@gmail.com",name:"Robert Mara",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 20:04",date_updated:"4/5/2022 20:04"},
+				{id_user:"6198",id_role:"2",username:"miferro100",email:"vrlchildstudy+miferro100@gmail.com",name:"Michael Ferro",signup_prof:"childstudyadmin",signup_group:"harding_3-5",date_created:"4/5/2022 20:05",date_updated:"4/5/2022 20:05"},
+				{id_user:"6199",id_role:"2",username:"kagoebel100",email:"vrlchildstudy+kagoebel100@gmail.com",name:"Kaylee Goebel",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 20:07",date_updated:"4/5/2022 20:07"},
+				{id_user:"6200",id_role:"2",username:"stminor100",email:"vrlchildstudy+stminor100@gmail.com",name:"Stiles Minor",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 20:08",date_updated:"4/5/2022 20:08"},
+				{id_user:"6201",id_role:"2",username:"cakline100",email:"vrlchildstudy+cakline100@gmail.com",name:"Carlysle Kline",signup_prof:"childstudyadmin",signup_group:"harding_6-8",date_created:"4/5/2022 20:09",date_updated:"4/5/2022 20:09"}
+			]
+			
+			
+			
+			
+			// retrieve content from MINIQ Collection
+			
+			fetch("https://v1.nocodeapi.com/readability/fbsdk/zkdZWYRTPLdcqeGe/firestore/allDocuments?collectionName=miniq", requestOptions)
+				.then(response => response.text())
+				.then(result => 
+					{
+						let results = JSON.parse(result);
+						mini = results;
+						//console.log(result);
+						//console.log(typeof(result));
+						//console.log(results.length);
+						
+						let header = ["id_study","user_type","study_step","id_passage","font","question","answer"]
+						
+						//let header = ["id_study","study_step","id_passage","font","question","answer"]
+						let csv_string = ""
+
+						// add header
+						csv_string = header.join(",") + "\n"
+
+						//build rows of table
+						for(var i = 0; i < results.length; i++)
+						{
+							for(var j = 0; j < header.length; j++)
+							{
+								if(j == 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] == null)
+								{
+									csv_string += ",";
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["integerValue"];
+								}
+							}
+							csv_string += "\n"
+						}
+
+						// todays date
+						const date = new Date();
+						const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+										.toISOString()
+										.split("T")[0];
+
+						// write to csv
+						let blob = new Blob([csv_string], {type: "text/csv"});
+						let blobUrl = URL.createObjectURL(blob);
+
+						let element = document.createElement("a");
+						element.href = blobUrl;
+						element.download = `Child Study Miniq Results ${dateString}.csv`
+						//element.click();
+
+						setTimeout(() => {
+						//URL.revokeObjectURL(blobUrl);
+						},500);
+						
+					})
+				.catch(error => console.log('error', error));
+				
+				
+				
+			// retrieve content from STUDY Collection
+				
+			fetch("https://v1.nocodeapi.com/readability/fbsdk/zkdZWYRTPLdcqeGe/firestore/allDocuments?collectionName=study", requestOptions)
+				.then(response => response.text())
+				.then(result => 
+					{
+						let results = JSON.parse(result);
+						studies = results;
+						//console.log(result);
+						//console.log(typeof(result));
+						//console.log(results.length);
+						
+						let header = ["url","type","user_type","start_time","end_time"];
+						
+						//let header = ["url","type","start_time","end_time"];
+						let csv_string = "";
+
+						// add header
+						csv_string = header.join(",") + "\n"
+
+						//build rows of table
+						for(var i = 0; i < results.length; i++)
+						{
+							for(var j = 0; j < header.length; j++)
+							{
+								if(j == 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] == null)
+								{
+									csv_string += ",";
+								}
+								else if(j != 0 &&results[i]["_fieldsProto"][header[j]]["stringValue"] != null && (header[j] == "question" || header[j] == "answer"))
+								{
+									csv_string += ",\"" + results[i]["_fieldsProto"][header[j]]["stringValue"] + "\"";
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["doubleValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["doubleValue"];
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["nullValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["nullValue"];
+								}
+								else{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["integerValue"];
+								}
+							}
+							csv_string += "\n"
+						}
+
+						// todays date
+						const date = new Date();
+						const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+										.toISOString()
+										.split("T")[0];
+
+						// write to csv
+						let blob = new Blob([csv_string], {type: "text/csv"});
+						let blobUrl = URL.createObjectURL(blob);
+
+						let element = document.createElement("a");
+						element.href = blobUrl;
+						element.download = `Child Study Details Results ${dateString}.csv`
+						//element.click();
+
+						setTimeout(() => {
+						//URL.revokeObjectURL(blobUrl);
+						},500);
+						
+					})
+				.catch(error => console.log('error', error));
+
+
+
+			// retrieve content from SPEED Collection
+			
+			fetch("https://v1.nocodeapi.com/readability/fbsdk/zkdZWYRTPLdcqeGe/firestore/allDocuments?collectionName=speed", requestOptions)
+				.then(response => response.text())
+				.then(result => 
+					{
+						let results = JSON.parse(result);
+						speed = results;
+						//console.log(result);
+						//console.log(typeof(result));
+						//console.log(results.length);
+						
+						let header = ["id_study","user_type","study_step","id_passage","font","sentences","words","chars","wpm","seconds","timestamp"];
+						
+						//let header = ["id_study","study_step","id_passage","font","sentences","words","chars","wpm","seconds","timestamp"]
+						let csv_string = ""
+
+						// add header
+						csv_string = header.join(",") + "\n"
+
+						//build rows of table
+						for(var i = 0; i < results.length; i++)
+						{
+							for(var j = 0; j < header.length; j++)
+							{
+								if(j == 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] == null)
+								{
+									csv_string += ",";
+								}
+								else if(j != 0 &&results[i]["_fieldsProto"][header[j]]["stringValue"] != null && (header[j] == "question" || header[j] == "answer"))
+								{
+									csv_string += ",\"" + results[i]["_fieldsProto"][header[j]]["stringValue"] + "\"";
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["doubleValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["doubleValue"];
+								}
+								else{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["integerValue"];
+								}
+							}
+							csv_string += "\n"
+						}
+
+						// todays date
+						const date = new Date();
+						const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+										.toISOString()
+										.split("T")[0];
+
+						// write to csv
+						let blob = new Blob([csv_string], {type: "text/csv"});
+						let blobUrl = URL.createObjectURL(blob);
+
+						let element = document.createElement("a");
+						element.href = blobUrl;
+						element.download = `Child Study Speed Results ${dateString}.csv`
+						//element.click();
+
+						setTimeout(() => {
+						//URL.revokeObjectURL(blobUrl);
+						},500);
+						
+					})
+					.catch(error => console.log('error', error));
+						
+						
+			// retrieve content from FONT ATTRIBUTES Collection	
+				
+			fetch("https://v1.nocodeapi.com/readability/fbsdk/zkdZWYRTPLdcqeGe/firestore/allDocuments?collectionName=font_attributes", requestOptions)
+				.then(response => response.text())
+				.then(result => 
+					{
+						let results = JSON.parse(result); 
+						fat = results;
+						
+						let header = ["id_study","user_type", "study_step","id_passage","font","font_size","font_weight","line_type","line_spacing","char_spacing","timestamp"]
+						
+						//let header = ["id_study","study_step","id_passage","font","font_size","font_weight","line_type","line_spacing","char_spacing","timestamp"]
+						let csv_string = ""
+
+					// add header
+						csv_string = header.join(",") + "\n"
+
+						//build rows of table	
+						for(var i = 0; i < results.length; i++)
+						{
+							for(var j = 0; j < header.length; j++)
+							{
+								
+								if(j == 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] == null)
+								{
+									csv_string += ",";
+								}
+								else if(j != 0 &&results[i]["_fieldsProto"][header[j]]["stringValue"] != null && (header[j] == "question" || header[j] == "answer"))
+								{
+									csv_string += ",\"" + results[i]["_fieldsProto"][header[j]]["stringValue"] + "\"";
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["doubleValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["doubleValue"];
+								}
+								else{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["integerValue"];
+								}
+							}
+							csv_string += "\n"
+						}
+
+						// todays date
+						const date = new Date();
+						const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+										.toISOString()
+										.split("T")[0];
+
+						// write to csv
+						let blob = new Blob([csv_string], {type: "text/csv"});
+						let blobUrl = URL.createObjectURL(blob);
+
+						let element = document.createElement("a");
+						element.href = blobUrl;
+						element.download = `Child Study Font Attribute Results ${dateString}.csv`
+						//element.click();
+
+						setTimeout(() => {
+						//URL.revokeObjectURL(blobUrl);
+						},500);
+
+					})
+					.catch(error => console.log('error', error));
+						
+						
+						
+						
+			// retrieve content from COMPREHENSION Collection	
+				
+			fetch("https://v1.nocodeapi.com/readability/fbsdk/zkdZWYRTPLdcqeGe/firestore/allDocuments?collectionName=comprehension", requestOptions)
+				.then(response => response.text())
+				.then(result => 
+					{
+						let results = JSON.parse(result);
+						comp = results;
+						//let header = ["id_study","user_type","study_step","id_passage","font","question","answer","correct","timestamp"]
+						
+						let header = ["id_study","study_step","id_passage","font","question","answer","correct","timestamp"]
+						let csv_string = ""
+
+						// add header
+						csv_string = header.join(",") + "\n"
+
+						//build rows of table
+						for(var i = 0; i < results.length; i++)
+						{
+							for(var j = 0; j < header.length; j++)
+							{
+								if(j == 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else if(header[j] == "user_type" && results[i]["_fieldsProto"][header[j]] == null)
+								{
+									csv_string += ",";
+								}
+								else if(j != 0 &&results[i]["_fieldsProto"][header[j]]["stringValue"] != null && (header[j] == "question" || header[j] == "answer"))
+								{
+									csv_string += ",\"" + results[i]["_fieldsProto"][header[j]]["stringValue"] + "\"";
+								}
+								else if(j != 0 && results[i]["_fieldsProto"][header[j]]["stringValue"] != null)
+								{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["stringValue"];
+								}
+								else{
+									csv_string += "," + results[i]["_fieldsProto"][header[j]]["integerValue"];
+								}
+							}
+							csv_string += "\n"
+						}
+
+						// todays date
+						const date = new Date();
+						const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+										.toISOString()
+										.split("T")[0];
+
+						// write to csv
+						let blob = new Blob([csv_string], {type: "text/csv"});
+						let blobUrl = URL.createObjectURL(blob);
+
+						let element = document.createElement("a");
+						element.href = blobUrl;
+						element.download = `Child Study Comprehension Results ${dateString}.csv`
+						//element.click();
+
+						setTimeout(() => {
+						//URL.revokeObjectURL(blobUrl);
+						},500);
+					})
+					.catch(error => console.log('error', error));
+		
+
+		
+		function sort_timestamp( a, b ) {
+		  if ( a.timestamp < b.timestamp ){
+			return -1;
+		  }
+		  if ( a.timestamp > b.timestamp ){
+			return 1;
+		  }
+		  return 0;
+		}
+
+					
+		function final_csv_unfinished(){
+			// mini, comp, fat, study
+			if(mini == null)
+			{
+				alert("The Mini Questions Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(comp == null)
+			{
+				alert("The Comprehension Collection have not been received yet, wait 10 seconds and try again.")
+				return false;				
+			}
+			else if(fat == null)
+			{
+				alert("The Font Attribute Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(studies == null)
+			{
+				alert("The Study Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			var csv;
+			var id_list = [];
+
+			var completed_tests = studies.filter(function (user) {
+				return user["_fieldsProto"]["end_time"]["integerValue"] != null;
+			});
+			
+			var users = completed_tests.map(function (user) {
+				return user["_fieldsProto"]["user_type"]["stringValue"];
+			});
+			
+			users = Array.from(new Set(users));
+			
+			var header = ["Id_study", "user_type", "study_step", "id_passage", "font", "question", "answer", "correct",  "passage part 1 sentences", "passage part 1 words", "passage part 1 char spacing", "passage part 1 wpm", "passage part 1 seconds", "passage part 2 sentences", "passage part 2 words", "passage part 2 char spacing", "passage part 2 wpm", "passage part 1 seconds", "passage part 3 sentences", "passage part 3 words", "passage part 3 char spacing", "passage part 3 wpm", "passage part 3 seconds", "passage part 4 sentences", "passage part 4 words", "passage part 4 char spacing", "passage part 4 wpm", "passage part 4 seconds", "time_stamp"]
+
+			// add header
+			csv = header.join(",") + "\n"
+
+			// get ids based on speed (will include in study collection)
+			for(var k = 0; k < users.length; k++)
+			{
+				
+				let temp_speed = speed.filter(function (x){
+					return x["_fieldsProto"]["user_type"] != null && x["_fieldsProto"]["user_type"]["stringValue"] == users[k];
+				});
+				
+				let ids = temp_speed.map(function (user) {
+					return user["_fieldsProto"]["id_study"]["stringValue"];
+				});
+
+				id_list = id_list.concat(ids);
+			}
+
+			id_list = Array.from(new Set(id_list));
+
+			console.log("THIS is ID LIST")
+			console.log(id_list)
+
+			//build rows of table	
+
+			for(var i = 0; i < id_list.length; i++)
+			{
+				for(var m = 0; m < 12; m++)
+				{
+					let temp_comp = comp.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_mini = mini.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_fat = fat.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_speed = speed.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					
+					temp_comp = temp_comp.sort(sort_timestamp);
+					temp_mini = temp_mini.sort(sort_timestamp);
+					temp_fat = temp_fat.sort(sort_timestamp);
+					temp_speed = temp_speed.sort(sort_timestamp);
+					
+					console.log(temp_comp);
+					console.log(temp_mini);
+					console.log(temp_fat);
+					console.log(temp_speed);
+
+					for(var j = 0; j < temp_comp.length; j++){
+						
+						// id_study
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_study"] && temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"]  : csv + ",";
+						
+						
+						// user_type
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["user_type"] && temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] : csv + ",";
+						
+						
+						// study_step
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["study_step"] && temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"]  : csv + ",";
+						
+						
+						// id_passage
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_passage"] && temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] : csv + ",";
+						
+						
+						// font
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["font"] && temp_comp[j]["_fieldsProto"]["font"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["font"]["stringValue"] : csv + ",";
+						
+						
+						// question
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["question"] && temp_comp[j]["_fieldsProto"]["question"]["stringValue"] != null) ? csv + ",\"" + temp_comp[j]["_fieldsProto"]["question"]["stringValue"] + "\"" : csv + ",";
+						
+						
+						// answer
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["answer"] && temp_comp[j]["_fieldsProto"]["answer"]["stringValue"] != null) ? csv + ",\""  +  temp_comp[j]["_fieldsProto"]["answer"]["stringValue"]  + "\"" : csv + ",";
+						
+						
+						// correct
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["correct"] && temp_comp[j]["_fieldsProto"]["correct"]["integerValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["correct"]["integerValue"]  : csv + ",";
+						
+					
+						//if(j == 0 ){
+						// passage pt 1 sentences
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["sentences"] && temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 words
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["words"] && temp_speed[0]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+
+						// passage pt 1 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 wpm
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["wpm"] && temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 seconds
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["seconds"] && temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+					
+						// passage pt 2 sentences
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["sentences"] && temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 words
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["words"] && temp_speed[1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 2 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 wpm
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["wpm"] && temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 seconds
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["seconds"] && temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						// passage pt 3 sentences
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["sentences"] && temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 words
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["words"] && temp_speed[2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+									
+						// passage pt 3 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 wpm
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["wpm"] && temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 seconds
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["seconds"] && temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						
+						// passage pt 4 sentences
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["sentences"] && temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 words
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["words"] && temp_speed[3]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 4 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 wpm
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["wpm"] && temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 seconds
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["seconds"] && temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						// timestamp
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["timestamp"] && temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"]  : csv + ",";
+
+
+
+						//}
+						/*else{
+						
+								// passage pt 1 sentences
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["sentences"] && temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 words
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["words"] && temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+
+							// passage pt 1 char_spacing
+							csv = (temp_fat.length >= (j*4-1) && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 wpm
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["wpm"] && temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 seconds
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["seconds"] && temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+						
+							// passage pt 2 sentences
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["sentences"] && temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 words
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["words"] && temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 2 char_spacing
+							csv = (temp_fat.length >= (j*4) && temp_fat[j*4]["_fieldsProto"]["char_spacing"] && temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 wpm
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["wpm"] && temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 seconds
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["seconds"] && temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							// passage pt 3 sentences
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["sentences"] && temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 words
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["words"] && temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+										
+							// passage pt 3 char_spacing
+							csv = (temp_fat.length >= (j*4+1) && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 wpm
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["wpm"] && temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 seconds
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["seconds"] && temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							
+							// passage pt 4 sentences
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["sentences"] && temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 words
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["words"] && temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 4 char_spacing
+							csv = (temp_fat.length >= (j*4+2) && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 wpm
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["wpm"] && temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 seconds
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["seconds"] && temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+						}*/
+						
+						
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						
+						csv = csv + "\n"
+					
+					}		
+				}
+			}
+
+			// todays date
+			const date = new Date();
+			const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+							.toISOString()
+							.split("T")[0];
+
+			// write to csv
+			let blob = new Blob([csv], {type: "text/csv"});
+			let blobUrl = URL.createObjectURL(blob);
+
+			let element = document.createElement("a");
+			element.href = blobUrl;
+			element.download = `Child Study - Incomplete ${dateString}.csv`
+			element.click();
+
+			setTimeout(() => {
+			URL.revokeObjectURL(blobUrl);
+			},500);
+		}
+		
+		
+		function final_csv_finished_w_ident(){
+			// mini, comp, fat, study
+			if(mini == null)
+			{
+				alert("The Mini Questions Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(comp == null)
+			{
+				alert("The Comprehension Collection have not been received yet, wait 10 seconds and try again.")
+				return false;				
+			}
+			else if(fat == null)
+			{
+				alert("The Font Attribute Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(studies == null)
+			{
+				alert("The Study Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			var csv;
+			var id_list = [];
+
+			var completed_tests = studies.filter(function (user) {
+				return user["_fieldsProto"]["end_time"]["integerValue"] != null;
+			});
+			
+			var users = completed_tests.map(function (user) {
+				return user["_fieldsProto"]["user_type"]["stringValue"];
+			});
+			
+			users = Array.from(new Set(users));
+			
+			
+		
+			var header = ["Id_study", "user_type", "name","email","prof_ID","group_id","study_step", "id_passage", "font", "question", "answer", "correct",  "passage part 1 sentences", "passage part 1 words", "passage part 1 char spacing", "passage part 1 wpm", "passage part 1 seconds", "passage part 2 sentences", "passage part 2 words", "passage part 2 char spacing", "passage part 2 wpm", "passage part 1 seconds", "passage part 3 sentences", "passage part 3 words", "passage part 3 char spacing", "passage part 3 wpm", "passage part 3 seconds", "passage part 4 sentences", "passage part 4 words", "passage part 4 char spacing", "passage part 4 wpm", "passage part 4 seconds", "time_stamp"]
+
+			// add header
+			csv = header.join(",") + "\n"
+
+			// get ids based on speed (will include in study collection)
+			for(var k = 0; k < users.length; k++)
+			{
+				
+				let temp_speed = speed.filter(function (x){
+					return x["_fieldsProto"]["user_type"] != null && x["_fieldsProto"]["user_type"]["stringValue"] == users[k];
+				});
+				
+				let ids = temp_speed.map(function (user) {
+					return user["_fieldsProto"]["id_study"]["stringValue"];
+				});
+
+				id_list = id_list.concat(ids);
+			}
+
+			id_list = Array.from(new Set(id_list));
+
+			console.log("THIS is ID LIST")
+			console.log(id_list)
+
+			//build rows of table	
+
+			for(var i = 0; i < id_list.length; i++)
+			{
+				for(var m = 0; m < 12; m++)
+				{
+					let temp_comp = comp.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_mini = mini.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_fat = fat.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_speed = speed.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					
+					temp_comp = temp_comp.sort(sort_timestamp);
+					temp_mini = temp_mini.sort(sort_timestamp);
+					temp_fat = temp_fat.sort(sort_timestamp);
+					temp_speed = temp_speed.sort(sort_timestamp);
+					
+					console.log(temp_comp);
+					console.log(temp_mini);
+					console.log(temp_fat);
+					console.log(temp_speed);
+
+					let user_id = temp_comp.length > 0 ? temp_comp[0]["_fieldsProto"]["user_type"]["stringValue"].split("_")[2] : "";
+				
+					let temp_user_info = user_data.filter( function (x) {
+						return x.id_user == user_id;
+					});
+					
+					console.log("this is temp user info")
+					console.log(temp_user_info);
+				
+					for(var j = 0; j < temp_comp.length; j++){
+						
+						
+						// id_study
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_study"] && temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"]  : csv + ",";
+						
+						
+						// user_type
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["user_type"] && temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] : csv + ",";
+						
+						// name
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].name : csv + ",";
+						
+						// email
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].email : csv + ",";
+						
+						// prof_ID
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].signup_prof : csv + ",";
+						
+						// group_id
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].signup_group : csv + ",";
+						
+						
+						
+						
+						
+						// study_step
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["study_step"] && temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"]  : csv + ",";
+						
+						
+						// id_passage
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_passage"] && temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] : csv + ",";
+						
+						
+						// font
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["font"] && temp_comp[j]["_fieldsProto"]["font"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["font"]["stringValue"] : csv + ",";
+						
+						
+						// question
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["question"] && temp_comp[j]["_fieldsProto"]["question"]["stringValue"] != null) ? csv + ",\"" + temp_comp[j]["_fieldsProto"]["question"]["stringValue"] + "\"" : csv + ",";
+						
+						
+						// answer
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["answer"] && temp_comp[j]["_fieldsProto"]["answer"]["stringValue"] != null) ? csv + ",\""  +  temp_comp[j]["_fieldsProto"]["answer"]["stringValue"]  + "\"" : csv + ",";
+						
+						
+						// correct
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["correct"] && temp_comp[j]["_fieldsProto"]["correct"]["integerValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["correct"]["integerValue"]  : csv + ",";
+						
+					
+						//if(j == 0 ){
+						// passage pt 1 sentences
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["sentences"] && temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 words
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["words"] && temp_speed[0]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+
+						// passage pt 1 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 wpm
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["wpm"] && temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 seconds
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["seconds"] && temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+					
+						// passage pt 2 sentences
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["sentences"] && temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 words
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["words"] && temp_speed[1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 2 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 wpm
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["wpm"] && temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 seconds
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["seconds"] && temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						// passage pt 3 sentences
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["sentences"] && temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 words
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["words"] && temp_speed[2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+									
+						// passage pt 3 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 wpm
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["wpm"] && temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 seconds
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["seconds"] && temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						
+						// passage pt 4 sentences
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["sentences"] && temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 words
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["words"] && temp_speed[3]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 4 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 wpm
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["wpm"] && temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 seconds
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["seconds"] && temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						// timestamp
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["timestamp"] && temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"]  : csv + ",";
+
+
+
+						//}
+						/*else{
+						
+								// passage pt 1 sentences
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["sentences"] && temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 words
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["words"] && temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+
+							// passage pt 1 char_spacing
+							csv = (temp_fat.length >= (j*4-1) && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 wpm
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["wpm"] && temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 seconds
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["seconds"] && temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+						
+							// passage pt 2 sentences
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["sentences"] && temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 words
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["words"] && temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 2 char_spacing
+							csv = (temp_fat.length >= (j*4) && temp_fat[j*4]["_fieldsProto"]["char_spacing"] && temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 wpm
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["wpm"] && temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 seconds
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["seconds"] && temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							// passage pt 3 sentences
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["sentences"] && temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 words
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["words"] && temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+										
+							// passage pt 3 char_spacing
+							csv = (temp_fat.length >= (j*4+1) && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 wpm
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["wpm"] && temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 seconds
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["seconds"] && temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							
+							// passage pt 4 sentences
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["sentences"] && temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 words
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["words"] && temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 4 char_spacing
+							csv = (temp_fat.length >= (j*4+2) && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 wpm
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["wpm"] && temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 seconds
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["seconds"] && temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+						}*/
+						
+						
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						
+						csv = csv + "\n"
+					
+					}		
+				}
+			}
+
+			// todays date
+			const date = new Date();
+			const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+							.toISOString()
+							.split("T")[0];
+
+			// write to csv
+			let blob = new Blob([csv], {type: "text/csv"});
+			let blobUrl = URL.createObjectURL(blob);
+
+			let element = document.createElement("a");
+			element.href = blobUrl;
+			element.download = `Child Study - Complete w Ident ${dateString}.csv`
+			element.click();
+
+			setTimeout(() => {
+			URL.revokeObjectURL(blobUrl);
+			},500);
+		}
+		
+		
+		
+		function final_csv_unfinished_w_ident(){
+			// mini, comp, fat, study
+			if(mini == null)
+			{
+				alert("The Mini Questions Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(comp == null)
+			{
+				alert("The Comprehension Collection have not been received yet, wait 10 seconds and try again.")
+				return false;				
+			}
+			else if(fat == null)
+			{
+				alert("The Font Attribute Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(studies == null)
+			{
+				alert("The Study Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			var csv;
+			var id_list = [];
+
+			var completed_tests = studies.filter(function (user) {
+				return user["_fieldsProto"]["end_time"]["integerValue"] == null;
+			});
+			
+			var users = completed_tests.map(function (user) {
+				return user["_fieldsProto"]["user_type"]["stringValue"];
+			});
+			
+			users = Array.from(new Set(users));
+			
+			var header = ["Id_study", "user_type", "name","email","prof_ID","group_id","study_step", "id_passage", "font", "question", "answer", "correct",  "passage part 1 sentences", "passage part 1 words", "passage part 1 char spacing", "passage part 1 wpm", "passage part 1 seconds", "passage part 2 sentences", "passage part 2 words", "passage part 2 char spacing", "passage part 2 wpm", "passage part 1 seconds", "passage part 3 sentences", "passage part 3 words", "passage part 3 char spacing", "passage part 3 wpm", "passage part 3 seconds", "passage part 4 sentences", "passage part 4 words", "passage part 4 char spacing", "passage part 4 wpm", "passage part 4 seconds", "time_stamp"]
+
+			// add header
+			csv = header.join(",") + "\n"
+
+			// get ids based on speed (will include in study collection)
+			for(var k = 0; k < users.length; k++)
+			{
+				
+				let temp_speed = speed.filter(function (x){
+					return x["_fieldsProto"]["user_type"] != null && x["_fieldsProto"]["user_type"]["stringValue"] == users[k];
+				});
+				
+				let ids = temp_speed.map(function (user) {
+					return user["_fieldsProto"]["id_study"]["stringValue"];
+				});
+
+				id_list = id_list.concat(ids);
+			}
+
+			id_list = Array.from(new Set(id_list));
+
+			console.log("THIS is ID LIST")
+			console.log(id_list)
+
+			//build rows of table	
+
+			for(var i = 0; i < id_list.length; i++)
+			{
+				for(var m = 0; m < 12; m++)
+				{
+					let temp_comp = comp.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_mini = mini.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_fat = fat.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_speed = speed.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let user_id = temp_comp.length > 0 ? temp_comp[0]["_fieldsProto"]["user_type"]["stringValue"].split("_")[2] : "";
+				
+					let temp_user_info = user_data.filter( function (x) {
+						return x.id_user == user_id;
+					});
+					
+					console.log("this is temp user info")
+					console.log(temp_user_info);
+					
+					temp_comp = temp_comp.sort(sort_timestamp);
+					temp_mini = temp_mini.sort(sort_timestamp);
+					temp_fat = temp_fat.sort(sort_timestamp);
+					temp_speed = temp_speed.sort(sort_timestamp);
+					
+					console.log(temp_comp);
+					console.log(temp_mini);
+					console.log(temp_fat);
+					console.log(temp_speed);
+
+					for(var j = 0; j < temp_comp.length; j++){
+						
+						// id_study
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_study"] && temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"]  : csv + ",";
+						
+						
+						// user_type
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["user_type"] && temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] : csv + ",";
+						
+						// name
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].name : csv + ",";
+						
+						// email
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].email : csv + ",";
+						
+						// prof_ID
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].signup_prof : csv + ",";
+						
+						// group_id
+						csv = temp_user_info.length > 0 ? csv + "," + temp_user_info[0].signup_group : csv + ",";
+						
+						
+						
+						// study_step
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["study_step"] && temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"]  : csv + ",";
+						
+						
+						// id_passage
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_passage"] && temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] : csv + ",";
+						
+						
+						// font
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["font"] && temp_comp[j]["_fieldsProto"]["font"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["font"]["stringValue"] : csv + ",";
+						
+						
+						// question
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["question"] && temp_comp[j]["_fieldsProto"]["question"]["stringValue"] != null) ? csv + ",\"" + temp_comp[j]["_fieldsProto"]["question"]["stringValue"] + "\"" : csv + ",";
+						
+						
+						// answer
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["answer"] && temp_comp[j]["_fieldsProto"]["answer"]["stringValue"] != null) ? csv + ",\""  +  temp_comp[j]["_fieldsProto"]["answer"]["stringValue"]  + "\"" : csv + ",";
+						
+						
+						// correct
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["correct"] && temp_comp[j]["_fieldsProto"]["correct"]["integerValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["correct"]["integerValue"]  : csv + ",";
+						
+					
+						//if(j == 0 ){
+						// passage pt 1 sentences
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["sentences"] && temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 words
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["words"] && temp_speed[0]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+
+						// passage pt 1 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 wpm
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["wpm"] && temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 seconds
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["seconds"] && temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+					
+						// passage pt 2 sentences
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["sentences"] && temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 words
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["words"] && temp_speed[1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 2 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 wpm
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["wpm"] && temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 seconds
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["seconds"] && temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						// passage pt 3 sentences
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["sentences"] && temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 words
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["words"] && temp_speed[2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+									
+						// passage pt 3 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 wpm
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["wpm"] && temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 seconds
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["seconds"] && temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						
+						// passage pt 4 sentences
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["sentences"] && temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 words
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["words"] && temp_speed[3]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 4 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 wpm
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["wpm"] && temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 seconds
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["seconds"] && temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						// timestamp
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["timestamp"] && temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"]  : csv + ",";
+
+
+
+						//}
+						/*else{
+						
+								// passage pt 1 sentences
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["sentences"] && temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 words
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["words"] && temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+
+							// passage pt 1 char_spacing
+							csv = (temp_fat.length >= (j*4-1) && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 wpm
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["wpm"] && temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 seconds
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["seconds"] && temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+						
+							// passage pt 2 sentences
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["sentences"] && temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 words
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["words"] && temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 2 char_spacing
+							csv = (temp_fat.length >= (j*4) && temp_fat[j*4]["_fieldsProto"]["char_spacing"] && temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 wpm
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["wpm"] && temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 seconds
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["seconds"] && temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							// passage pt 3 sentences
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["sentences"] && temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 words
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["words"] && temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+										
+							// passage pt 3 char_spacing
+							csv = (temp_fat.length >= (j*4+1) && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 wpm
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["wpm"] && temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 seconds
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["seconds"] && temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							
+							// passage pt 4 sentences
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["sentences"] && temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 words
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["words"] && temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 4 char_spacing
+							csv = (temp_fat.length >= (j*4+2) && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 wpm
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["wpm"] && temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 seconds
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["seconds"] && temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+						}*/
+						
+						
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						
+						csv = csv + "\n"
+					
+					}		
+				}
+			}
+
+			// todays date
+			const date = new Date();
+			const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+							.toISOString()
+							.split("T")[0];
+
+			// write to csv
+			let blob = new Blob([csv], {type: "text/csv"});
+			let blobUrl = URL.createObjectURL(blob);
+
+			let element = document.createElement("a");
+			element.href = blobUrl;
+			element.download = `Child Study - Incomplete w Ident ${dateString}.csv`
+			element.click();
+
+			setTimeout(() => {
+			URL.revokeObjectURL(blobUrl);
+			},500);
+		}
+		
+		
+		function final_csv_finished(){
+			// mini, comp, fat, study
+			if(mini == null)
+			{
+				alert("The Mini Questions Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(comp == null)
+			{
+				alert("The Comprehension Collection have not been received yet, wait 10 seconds and try again.")
+				return false;				
+			}
+			else if(fat == null)
+			{
+				alert("The Font Attribute Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			else if(studies == null)
+			{
+				alert("The Study Collection have not been received yet, wait 10 seconds and try again.")
+				return false;
+			}
+			var csv;
+			var id_list = [];
+
+			var completed_tests = studies.filter(function (user) {
+				return user["_fieldsProto"]["end_time"]["integerValue"] != null;
+			});
+			
+			var users = completed_tests.map(function (user) {
+				return user["_fieldsProto"]["user_type"]["stringValue"];
+			});
+			
+			users = Array.from(new Set(users));
+			
+			var header = ["Id_study", "user_type", "study_step", "id_passage", "font", "question", "answer", "correct",  "passage part 1 sentences", "passage part 1 words", "passage part 1 char spacing", "passage part 1 wpm", "passage part 1 seconds", "passage part 2 sentences", "passage part 2 words", "passage part 2 char spacing", "passage part 2 wpm", "passage part 1 seconds", "passage part 3 sentences", "passage part 3 words", "passage part 3 char spacing", "passage part 3 wpm", "passage part 3 seconds", "passage part 4 sentences", "passage part 4 words", "passage part 4 char spacing", "passage part 4 wpm", "passage part 4 seconds", "time_stamp"]
+
+			// add header
+			csv = header.join(",") + "\n"
+
+			// get ids based on speed (will include in study collection)
+			for(var k = 0; k < users.length; k++)
+			{
+				
+				let temp_speed = speed.filter(function (x){
+					return x["_fieldsProto"]["user_type"] != null && x["_fieldsProto"]["user_type"]["stringValue"] == users[k];
+				});
+				
+				let ids = temp_speed.map(function (user) {
+					return user["_fieldsProto"]["id_study"]["stringValue"];
+				});
+
+				id_list = id_list.concat(ids);
+			}
+
+			id_list = Array.from(new Set(id_list));
+
+			console.log("THIS is ID LIST")
+			console.log(id_list)
+
+			//build rows of table	
+
+			for(var i = 0; i < id_list.length; i++)
+			{
+				for(var m = 0; m < 12; m++)
+				{
+					let temp_comp = comp.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_mini = mini.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_fat = fat.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					let temp_speed = speed.filter(function (x){
+						return x["_fieldsProto"]["id_study"] != null && x["_fieldsProto"]["id_study"]["stringValue"] == id_list[i] && x["_fieldsProto"]["id_passage"]["stringValue"] == m.toString();
+					});
+					
+					
+					temp_comp = temp_comp.sort(sort_timestamp);
+					temp_mini = temp_mini.sort(sort_timestamp);
+					temp_fat = temp_fat.sort(sort_timestamp);
+					temp_speed = temp_speed.sort(sort_timestamp);
+					
+					console.log(temp_comp);
+					console.log(temp_mini);
+					console.log(temp_fat);
+					console.log(temp_speed);
+
+					for(var j = 0; j < temp_comp.length; j++){
+						
+						// id_study
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_study"] && temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["id_study"]["stringValue"]  : csv + ",";
+						
+						
+						// user_type
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["user_type"] && temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["user_type"]["stringValue"] : csv + ",";
+						
+						
+						// study_step
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["study_step"] && temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["study_step"]["stringValue"]  : csv + ",";
+						
+						
+						// id_passage
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["id_passage"] && temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["id_passage"]["stringValue"] : csv + ",";
+						
+						
+						// font
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["font"] && temp_comp[j]["_fieldsProto"]["font"]["stringValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["font"]["stringValue"] : csv + ",";
+						
+						
+						// question
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["question"] && temp_comp[j]["_fieldsProto"]["question"]["stringValue"] != null) ? csv + ",\"" + temp_comp[j]["_fieldsProto"]["question"]["stringValue"] + "\"" : csv + ",";
+						
+						
+						// answer
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["answer"] && temp_comp[j]["_fieldsProto"]["answer"]["stringValue"] != null) ? csv + ",\""  +  temp_comp[j]["_fieldsProto"]["answer"]["stringValue"]  + "\"" : csv + ",";
+						
+						
+						// correct
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["correct"] && temp_comp[j]["_fieldsProto"]["correct"]["integerValue"] != null) ? csv + "," + temp_comp[j]["_fieldsProto"]["correct"]["integerValue"]  : csv + ",";
+						
+					
+						//if(j == 0 ){
+						// passage pt 1 sentences
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["sentences"] && temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 words
+						csv = (temp_speed.length >= 0 && temp_speed[j]["_fieldsProto"]["words"] && temp_speed[0]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+
+						// passage pt 1 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 wpm
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["wpm"] && temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 1 seconds
+						csv = (temp_speed.length >= 0 && temp_speed[0]["_fieldsProto"]["seconds"] && temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[0]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+					
+						// passage pt 2 sentences
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["sentences"] && temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 words
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["words"] && temp_speed[1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 2 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 wpm
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["wpm"] && temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 2 seconds
+						csv = (temp_speed.length >= 1 && temp_speed[1]["_fieldsProto"]["seconds"] && temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[1]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						// passage pt 3 sentences
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["sentences"] && temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 words
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["words"] && temp_speed[2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+									
+						// passage pt 3 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 wpm
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["wpm"] && temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 3 seconds
+						csv = (temp_speed.length >= 2 && temp_speed[2]["_fieldsProto"]["seconds"] && temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[2]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						
+						
+						
+						// passage pt 4 sentences
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["sentences"] && temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 words
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["words"] && temp_speed[3]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+						
+						
+						// passage pt 4 char_spacing
+						csv = (temp_fat.length > 0 && temp_fat[0]["_fieldsProto"]["char_spacing"] && temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[0]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 wpm
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["wpm"] && temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+						
+						// passage pt 4 seconds
+						csv = (temp_speed.length >= 3 && temp_speed[3]["_fieldsProto"]["seconds"] && temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] != null) ? csv + "," + temp_speed[3]["_fieldsProto"]["seconds"]["doubleValue"] : csv + ",";
+						
+						
+						// timestamp
+						csv = (temp_comp.length > 0 && temp_comp[j]["_fieldsProto"]["timestamp"] && temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"] != null) ? csv + temp_comp[j]["_fieldsProto"]["timestamp"]["integerValue"]  : csv + ",";
+
+
+
+						//}
+						/*else{
+						
+								// passage pt 1 sentences
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["sentences"] && temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 words
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["words"] && temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+
+							// passage pt 1 char_spacing
+							csv = (temp_fat.length >= (j*4-1) && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4-1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 wpm
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["wpm"] && temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 1 seconds
+							csv = (temp_speed.length >= (j*4-1) && temp_speed[j*4-1]["_fieldsProto"]["seconds"] && temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4-1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+						
+							// passage pt 2 sentences
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["sentences"] && temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 words
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["words"] && temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 2 char_spacing
+							csv = (temp_fat.length >= (j*4) && temp_fat[j*4]["_fieldsProto"]["char_spacing"] && temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 wpm
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["wpm"] && temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 2 seconds
+							csv = (temp_speed.length >= (j*4) && temp_speed[j*4]["_fieldsProto"]["seconds"] && temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							// passage pt 3 sentences
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["sentences"] && temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 words
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["words"] && temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+										
+							// passage pt 3 char_spacing
+							csv = (temp_fat.length >= (j*4+1) && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+1]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 wpm
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["wpm"] && temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 3 seconds
+							csv = (temp_speed.length >= (j*4+1) && temp_speed[j*4+1]["_fieldsProto"]["seconds"] && temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+1]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+							
+							
+							
+							
+							// passage pt 4 sentences
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["sentences"] && temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["sentences"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 words
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["words"] && temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["words"]["integerValue"] : csv + ",";
+							
+							
+							// passage pt 4 char_spacing
+							csv = (temp_fat.length >= (j*4+2) && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"] && temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] != null) ? csv + "," + temp_fat[j*4+2]["_fieldsProto"]["char_spacing"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 wpm
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["wpm"] && temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["wpm"]["integerValue"] : csv + ",";
+							
+							// passage pt 4 seconds
+							csv = (temp_speed.length >= (j*4+2) && temp_speed[j*4+2]["_fieldsProto"]["seconds"] && temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] != null) ? csv + "," + temp_speed[j*4+2]["_fieldsProto"]["seconds"]["integerValue"] : csv + ",";
+							
+						}*/
+						
+						
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						// user_type
+						//csv = (temp_comp.length > 0 && temp_comp["_fieldsProto"]["user_type"] && temp_comp["_fieldsProto"]["user_type"]["stringValue"] != null) ? csv + temp_comp["_fieldsProto"]["user_type"]["stringValue"] + "," : csv + ",";
+						
+						
+						
+						csv = csv + "\n"
+					
+					}		
+				}
+			}
+
+			// todays date
+			const date = new Date();
+			const dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
+							.toISOString()
+							.split("T")[0];
+
+			// write to csv
+			let blob = new Blob([csv], {type: "text/csv"});
+			let blobUrl = URL.createObjectURL(blob);
+
+			let element = document.createElement("a");
+			element.href = blobUrl;
+			element.download = `Child Study - Complete  ${dateString}.csv`
+			element.click();
+
+			setTimeout(() => {
+			URL.revokeObjectURL(blobUrl);
+			},500);
+		}
+        </script>
+    </head>
+    <body>
+		<div class="center">
+			<button onclick="final_csv_finished()">Get Complete Data</button>
+			<br>
+		</div>
+		<div class="center">
+			<button onclick="final_csv_unfinished()">Get Incomplete Data</button>
+		</div>
+		<div class="center">
+			<button onclick="final_csv_finished_w_ident()">Get Complete Data w/ Sensitive</button>
+		</div>
+		<div class="center">
+			<button onclick="final_csv_unfinished_w_ident()">Get Incomplete Data w/ Sensitive</button>
+		</div>
+    </body>
+</html>
